@@ -1,4 +1,7 @@
-"""@package data_structure.case_model
+"""
+
+Xylem Inc.
+Contact: lucas.almeida@xyleminc.com
 
 File that contains the class CaseModel that creates a model for the Case treeview list.
 

@@ -56,9 +56,7 @@ class MacaulayBracket:
 
 
 class Beam:
-
-
-    def __init__(self, E, I, length):
+    def __init__(self, E, I, length, height=0, nl=0):
         ## Attributes
         """
 
@@ -67,20 +65,29 @@ class Beam:
         self.__E = 0
         self.__I = 0
         self.__length = 0
+        self.__height = 0
+        self.__nl = 0
+
+        if height == 0:
+            self.height = length / 5
+        else:
+            self.height = height
+
+        self.__nl = nl
 
         self.young_modulus = E
         self.inertia_moment = I
-        self.beam_length = length
+        self.neutral_line = nl
+        self.length = length
 
         self.__max_values = dict()
 
         self.loads = []
 
-        self.load_brackets = []
         self.__supports = []
-        self.pivots = []
+        self.__hinges = []
 
-        self.boundary = [0, 0]
+        self.boundary = [free_support, free_support]
 
         #### POST PROCESSING
 
@@ -99,31 +106,49 @@ class Beam:
         self.theta_boundary = []
         self.disp_boundary = []
 
-
-
-
-
     @property
     def young_modulus(self):
         return self.__E
 
     @young_modulus.setter
     def young_modulus(self, E):
-        if not E > 0: raise  beam_exceptions.InvalidInput("Young Module should be greater than zero")
+        if not E > 0: raise beam_exceptions.InvalidInput("Young Module should be greater than zero")
         self.calculated_beam = False
 
         self.__E = E
 
     @property
-    def beam_length(self):
+    def length(self):
         return self.__length
 
-    @beam_length.setter
-    def beam_length(self, length):
-        if not length > 0: raise  beam_exceptions.InvalidInput("beam_length should be greater than zero")
+    @length.setter
+    def length(self, l):
+        if not l > 0: raise beam_exceptions.InvalidInput("beam_length should be greater than zero")
         self.calculated_beam = False
 
-        self.__length = length
+        self.__length = l
+
+    @property
+    def height(self):
+        return self.__height
+
+    @height.setter
+    def height(self, h):
+        if not h > 0: raise beam_exceptions.InvalidInput("Beam Height should be greater than zero")
+        self.calculated_beam = False
+
+        self.__height = h
+
+    @property
+    def neutral_line(self):
+        return self.__nl
+
+    @neutral_line.setter
+    def neutral_line(self, nl):
+        if abs(nl) >= self.height / 2: raise beam_exceptions.InvalidInput("Invalid Neutral line")
+        self.calculated_beam = False
+
+        self.__nl = nl
 
     @property
     def inertia_moment(self):
@@ -137,27 +162,54 @@ class Beam:
         self.__I = I
 
     @property
-    def beam_supports(self):
+    def supports(self):
         return self.__supports
 
-    @beam_supports.setter
-    def beam_supports(self, support_list=[]):
+    @supports.setter
+    def supports(self, support_list=[]):
 
         if not support_list:
-            self.__supports =[]
+            self.__supports = []
 
             return
 
         if not min(support_list) >= 0: raise beam_exceptions.OutOfBounds("Support must be greater than zero")
-        if not max(support_list) <= self.beam_length: raise beam_exceptions.OutOfBounds("Support must be lower than beam length")
+        if not max(support_list) <= self.length: raise beam_exceptions.OutOfBounds(
+            "Support must be lower than beam length")
 
         if (self.boundary[0] is simply_support and 0 in support_list):  raise beam_exceptions.SuperImposedSupports
-        if (self.boundary[1] is simply_support and self.beam_length in support_list):  raise beam_exceptions.SuperImposedSupports
+        if (self.boundary[
+                1] is simply_support and self.length in support_list):  raise beam_exceptions.SuperImposedSupports
         if (self.boundary[0] is fixed_support and 0 in support_list):  raise beam_exceptions.SuperImposedSupports
-        if (self.boundary[1] is fixed_support and self.beam_length in support_list):  raise beam_exceptions.SuperImposedSupports
-
+        if (self.boundary[
+                1] is fixed_support and self.length in support_list):  raise beam_exceptions.SuperImposedSupports
 
         self.__supports = list(set(support_list))
+
+    @property
+    def hinges(self):
+        return self.__hinges
+
+    @hinges.setter
+    def hinges(self, hinge_list=[]):
+
+        if not hinge_list:
+            self.__hinges = []
+
+            return
+
+        if not min(hinge_list) >= 0: raise beam_exceptions.OutOfBounds("Hinge must be greater than zero")
+        if not max(hinge_list) <= self.length: raise beam_exceptions.OutOfBounds("Hinge must be lower than beam length")
+
+        if (self.boundary[0] is simply_support and 0 in hinge_list):  raise beam_exceptions.SuperImposedSupports
+        if (self.boundary[
+                1] is simply_support and self.length in hinge_list):  raise beam_exceptions.SuperImposedSupports
+        if (self.boundary[0] is fixed_support and 0 in hinge_list):  raise beam_exceptions.SuperImposedSupports
+        if (self.boundary[
+                1] is fixed_support and self.length in hinge_list):  raise beam_exceptions.SuperImposedSupports
+
+        self.__hinges = list(set(hinge_list))
+        pass
 
     def setBoundary(self, left_support_type: str, right_support_type: str) -> None:
         """
@@ -168,10 +220,11 @@ class Beam:
         :return: none
         """
 
-        support_list = self.beam_supports
+        support_list = self.supports
 
         if not isinstance(left_support_type, SupportObject): raise beam_exceptions.InvalidInput("Invalid left support")
-        if not isinstance(right_support_type, SupportObject): raise beam_exceptions.InvalidInput("Invalid right support")
+        if not isinstance(right_support_type, SupportObject): raise beam_exceptions.InvalidInput(
+            "Invalid right support")
 
         #
         # if (self.boundary[0] is simply_support and 0 in support_list):  raise beam_exceptions.SuperImposedSupports
@@ -183,13 +236,51 @@ class Beam:
 
         if (self.boundary[0] is simply_support and 0 in support_list):  support_list.remove(0)
         if (self.boundary[
-                1] is simply_support and self.beam_length in support_list):  support_list.remove(0)
+                1] is simply_support and self.length in support_list):  support_list.remove(0)
         if (self.boundary[0] is fixed_support and 0 in support_list):  support_list.remove(0)
         if (self.boundary[
-                1] is fixed_support and self.beam_length in support_list):  support_list.remove(0)
+                1] is fixed_support and self.length in support_list):  support_list.remove(0)
 
-        self.beam_supports = support_list
+        self.supports = support_list
         self.boundary = [left_support_type, right_support_type]
+
+    def applyMoment(self, magnitude, distance):
+        """
+
+        :param magnitude:
+        :param distance:
+        :return:
+        """
+        if not distance >= 0: raise beam_exceptions.OutOfBounds("Load out of boundaries")
+        if not distance <= self.length: raise beam_exceptions.OutOfBounds("Load out of boundaries")
+
+        self.loads.append(["moment", magnitude, distance])
+
+    def applyPointLoad(self, magnitude, distance):
+        if not distance >= 0: raise beam_exceptions.OutOfBounds("Load out of boundaries")
+        if not distance <= self.length: raise beam_exceptions.OutOfBounds("Load out of boundaries")
+
+        self.loads.append(["point_load", magnitude, distance])
+
+    def applyDistLoad(self, magnitude_1, distance_1, magnitude_2, distance_2):
+        """
+
+        :param magnitude_1:
+        :param distance_1:
+        :param magnitude_2:
+        :param distance_2:
+        :return:
+        """
+
+        if not distance_1 >= 0: raise beam_exceptions.OutOfBounds("Load out of boundaries")
+        if not distance_2 > distance_1: raise beam_exceptions.InvalidInput(
+            "End load position must be > than star load position")
+        if not distance_2 <= self.length: raise beam_exceptions.OutOfBounds("Load out of boundaries")
+        if not magnitude_1 * magnitude_2 >= 0: raise beam_exceptions.InvalidInput("Both magnitudes must have same sign")
+        if not abs(magnitude_1) + abs(magnitude_2) > 0: raise beam_exceptions.InvalidInput(
+            "At least one magnitude must be greater than zero")
+
+        self.loads.append(["dist_load", magnitude_1, distance_1, magnitude_2, distance_2])
 
     def resetLoads(self):
         self.loads = []
@@ -201,7 +292,7 @@ class Beam:
 
         self.calculated_beam = False
 
-        if distance == self.beam_length or (distance == 0 and exponent < 0):
+        if distance == self.length or (distance == 0 and exponent < 0):
             is_contour = True
 
         bracket = MacaulayBracket(magnitude, distance, exponent, is_contour)
@@ -220,45 +311,14 @@ class Beam:
             elif load[0] == "dist_load":
                 self.__addDistLoad(load[1], load[2], load[3], load[4])
 
-        reaction_array = sp.symbols("R1:10")
-        for index in range(0, len(self.beam_supports)):
-            self.__addPointLoad(reaction_array[index], self.beam_supports[index])
+        reaction_array = sp.symbols("R1:10")  ## TODO: expand this
+        eitheta_array = sp.symbols("EITHETA1:10")  # TODO: expand this
 
-    def applyMoment(self, magnitude, distance):
-        """
-        
-        :param magnitude: 
-        :param distance: 
-        :return: 
-        """
-        if not distance >= 0: raise beam_exceptions.OutOfBounds("Load out of boundaries")
-        if not distance <= self.beam_length: raise beam_exceptions.OutOfBounds("Load out of boundaries")
+        for index in range(0, len(self.supports)):
+            self.__addPointLoad(reaction_array[index], self.supports[index])
 
-        self.loads.append(["moment", magnitude, distance])
-
-    def applyPointLoad(self, magnitude, distance):
-        if not distance >= 0: raise beam_exceptions.OutOfBounds("Load out of boundaries")
-        if not distance <= self.beam_length: raise beam_exceptions.OutOfBounds("Load out of boundaries")
-
-        self.loads.append(["point_load", magnitude, distance])
-
-    def applyDistLoad(self, magnitude_1, distance_1, magnitude_2, distance_2):
-        """
-        
-        :param magnitude_1: 
-        :param distance_1: 
-        :param magnitude_2: 
-        :param distance_2: 
-        :return: 
-        """
-
-        if not distance_1 >= 0: raise beam_exceptions.OutOfBounds("Load out of boundaries")
-        if not distance_2 > distance_1: raise beam_exceptions.InvalidInput("End load position must be > than star load position")
-        if not distance_2 <= self.beam_length: raise beam_exceptions.OutOfBounds("Load out of boundaries")
-        if not magnitude_1 * magnitude_2 >= 0: raise beam_exceptions.InvalidInput("Both magnitudes must have same sign")
-        if not abs(magnitude_1) + abs(magnitude_2) > 0: raise beam_exceptions.InvalidInput("At least one magnitude must be greater than zero")
-
-        self.loads.append(["dist_load", magnitude_1, distance_1, magnitude_2, distance_2])
+        for index in range(0, len(self.hinges)):
+            self.__addHingeLoad(eitheta_array[index], self.hinges[index])
 
     def __addMoment(self, magnitude, distance):
         n = -2
@@ -266,6 +326,10 @@ class Beam:
 
     def __addPointLoad(self, magnitude, distance):
         n = -1
+        self.__addBracket(magnitude, distance, n)
+
+    def __addHingeLoad(self, magnitude, distance):
+        n = -3
         self.__addBracket(magnitude, distance, n)
 
     def __addDistLoad(self, magnitude_1, distance_1, magnitude_2, distance_2):
@@ -283,7 +347,7 @@ class Beam:
             w = magnitude_1
             self.__addBracket(w, distance_1, n)
 
-            if distance_2 < self.beam_length:
+            if distance_2 < self.length:
                 self.__addBracket(-w, distance_2, n)
 
             return
@@ -296,14 +360,14 @@ class Beam:
             self.__addBracket(w, distance_1, n)
             # self.load_brackets.append(MacaulayBracket(magnitude, distance, -1))
 
-            if distance_2 < self.beam_length:
+            if distance_2 < self.length:
                 self.__addBracket(-w, distance_2, n)
                 self.__addBracket(-(magnitude_2 - magnitude_1), distance_2, 0)
 
             if magnitude_1 != 0:
                 self.__addBracket(magnitude_1, distance_1, 0)
 
-                if distance_2 < self.beam_length:
+                if distance_2 < self.length:
                     self.__addBracket(-magnitude_1, distance_2, 0)
 
             return
@@ -315,20 +379,20 @@ class Beam:
             self.__addBracket((magnitude_1 - magnitude_2), distance_1, 0)
             self.__addBracket(-w, distance_1, n)
 
-            if distance_2 < self.beam_length:
+            if distance_2 < self.length:
                 self.__addBracket(w, distance_2, n)
                 # self.__addBracket(-(magnitude_2 - magnitude_1), distance_2, 0)
 
             if magnitude_2 != 0:
                 self.__addBracket(magnitude_2, distance_1, 0)
 
-                if distance_2 < self.beam_length:
+                if distance_2 < self.length:
                     self.__addBracket(-magnitude_2, distance_2, 0)
 
             return
 
     @staticmethod
-    def evalBrackets(bracket_list, position, sym=False):
+    def __evalBrackets(bracket_list, position, sym=False):
         """
         Find the sum of an input bracket_list and returns a value
         sym == true is for the case when the symbolic equation is evaluated for each section.
@@ -345,7 +409,7 @@ class Beam:
 
         return sum
 
-    def findSections(self):
+    def __findSections(self):
         """
         Find where the discontinuities are
 
@@ -357,7 +421,7 @@ class Beam:
             section_pos.append(load.pos)
 
         try:
-            section_pos.remove(self.beam_length)
+            section_pos.remove(self.length)
         except ValueError:
             pass
 
@@ -372,7 +436,7 @@ class Beam:
         """
         assert self.calculated_beam
 
-        sections = self.findSections()
+        sections = self.__findSections()
 
         self.V_equations = []
         self.M_equations = []
@@ -384,11 +448,11 @@ class Beam:
 
         for equation_list, bracket_list in zip(equations, brackets):
             for section in sections:
-                equation_list.append(sp.expand(self.evalBrackets(bracket_list, section, sym=True)))
+                equation_list.append(sp.expand(self.__evalBrackets(bracket_list, section, sym=True)))
 
     def __calculateValues(self):
 
-        self.__beam_span = np.linspace(0, self.beam_length, 500)
+        self.__beam_span = np.linspace(0, self.length, 500)
 
         self.__V_values = np.array([])
         self.__M_values = np.array([])
@@ -396,59 +460,18 @@ class Beam:
         self.__disp_values = np.array([])
 
         for pos in self.__beam_span:
-            self.__V_values = np.append(self.__V_values, np.float(self.evalBrackets(self.V_brackets, pos)))
-            self.__M_values = np.append(self.__M_values, np.float(self.evalBrackets(self.M_brackets, pos)))
+            self.__V_values = np.append(self.__V_values, np.float(self.__evalBrackets(self.V_brackets, pos)))
+            self.__M_values = np.append(self.__M_values, np.float(self.__evalBrackets(self.M_brackets, pos)))
             self.__theta_values = np.append(self.__theta_values,
-                                            np.float(self.evalBrackets(self.theta_brackets, pos) / (
+                                            np.float(self.__evalBrackets(self.theta_brackets, pos) / (
                                                 self.young_modulus * self.inertia_moment)))
-            self.__disp_values = np.append(self.__disp_values, np.float(self.evalBrackets(self.disp_brackets, pos) / (
+            self.__disp_values = np.append(self.__disp_values, np.float(self.__evalBrackets(self.disp_brackets, pos) / (
                 self.young_modulus * self.inertia_moment)))
 
         self.__max_values['shear'] = max(self.__V_values, key=abs)
         self.__max_values['moment'] = max(self.__M_values, key=abs)
         self.__max_values['theta'] = max(self.__theta_values, key=abs)
         self.__max_values['displacement'] = max(self.__disp_values, key=abs)
-
-    def plotEquations(self, fig, ax):
-        """
-        Post-processing Method
-        Evaluate the values of V, M, theta and v for the beam and plot.
-
-        :return:
-        """
-        if not self.calculated_beam: raise beam_exceptions.BeamNotCalculated("Beam has not been calculated or has been modified")
-
-        # fig, (ax1, ax2, ax3, ax4) = plt.subplots(4, 1, sharex=True)
-        # plt.subplots_adjust(top=.98, bottom=.04, right=.95, left=.13, hspace=0.12)
-        plt.figure(fig.number)
-        ax1 = ax[0]
-        ax2 = ax[1]
-        ax3 = ax[2]
-        ax4 = ax[3]
-
-        ax1.fill_between(self.__beam_span, 0, self.__V_values, hatch="//", facecolor="none")
-        ax1.set_ylabel("V")
-        # ax1.set_title("Esforço Cortante")
-        ax1.grid()
-
-        ax2.fill_between(self.__beam_span, 0, self.__M_values, hatch="//", facecolor="none")
-        ax2.set_ylabel("M")
-        # ax2.set_title("Momento Fletor")
-        ax2.grid()
-
-        ax3.fill_between(self.__beam_span, 0, self.__theta_values, hatch="//", facecolor="none")
-        ax3.set_ylabel("Theta")
-        # ax3.set_title("Angulo")
-        ax3.grid()
-
-        ax4.fill_between(self.__beam_span, 0, self.__disp_values, hatch="//", facecolor="none")
-        ax4.set_xlabel("x")
-        ax4.set_ylabel("v")
-        # ax4.set_title("Deslocamento")
-        ax4.grid()
-
-
-        return fig, (ax1, ax2, ax3, ax4)
 
     def __defineConditions(self):
         """
@@ -469,17 +492,17 @@ class Beam:
         for load in self.load_brackets:
             if load.exp == -2:  # Moment loads
                 if load.pos == 0:
-                    momment_boundary[0] = load.magnitude
+                    momment_boundary[0] += load.magnitude
 
-                elif load.pos == self.beam_length:
-                    momment_boundary[1] = load.magnitude
+                elif load.pos == self.length:
+                    momment_boundary[1] += load.magnitude
 
             if load.exp == -1:  # Moment loads
                 if load.pos == 0:
-                    conload_boundary[0] = load.magnitude
+                    conload_boundary[0] += load.magnitude
 
-                elif load.pos == self.beam_length:
-                    conload_boundary[1] = load.magnitude
+                elif load.pos == self.length:
+                    conload_boundary[1] += load.magnitude
 
         if boundary[0] is free_support:
             self.V_boundary.append([0, conload_boundary[0]])
@@ -496,28 +519,33 @@ class Beam:
             pass
 
         if boundary[1] == free_support:
-            self.V_boundary.append([self.beam_length, -conload_boundary[1]])
-            self.M_boundary.append([self.beam_length, -momment_boundary[1]])
+            self.V_boundary.append([self.length, -conload_boundary[1]])
+            self.M_boundary.append([self.length, -momment_boundary[1]])
 
         elif boundary[1] is simply_support:
-            self.disp_boundary.append([self.beam_length, 0])
-            self.M_boundary.append([self.beam_length, -momment_boundary[1]])
+            self.disp_boundary.append([self.length, 0])
+            self.M_boundary.append([self.length, -momment_boundary[1]])
 
         elif boundary[1] is fixed_support:
-            self.disp_boundary.append([self.beam_length, 0])
-            self.theta_boundary.append([self.beam_length, 0])
+            self.disp_boundary.append([self.length, 0])
+            self.theta_boundary.append([self.length, 0])
 
-        for index in range(len(self.beam_supports)):
-            self.disp_boundary.append([self.beam_supports[index], 0])
+        ## Restrictions:
+
+        for index in range(len(self.supports)):
+            self.disp_boundary.append([self.supports[index], 0])
+
+        for index in range(len(self.hinges)):
+            self.M_boundary.append([self.hinges[index], 0])
 
     def printEquations(self):
 
-        sections = self.findSections()
+        sections = self.__findSections()
 
         for index in range(len(sections)):
 
             if index == len(sections) - 1:
-                print("%.2f < X < %.2f" % (sections[index], self.beam_length))
+                print("%.2f < X < %.2f" % (sections[index], self.length))
                 print
             else:
                 print("%.2f < X < %.2f" % (sections[index], sections[index + 1]))
@@ -527,22 +555,7 @@ class Beam:
             print("teta = %s" % self.theta_equations[index])
             print("v = %s\n" % self.disp_equations[index])
 
-    def evalPoint(self, plot, point):
-
-
-        if plot == "shear":
-            return self.evalBrackets(self.V_brackets, point)
-        elif plot == "moment":
-            return self.evalBrackets(self.M_brackets, point)
-        elif plot == "theta":
-            return self.evalBrackets(self.theta_brackets, point) / (self.young_modulus * self.inertia_moment)
-        elif plot == "displacement":
-            return self.evalBrackets(self.disp_brackets, point) / (self.young_modulus * self.inertia_moment)
-
-    def evalMax(self, plot):
-        return self.__max_values[plot]
-
-    def calculate(self):
+    def solve(self):
 
         self.V_brackets = []
         self.M_brackets = []
@@ -573,16 +586,23 @@ class Beam:
         self.disp_brackets.append(MacaulayBracket(C4, 0, 0))
 
         equation_set = []
+        variables = set()
 
-        boundaries = (self.V_boundary, self.M_boundary, self.theta_boundary, self.disp_boundary)
-        brackets = (self.V_brackets, self.M_brackets, self.theta_brackets, self.disp_brackets)
+        boundaries_tuple = (self.V_boundary, self.M_boundary, self.theta_boundary, self.disp_boundary)
+        brackets_tuple = (self.V_brackets, self.M_brackets, self.theta_brackets, self.disp_brackets)
 
-        for boundary_list, bracket_list in zip(boundaries, brackets):
+        for boundary_list, bracket_list in zip(boundaries_tuple, brackets_tuple):
             for boundary in boundary_list:
-                equation_set.append(self.evalBrackets(bracket_list, boundary[0]) - boundary[1])
+                equation = self.__evalBrackets(bracket_list, boundary[0]) - boundary[1]
+                variables.update(equation.atoms(sp.Symbol), variables)
+
+                equation_set.append(equation)
+
+        if len(equation_set) != len(variables):
+            raise beam_exceptions.ImpossibleToCalculate("Not enough supports")
 
         solutions = sp.solve(equation_set)
-        for brackets in (self.V_brackets, self.M_brackets, self.theta_brackets, self.disp_brackets):
+        for brackets in brackets_tuple:
             for bracket in brackets:
                 try:
                     bracket.magnitude = bracket.magnitude.subs(solutions)
@@ -595,31 +615,120 @@ class Beam:
 
         self.__determineSectionsEquations()
 
+    def evalPoint(self, plot, point):
+
+        if plot == "shear":
+            return self.__evalBrackets(self.V_brackets, point)
+        elif plot == "moment":
+            return self.__evalBrackets(self.M_brackets, point)
+        elif plot == "theta":
+            return self.__evalBrackets(self.theta_brackets, point) / (self.young_modulus * self.inertia_moment)
+        elif plot == "displacement":
+            return self.__evalBrackets(self.disp_brackets, point) / (self.young_modulus * self.inertia_moment)
+
+    def evalMax(self, plot):
+        return self.__max_values[plot]
+
+    def plotStress(self, fig=None, ax=None):
+        h_vector = np.linspace(-self.height / 2, self.height / 2, 500)
+        M_value = self.__M_values
+
+        MM, hh = np.meshgrid(M_value, h_vector)
+
+        stress = - MM * (hh - self.neutral_line) / (self.inertia_moment)
+
+        if not self.calculated_beam: raise beam_exceptions.BeamNotCalculated(
+            "Beam has not been calculated or has been modified")
+
+        if not ax:
+            figure_beam, ax_beam = plt.subplots()
+        else:
+            # plt.subplots_adjust(top=.98, bottom=.04, right=.95, left=.13, hspace=0.12)
+            plt.figure(fig.number)
+            ax_beam = ax
+            figure_beam = fig
+
+
+        n_levels = np.linspace(np.amin(stress), np.amax(stress), 100)
+
+        im = ax_beam.contourf(self.__beam_span, h_vector, stress, levels=n_levels)
+        # cb = figure_beam.colorbar(im, orientation="horizontal")
+        ax_beam.axis("equal")
+        ax_beam.autoscale(enable=True, axis='y', tight=True)
+        ax_beam.set_ylabel("Beam height (m)")
+        ax_beam.set_xlabel("Beam length (m)")
+        ax_beam.set_title("Bending Stress")
+
+        if __name__ == "__main__":
+            plt.show()
+
+
+        return None
+
+    def plotEquations(self, fig=None, ax=None):
+        """
+        Post-processing Method
+        Evaluate the values of V, M, theta and v for the beam and plot.
+
+        :return:
+        """
+        if not self.calculated_beam: raise beam_exceptions.BeamNotCalculated(
+            "Beam has not been calculated or has been modified")
+
+        if not ax:
+            fig, (ax1, ax2, ax3, ax4) = plt.subplots(4, 1, sharex=True)
+        else:
+            # plt.subplots_adjust(top=.98, bottom=.04, right=.95, left=.13, hspace=0.12)
+            plt.figure(fig.number)
+            ax1 = ax[0]
+            ax2 = ax[1]
+            ax3 = ax[2]
+            ax4 = ax[3]
+
+        ax1.fill_between(self.__beam_span, 0, self.__V_values, hatch="//", facecolor="none")
+        ax1.set_ylabel("V")
+        # ax1.set_title("Esforço Cortante")
+        ax1.grid()
+
+        ax2.fill_between(self.__beam_span, 0, self.__M_values, hatch="//", facecolor="none")
+        ax2.set_ylabel("M")
+        # ax2.set_title("Momento Fletor")
+        ax2.grid()
+
+        ax3.fill_between(self.__beam_span, 0, self.__theta_values, hatch="//", facecolor="none")
+        ax3.set_ylabel("Theta")
+        # ax3.set_title("Angulo")
+        ax3.grid()
+
+        ax4.fill_between(self.__beam_span, 0, self.__disp_values, hatch="//", facecolor="none")
+        ax4.set_xlabel("x")
+        ax4.set_ylabel("v")
+        # ax4.set_title("Deslocamento")
+        ax4.grid()
+
+        if __name__ == "__main__":
+            plt.show()
+
+        return fig, (ax1, ax2, ax3, ax4)
+
 
 if __name__ == "__main__":
-    L = 4
-    I = 1234
-    E = 1
-
-    L = 4
-    I = 1234
+    L = 20
+    I = 1
     E = 200e9
     P = -10
 
-    beam = Beam(E, I, L)
-    beam.setBoundary(simply_support, simply_support)
-    beam.applyPointLoad(-10, 2)
-    beam.calculate()
+    beam = Beam(E, I, L, nl=0)
+    beam.setBoundary(fixed_support, free_support)
+    beam.applyDistLoad(-10, 0, -10, 20)
+    # beam.beam_hinges = [2]
+    # beam.applyMoment(-10, 10)
 
 
-    beam.calculate()
-    beam.printEquations()
-
-    beam.calculate()
-    beam.printEquations()
 
 
-    beam.printEquations()
 
-    ## beam.plotEquations()
 
+    beam.solve()
+    beam.plotStress()
+    beam.plotEquations()

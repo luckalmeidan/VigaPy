@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1379</width>
-    <height>503</height>
+    <width>1413</width>
+    <height>670</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -17,6 +17,313 @@
    <layout class="QVBoxLayout" name="verticalLayout">
     <item>
      <layout class="QGridLayout" name="main_gl">
+      <item row="1" column="1" rowspan="2">
+       <widget class="QTreeView" name="load_treeview">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>500</width>
+          <height>0</height>
+         </size>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="0" colspan="3">
+       <widget class="QWidget" name="beam_draw_widget" native="true">
+        <layout class="QVBoxLayout" name="beam_draw_widget_vl"/>
+       </widget>
+      </item>
+      <item row="2" column="2">
+       <layout class="QHBoxLayout" name="add_remove_hl">
+        <item>
+         <widget class="QPushButton" name="add_load_btn">
+          <property name="text">
+           <string>Add</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="remove_load_btn">
+          <property name="text">
+           <string>Remove Selected</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item row="1" column="0" rowspan="2">
+       <layout class="QGridLayout" name="properties_supports_vl">
+        <item row="1" column="0">
+         <widget class="QGroupBox" name="beam_properties_gb">
+          <property name="title">
+           <string>Beam Properties</string>
+          </property>
+          <layout class="QGridLayout" name="beam_properties_gb_vl">
+           <item row="4" column="1" colspan="2">
+            <widget class="QDoubleSpinBox" name="nl_dspn">
+             <property name="decimals">
+              <number>4</number>
+             </property>
+             <property name="minimum">
+              <double>-9999.000000000000000</double>
+             </property>
+             <property name="maximum">
+              <double>9999.000000000000000</double>
+             </property>
+             <property name="value">
+              <double>0.000000000000000</double>
+             </property>
+            </widget>
+           </item>
+           <item row="4" column="0">
+            <widget class="QLabel" name="lbl_length_2">
+             <property name="text">
+              <string>Neutral Line (m)</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="0">
+            <widget class="QLabel" name="lbl_inertia_moment">
+             <property name="text">
+              <string>Inertia (m^4)</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="0">
+            <widget class="QLabel" name="lbl_height">
+             <property name="text">
+              <string>Height (m)</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="1" colspan="2">
+            <widget class="QDoubleSpinBox" name="inertia_moment_dspn">
+             <property name="decimals">
+              <number>4</number>
+             </property>
+             <property name="minimum">
+              <double>0.000100000000000</double>
+             </property>
+             <property name="maximum">
+              <double>9999.000000000000000</double>
+             </property>
+             <property name="value">
+              <double>10.000000000000000</double>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="0">
+            <widget class="QLabel" name="lbl_young_module">
+             <property name="text">
+              <string>E (GPa)</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="1" colspan="2">
+            <widget class="QDoubleSpinBox" name="young_module_dpsn">
+             <property name="minimum">
+              <double>1.000000000000000</double>
+             </property>
+             <property name="maximum">
+              <double>99999.000000000000000</double>
+             </property>
+             <property name="singleStep">
+              <double>10.000000000000000</double>
+             </property>
+             <property name="value">
+              <double>200.000000000000000</double>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="1" colspan="2">
+            <widget class="QDoubleSpinBox" name="height_dpsn">
+             <property name="decimals">
+              <number>4</number>
+             </property>
+             <property name="minimum">
+              <double>0.000100000000000</double>
+             </property>
+             <property name="maximum">
+              <double>9999.000000000000000</double>
+             </property>
+             <property name="value">
+              <double>2.000000000000000</double>
+             </property>
+            </widget>
+           </item>
+           <item row="5" column="0">
+            <widget class="QLabel" name="lbl_length">
+             <property name="text">
+              <string>Length (m)</string>
+             </property>
+            </widget>
+           </item>
+           <item row="5" column="1" colspan="2">
+            <widget class="QDoubleSpinBox" name="length_dspn">
+             <property name="decimals">
+              <number>4</number>
+             </property>
+             <property name="minimum">
+              <double>0.000100000000000</double>
+             </property>
+             <property name="maximum">
+              <double>9999.000000000000000</double>
+             </property>
+             <property name="value">
+              <double>10.000000000000000</double>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item row="3" column="0">
+         <widget class="QPushButton" name="calculate_beam">
+          <property name="text">
+           <string>Calculate</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QGroupBox" name="supports_gb">
+          <property name="title">
+           <string>Supports</string>
+          </property>
+          <layout class="QGridLayout" name="supports_gb_gl">
+           <item row="2" column="0">
+            <widget class="QLabel" name="lbl_add_support">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="text">
+              <string>Add Supports</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="0">
+            <widget class="QLabel" name="lbl_left_support">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="text">
+              <string>Left Support</string>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="0">
+            <widget class="QComboBox" name="supports_combo">
+             <property name="editable">
+              <bool>true</bool>
+             </property>
+             <property name="duplicatesEnabled">
+              <bool>false</bool>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="1">
+            <widget class="QLabel" name="lbl_right_support">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="text">
+              <string>Right Support</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="0">
+            <widget class="QComboBox" name="left_support_combo">
+             <item>
+              <property name="text">
+               <string>Simply</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Fixed</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Free</string>
+              </property>
+             </item>
+            </widget>
+           </item>
+           <item row="1" column="1">
+            <widget class="QComboBox" name="right_support_combo">
+             <item>
+              <property name="text">
+               <string>Simply</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Fixed</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Free</string>
+              </property>
+             </item>
+            </widget>
+           </item>
+           <item row="4" column="0">
+            <widget class="QPushButton" name="remove_support_btn">
+             <property name="text">
+              <string>Remove Support</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="1">
+            <widget class="QLabel" name="lbl_add_support_2">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="text">
+              <string>Add Hinges</string>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="1">
+            <widget class="QComboBox" name="hinges_combo">
+             <property name="editable">
+              <bool>true</bool>
+             </property>
+             <property name="duplicatesEnabled">
+              <bool>false</bool>
+             </property>
+            </widget>
+           </item>
+           <item row="4" column="1">
+            <widget class="QPushButton" name="remove_hinge_btn">
+             <property name="text">
+              <string>Remove Hinge</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+       </layout>
+      </item>
       <item row="1" column="2">
        <widget class="QTabWidget" name="loads_tab">
         <property name="sizePolicy">
@@ -125,6 +432,9 @@
             <property name="maximum">
              <double>9999.000000000000000</double>
             </property>
+            <property name="value">
+             <double>5.000000000000000</double>
+            </property>
            </widget>
           </item>
           <item row="3" column="0">
@@ -151,6 +461,9 @@
            <widget class="QDoubleSpinBox" name="pnt_load_pos_dpsn">
             <property name="maximum">
              <double>9999.000000000000000</double>
+            </property>
+            <property name="value">
+             <double>5.000000000000000</double>
             </property>
            </widget>
           </item>
@@ -272,30 +585,37 @@
           <property name="horizontalSpacing">
            <number>0</number>
           </property>
-          <item row="3" column="0">
-           <widget class="QLabel" name="lbl_start_distr_load_mag">
-            <property name="text">
-             <string>Start Magnitude:</string>
+          <item row="0" column="1">
+           <widget class="QPushButton" name="down_distr_load_chkbtn">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
             </property>
-           </widget>
-          </item>
-          <item row="3" column="1">
-           <widget class="QDoubleSpinBox" name="distr_load_start_mag"/>
-          </item>
-          <item row="4" column="1">
-           <widget class="QDoubleSpinBox" name="distr_load_start_pos"/>
-          </item>
-          <item row="4" column="0">
-           <widget class="QLabel" name="lbl_start_distr_load_pos">
-            <property name="text">
-             <string>Start Position: </string>
+            <property name="minimumSize">
+             <size>
+              <width>100</width>
+              <height>100</height>
+             </size>
             </property>
-           </widget>
-          </item>
-          <item row="5" column="0">
-           <widget class="QLabel" name="lbl_end_distr_load_mag">
+            <property name="maximumSize">
+             <size>
+              <width>16777215</width>
+              <height>100</height>
+             </size>
+            </property>
             <property name="text">
-             <string>End Magnitude:</string>
+             <string>Down</string>
+            </property>
+            <property name="checkable">
+             <bool>true</bool>
+            </property>
+            <property name="checked">
+             <bool>true</bool>
+            </property>
+            <property name="autoExclusive">
+             <bool>true</bool>
             </property>
            </widget>
           </item>
@@ -333,309 +653,61 @@
             </property>
            </widget>
           </item>
-          <item row="0" column="1">
-           <widget class="QPushButton" name="down_distr_load_chkbtn">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="minimumSize">
-             <size>
-              <width>100</width>
-              <height>100</height>
-             </size>
-            </property>
-            <property name="maximumSize">
-             <size>
-              <width>16777215</width>
-              <height>100</height>
-             </size>
-            </property>
+          <item row="3" column="0">
+           <widget class="QLabel" name="lbl_start_distr_load_pos">
             <property name="text">
-             <string>Down</string>
-            </property>
-            <property name="checkable">
-             <bool>true</bool>
-            </property>
-            <property name="checked">
-             <bool>true</bool>
-            </property>
-            <property name="autoExclusive">
-             <bool>true</bool>
+             <string>Start Position: </string>
             </property>
            </widget>
           </item>
-          <item row="6" column="0">
+          <item row="2" column="0">
+           <widget class="QLabel" name="lbl_start_distr_load_mag">
+            <property name="text">
+             <string>Start Magnitude:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="5" column="0">
            <widget class="QLabel" name="lbl_end_distr_load_pos">
             <property name="text">
              <string>End Position: </string>
             </property>
            </widget>
           </item>
-          <item row="5" column="1">
+          <item row="4" column="0">
+           <widget class="QLabel" name="lbl_end_distr_load_mag">
+            <property name="text">
+             <string>End Magnitude:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="1">
+           <widget class="QDoubleSpinBox" name="distr_load_start_mag"/>
+          </item>
+          <item row="3" column="1">
+           <widget class="QDoubleSpinBox" name="distr_load_start_pos"/>
+          </item>
+          <item row="4" column="1">
            <widget class="QDoubleSpinBox" name="distr_load_end_mag"/>
           </item>
-          <item row="6" column="1">
+          <item row="5" column="1">
            <widget class="QDoubleSpinBox" name="distr_load_end_pos"/>
+          </item>
+          <item row="1" column="0" colspan="2">
+           <spacer name="verticalSpacer">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>40</height>
+             </size>
+            </property>
+           </spacer>
           </item>
          </layout>
         </widget>
-       </widget>
-      </item>
-      <item row="0" column="0" colspan="3">
-       <widget class="QWidget" name="beam_draw_widget" native="true">
-        <layout class="QVBoxLayout" name="beam_draw_widget_vl"/>
-       </widget>
-      </item>
-      <item row="2" column="2">
-       <layout class="QHBoxLayout" name="add_remove_hl">
-        <item>
-         <widget class="QPushButton" name="add_load_btn">
-          <property name="text">
-           <string>Add</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QPushButton" name="remove_load_btn">
-          <property name="text">
-           <string>Remove Selected</string>
-          </property>
-         </widget>
-        </item>
-       </layout>
-      </item>
-      <item row="1" column="0" rowspan="2">
-       <layout class="QGridLayout" name="properties_supports_vl">
-        <item row="1" column="0">
-         <widget class="QGroupBox" name="beam_properties_gb">
-          <property name="title">
-           <string>Beam Properties</string>
-          </property>
-          <layout class="QGridLayout" name="beam_properties_gb_vl">
-           <item row="2" column="0">
-            <widget class="QLabel" name="lbl_inertia_moment">
-             <property name="text">
-              <string>Inertia (mm^4)</string>
-             </property>
-            </widget>
-           </item>
-           <item row="3" column="0">
-            <widget class="QLabel" name="lbl_height">
-             <property name="text">
-              <string>Height (mm)</string>
-             </property>
-            </widget>
-           </item>
-           <item row="1" column="0">
-            <widget class="QLabel" name="lbl_young_module">
-             <property name="text">
-              <string>E (GPa)</string>
-             </property>
-            </widget>
-           </item>
-           <item row="4" column="0">
-            <widget class="QLabel" name="lbl_length">
-             <property name="text">
-              <string>Length (m)</string>
-             </property>
-            </widget>
-           </item>
-           <item row="3" column="1" colspan="2">
-            <widget class="QDoubleSpinBox" name="height_dpsn">
-             <property name="decimals">
-              <number>4</number>
-             </property>
-             <property name="minimum">
-              <double>0.000100000000000</double>
-             </property>
-             <property name="maximum">
-              <double>9999.000000000000000</double>
-             </property>
-             <property name="value">
-              <double>10.000000000000000</double>
-             </property>
-            </widget>
-           </item>
-           <item row="4" column="1" colspan="2">
-            <widget class="QDoubleSpinBox" name="length_dspn">
-             <property name="decimals">
-              <number>4</number>
-             </property>
-             <property name="minimum">
-              <double>0.000100000000000</double>
-             </property>
-             <property name="maximum">
-              <double>9999.000000000000000</double>
-             </property>
-             <property name="value">
-              <double>10.000000000000000</double>
-             </property>
-            </widget>
-           </item>
-           <item row="2" column="1" colspan="2">
-            <widget class="QDoubleSpinBox" name="inertia_moment_dspn">
-             <property name="decimals">
-              <number>4</number>
-             </property>
-             <property name="minimum">
-              <double>0.000100000000000</double>
-             </property>
-             <property name="maximum">
-              <double>9999.000000000000000</double>
-             </property>
-             <property name="value">
-              <double>10.000000000000000</double>
-             </property>
-            </widget>
-           </item>
-           <item row="1" column="1" colspan="2">
-            <widget class="QDoubleSpinBox" name="young_module_dpsn">
-             <property name="minimum">
-              <double>1.000000000000000</double>
-             </property>
-             <property name="maximum">
-              <double>99999.000000000000000</double>
-             </property>
-             <property name="singleStep">
-              <double>10.000000000000000</double>
-             </property>
-             <property name="value">
-              <double>200.000000000000000</double>
-             </property>
-            </widget>
-           </item>
-          </layout>
-         </widget>
-        </item>
-        <item row="3" column="0">
-         <widget class="QPushButton" name="calculate_beam">
-          <property name="text">
-           <string>Calculate</string>
-          </property>
-         </widget>
-        </item>
-        <item row="2" column="0">
-         <widget class="QGroupBox" name="supports_gb">
-          <property name="title">
-           <string>Supports</string>
-          </property>
-          <layout class="QGridLayout" name="supports_gb_gl">
-           <item row="1" column="0">
-            <widget class="QComboBox" name="left_support_combo">
-             <item>
-              <property name="text">
-               <string>Simply</string>
-              </property>
-             </item>
-             <item>
-              <property name="text">
-               <string>Fixed</string>
-              </property>
-             </item>
-             <item>
-              <property name="text">
-               <string>Free</string>
-              </property>
-             </item>
-            </widget>
-           </item>
-           <item row="0" column="1">
-            <widget class="QLabel" name="lbl_right_support">
-             <property name="sizePolicy">
-              <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
-               <horstretch>0</horstretch>
-               <verstretch>0</verstretch>
-              </sizepolicy>
-             </property>
-             <property name="text">
-              <string>Right Support</string>
-             </property>
-            </widget>
-           </item>
-           <item row="0" column="0">
-            <widget class="QLabel" name="lbl_left_support">
-             <property name="sizePolicy">
-              <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
-               <horstretch>0</horstretch>
-               <verstretch>0</verstretch>
-              </sizepolicy>
-             </property>
-             <property name="text">
-              <string>Left Support</string>
-             </property>
-            </widget>
-           </item>
-           <item row="1" column="1">
-            <widget class="QComboBox" name="right_support_combo">
-             <item>
-              <property name="text">
-               <string>Simply</string>
-              </property>
-             </item>
-             <item>
-              <property name="text">
-               <string>Fixed</string>
-              </property>
-             </item>
-             <item>
-              <property name="text">
-               <string>Free</string>
-              </property>
-             </item>
-            </widget>
-           </item>
-           <item row="2" column="0">
-            <widget class="QLabel" name="lbl_add_support">
-             <property name="sizePolicy">
-              <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
-               <horstretch>0</horstretch>
-               <verstretch>0</verstretch>
-              </sizepolicy>
-             </property>
-             <property name="text">
-              <string>Add Supports</string>
-             </property>
-            </widget>
-           </item>
-           <item row="3" column="0">
-            <widget class="QComboBox" name="supports_combo">
-             <property name="editable">
-              <bool>true</bool>
-             </property>
-             <property name="duplicatesEnabled">
-              <bool>false</bool>
-             </property>
-            </widget>
-           </item>
-           <item row="3" column="1">
-            <widget class="QPushButton" name="remove_support_btn">
-             <property name="text">
-              <string>Remove Support</string>
-             </property>
-            </widget>
-           </item>
-          </layout>
-         </widget>
-        </item>
-       </layout>
-      </item>
-      <item row="1" column="1" rowspan="2">
-       <widget class="QTreeView" name="load_treeview">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="minimumSize">
-         <size>
-          <width>500</width>
-          <height>0</height>
-         </size>
-        </property>
        </widget>
       </item>
      </layout>
@@ -647,7 +719,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1379</width>
+     <width>1413</width>
      <height>21</height>
     </rect>
    </property>
@@ -665,6 +737,9 @@
      <width>400</width>
      <height>58</height>
     </size>
+   </property>
+   <property name="windowTitle">
+    <string>Shear, bending, angle and displacement diagrams</string>
    </property>
    <attribute name="dockWidgetArea">
     <number>2</number>

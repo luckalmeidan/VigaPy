@@ -1,26 +1,57 @@
-import numpy as np
-import matplotlib.pyplot as plt
-from matplotlib.lines import Line2D
+from PyQt4 import QtCore, QtGui
 
-points = np.ones(5)  # Draw 3 points for each line
-text_style = dict(horizontalalignment='right', verticalalignment='center',
-                  fontsize=12, fontdict={'family': 'monospace'})
-marker_style = dict(color='cornflowerblue', linestyle=':', marker='o',
-                    markersize=15, markerfacecoloralt='gray')
+class MainWindow(QtGui.QMainWindow):
+    def __init__(self, parent=None):
+        QtGui.QMainWindow.__init__(self, parent)
+        self.resize(600, 600)
+        self.centralWidget = QtGui.QTextEdit()
+        self.setCentralWidget(self.centralWidget)
 
+        # Upper table widget
+        dock = QtGui.QDockWidget("Upper", self.centralWidget)
+        dock.setAllowedAreas(QtCore.Qt.RightDockWidgetArea)
+        self.tableWidget = QtGui.QTableWidget(dock)
+        self.tableWidget.setObjectName("tableWidget")
+        self.tableWidget.setColumnCount(6)
+        self.tableWidget.setRowCount(7)
+        for i in range(7):
+            item = QtGui.QTableWidgetItem()
+            self.tableWidget.setVerticalHeaderItem(i, item)
+            self.tableWidget.verticalHeaderItem(i).setText("Item " + str(i + 1))
+        for i in range(6):
+            item = QtGui.QTableWidgetItem()
+            self.tableWidget.setHorizontalHeaderItem(i, item)
+        dock.setWidget(self.tableWidget)
+        self.addDockWidget(QtCore.Qt.RightDockWidgetArea, dock)
+        # Lower table widget
+        dock = QtGui.QDockWidget("Lower", self.centralWidget)
+        self.tableWidget_2 = QtGui.QTableWidget(dock)
+        self.tableWidget_2.setObjectName("tableWidget_2")
+        self.tableWidget_2.setColumnCount(6)
+        self.tableWidget_2.setRowCount(7)
+        for i in range(7):
+            item = QtGui.QTableWidgetItem()
+            self.tableWidget_2.setVerticalHeaderItem(i, item)
+        for i in range(6):
+            item = QtGui.QTableWidgetItem()
+            self.tableWidget_2.setHorizontalHeaderItem(i, item)
+        dock.setWidget(self.tableWidget_2);
+        self.addDockWidget(QtCore.Qt.RightDockWidgetArea, dock)
+        self.listWidget = QtGui.QListWidget(self.centralWidget)
+        self.listWidget.setLayoutDirection(QtCore.Qt.RightToLeft)
+        self.listWidget.setObjectName("listWidget")
+        for i in range(10):
+            item = QtGui.QListWidgetItem()
+            self.listWidget.addItem(item)
+            item = self.listWidget.item(i)
+            item.setText("Item " + str(i + 1))
+        self.listWidget.setMinimumSize(QtCore.QSize(340, 600))
+        self.setWindowTitle("Dock Widgets")
 
-def format_axes(ax):
-    ax.margins(0.2)
-    ax.set_axis_off()
+if __name__ == '__main__':
+    import sys
 
-
-fig, ax = plt.subplots()
-
-# Plot all fill styles.
-for y, fill_style in enumerate(Line2D.fillStyles):
-    ax.text(-0.5, y, repr(fill_style), **text_style)
-    ax.plot(y * points, fillstyle=fill_style, **marker_style)
-    format_axes(ax)
-    ax.set_title('fill style')
-
-plt.show()
+    app = QtGui.QApplication(sys.argv)
+    w = MainWindow()
+    w.show()
+    sys.exit(app.exec_())

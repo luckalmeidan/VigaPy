@@ -7,6 +7,9 @@ class InvalidInput(Exception):
 class BeamNotCalculated(Exception):
     pass
 
+class ImpossibleToCalculate(Exception):
+    pass
+
 
 class SuperImposedSupports(Exception):
     def __init__(self):

@@ -15,7 +15,7 @@ class MyTestCase(unittest.TestCase):
         beam = Beam(E, I, L)
         beam.setBoundary(simply_support, simply_support)
         beam.applyPointLoad(-10, 2)
-        beam.calculate()
+        beam.solve()
 
         v_max = P * L ** 3 / (48 * E * I)
         theta_max = P * L ** 2 / (16 * E * I)
@@ -33,9 +33,9 @@ class MyTestCase(unittest.TestCase):
 
         beam = Beam(E, I, L)
         beam.setBoundary(free_support, free_support)
-        beam.beam_supports = [0, 4]
+        beam.supports = [0, 4]
         beam.applyPointLoad(P, a)
-        beam.calculate()
+        beam.solve()
 
         v_a = P * b * a * (L ** 2 - b ** 2 - a ** 2) / (6 * E * I * L)
         theta_1 = P * a * b * (L + b) / (6 * E * I * L)
@@ -54,7 +54,7 @@ class MyTestCase(unittest.TestCase):
         beam = Beam(E, I, L)
         beam.setBoundary(simply_support, simply_support)
         beam.applyMoment(M, 0)
-        beam.calculate()
+        beam.solve()
 
         theta_1 = - M * L / (3 * E * I)
         theta_2 = M * L / (6 * E * I)
@@ -74,7 +74,7 @@ class MyTestCase(unittest.TestCase):
         beam = Beam(E, I, L)
         beam.setBoundary(simply_support, simply_support)
         beam.applyDistLoad(w, 0, w, 2)
-        beam.calculate()
+        beam.solve()
 
         theta_1 = 3 * w * L ** 3 / (128 * E * I)
         theta_2 = -7 * w * L ** 3 / (384 * E * I)
@@ -92,7 +92,7 @@ class MyTestCase(unittest.TestCase):
         beam = Beam(E, I, L)
         beam.setBoundary(simply_support, simply_support)
         beam.applyDistLoad(0, 0, w, 4)
-        beam.calculate()
+        beam.solve()
 
         theta_1 = 7 * w * L ** 3 / (360 * E * I)
         theta_2 = - w * L ** 3 / (45 * E * I)
@@ -108,7 +108,7 @@ class MyTestCase(unittest.TestCase):
         beam = Beam(E, I, L)
         beam.setBoundary(fixed_support, free_support)
         beam.applyDistLoad(w, 0, w, 4)
-        beam.calculate()
+        beam.solve()
 
         theta_max = w * L ** 3 / (6 * E * I)
         v_max = w * L ** 4 / (8 * E * I)
@@ -124,7 +124,7 @@ class MyTestCase(unittest.TestCase):
         beam = Beam(E, I, L)
         beam.setBoundary(fixed_support, free_support)
         beam.applyDistLoad(w, 0, w, 2)
-        beam.calculate()
+        beam.solve()
 
         theta_max = w * L ** 3 / (48 * E * I)
         v_max = 7 * w * L ** 4 / (384 * E * I)
@@ -140,7 +140,7 @@ class MyTestCase(unittest.TestCase):
         beam = Beam(E, I, L)
         beam.setBoundary(fixed_support, free_support)
         beam.applyDistLoad(w, 0, 0, 4)
-        beam.calculate()
+        beam.solve()
 
         theta_max = w * L ** 3 / (24 * E * I)
         v_max = w * L ** 4 / (30 * E * I)
@@ -161,7 +161,7 @@ class MyTestCase(unittest.TestCase):
         beam.applyDistLoad(-20, 2.5, -10, 3.9)
         beam.applyDistLoad(20, 0.75, 20, 3.75)
 
-        beam.beam_supports = [1, 2, 3]
+        beam.supports = [1, 2, 3]
 
         beam.applyMoment(-30, 1)
         beam.applyMoment(20, 2)
@@ -170,7 +170,7 @@ class MyTestCase(unittest.TestCase):
         beam.applyMoment(-5, 4)
 
         beam.setBoundary(fixed_support, simply_support)
-        beam.calculate()
+        beam.solve()
 
         # Values obtained by independent software
         theta_max = -4.6128995e-3
@@ -197,7 +197,7 @@ class MyTestCase(unittest.TestCase):
         beam = Beam(E, I, L)
         beam.setBoundary(fixed_support, free_support)
         beam.applyDistLoad(-20, 1, -10, 3)
-        beam.calculate()
+        beam.solve()
 
         M_max = -56.667
         V_max = 30
@@ -214,7 +214,7 @@ class MyTestCase(unittest.TestCase):
             beam = Beam(E, I, L)
             beam.setBoundary(fixed_support, free_support)
             beam.applyDistLoad(-20, 1, -10, 3)
-            beam.calculate()
+            beam.solve()
 
         # Negative Length
         with self.assertRaises(beam_exceptions.InvalidInput) as context:
@@ -224,7 +224,7 @@ class MyTestCase(unittest.TestCase):
             beam = Beam(E, I, L)
             beam.setBoundary(fixed_support, free_support)
             beam.applyDistLoad(-20, 1, -10, 3)
-            beam.calculate()
+            beam.solve()
 
         # Out of boundaries dist load
         with self.assertRaises(beam_exceptions.OutOfBounds) as context:
@@ -241,7 +241,7 @@ class MyTestCase(unittest.TestCase):
             I = 1234
             E = 200e9
             beam = Beam(E, I, L)
-            beam.beam_supports = [6]
+            beam.supports = [6]
 
         # Out of boundaries support
         with self.assertRaises(beam_exceptions.OutOfBounds) as context:
@@ -249,7 +249,7 @@ class MyTestCase(unittest.TestCase):
             I = 1234
             E = 200e9
             beam = Beam(E, I, L)
-            beam.beam_supports = [-2]
+            beam.supports = [-2]
 
         # Super imposed supports, supports are defined before boundaries
         with self.assertRaises(beam_exceptions.SuperImposedSupports) as context:
@@ -257,7 +257,7 @@ class MyTestCase(unittest.TestCase):
             I = 1234
             E = 200e9
             beam = Beam(E, I, L)
-            beam.beam_supports = [0]
+            beam.supports = [0]
             beam.setBoundary(simply_support, simply_support)
 
         # Super imposed supports, supports are defined after boundaries
@@ -267,7 +267,7 @@ class MyTestCase(unittest.TestCase):
             E = 200e9
             beam = Beam(E, I, L)
             beam.setBoundary(fixed_support, simply_support)
-            beam.beam_supports = [0]
+            beam.supports = [0]
 
 
 if __name__ == '__main__':
