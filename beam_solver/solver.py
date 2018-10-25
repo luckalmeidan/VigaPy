@@ -5,7 +5,7 @@ import sympy as sp
 from beam_solver import beam_exceptions
 from beam_solver.definitions import *
 
-X, C1, C2, C3, C4, E, I = sp.symbols('X, C1, C2, C3, C4, E, I')
+x, C1, C2, C3, C4, E, I = sp.symbols('x, C1, C2, C3, C4, E, I')
 
 
 class MacaulayBracket:
@@ -21,14 +21,14 @@ class MacaulayBracket:
         self.pos = distance
         self.exp = exponent
 
-    def eval(self, x, sym=False):
-        if self.exp < 0 or x < self.pos or self.is_contour:
+    def eval(self, x_value, sym=False):
+        if self.exp < 0 or x_value < self.pos or self.is_contour:
             return 0
         else:
             if not sym:
-                return self.magnitude * (x - self.pos) ** self.exp
+                return self.magnitude * (x_value - self.pos) ** self.exp
             else:
-                return self.magnitude * (X - self.pos) ** self.exp
+                return self.magnitude * (x - self.pos) ** self.exp
                 pass
 
     @property
@@ -56,7 +56,7 @@ class MacaulayBracket:
 
 
 class Beam:
-    def __init__(self, E, I, length, height=0, nl=0):
+    def __init__(self, E, length, I=0, height=0, base=0):
         ## Attributes
         """
 
@@ -66,18 +66,23 @@ class Beam:
         self.__I = 0
         self.__length = 0
         self.__height = 0
-        self.__nl = 0
+        self.base = base
+        # self.__nl = 0
 
         if height == 0:
             self.height = length / 5
         else:
             self.height = height
 
-        self.__nl = nl
+        if I == 0:
+            self.inertia_moment = self.calculateInertia(base, height)
+        else:
+            self.inertia_moment = I
+
+        # self.__nl = nl
 
         self.young_modulus = E
-        self.inertia_moment = I
-        self.neutral_line = nl
+        # self.neutral_line = nl
         self.length = length
 
         self.__max_values = dict()
@@ -106,13 +111,19 @@ class Beam:
         self.theta_boundary = []
         self.disp_boundary = []
 
+    @staticmethod
+    def calculateInertia(base, height):
+        return (1.0 / 12.0 * base * height ** 3)
+
     @property
     def young_modulus(self):
         return self.__E
 
     @young_modulus.setter
     def young_modulus(self, E):
-        if not E > 0: raise beam_exceptions.InvalidInput("Young Module should be greater than zero")
+        if not E > 0:
+            raise beam_exceptions.InvalidInput("Young Module should be greater than zero")
+
         self.calculated_beam = False
 
         self.__E = E
@@ -123,7 +134,9 @@ class Beam:
 
     @length.setter
     def length(self, l):
-        if not l > 0: raise beam_exceptions.InvalidInput("beam_length should be greater than zero")
+        if not l > 0:
+            raise beam_exceptions.InvalidInput("beam_length should be greater than zero")
+
         self.calculated_beam = False
 
         self.__length = l
@@ -134,21 +147,23 @@ class Beam:
 
     @height.setter
     def height(self, h):
-        if not h > 0: raise beam_exceptions.InvalidInput("Beam Height should be greater than zero")
+        if not h > 0:
+            raise beam_exceptions.InvalidInput("Beam Height should be greater than zero")
         self.calculated_beam = False
 
         self.__height = h
 
-    @property
-    def neutral_line(self):
-        return self.__nl
-
-    @neutral_line.setter
-    def neutral_line(self, nl):
-        if abs(nl) >= self.height / 2: raise beam_exceptions.InvalidInput("Invalid Neutral line")
-        self.calculated_beam = False
-
-        self.__nl = nl
+    #
+    # @property
+    # def neutral_line(self):
+    #     return self.__nl
+    #
+    # @neutral_line.setter
+    # def neutral_line(self, nl):
+    #     if abs(nl) >= self.height / 2: raise beam_exceptions.InvalidInput("Invalid Neutral line")
+    #     self.calculated_beam = False
+    #
+    #     self.__nl = nl
 
     @property
     def inertia_moment(self):
@@ -156,7 +171,8 @@ class Beam:
 
     @inertia_moment.setter
     def inertia_moment(self, I):
-        if not I > 0: raise beam_exceptions.InvalidInput("inertia_moement should be greater than zero")
+        if not I > 0:
+            raise beam_exceptions.InvalidInput("inertia_moement should be greater than zero")
         self.calculated_beam = False
 
         self.__I = I
@@ -173,16 +189,20 @@ class Beam:
 
             return
 
-        if not min(support_list) >= 0: raise beam_exceptions.OutOfBounds("Support must be greater than zero")
-        if not max(support_list) <= self.length: raise beam_exceptions.OutOfBounds(
-            "Support must be lower than beam length")
+        if not min(support_list) >= 0:
+            raise beam_exceptions.OutOfBounds("Support must be greater than zero")
+        if not max(support_list) <= self.length:
+            raise beam_exceptions.OutOfBounds(
+                "Support must be lower than beam length")
 
-        if (self.boundary[0] is simply_support and 0 in support_list):  raise beam_exceptions.SuperImposedSupports
-        if (self.boundary[
-                1] is simply_support and self.length in support_list):  raise beam_exceptions.SuperImposedSupports
-        if (self.boundary[0] is fixed_support and 0 in support_list):  raise beam_exceptions.SuperImposedSupports
-        if (self.boundary[
-                1] is fixed_support and self.length in support_list):  raise beam_exceptions.SuperImposedSupports
+        if (self.boundary[0] is simply_support and 0 in support_list):
+            raise beam_exceptions.SuperImposedSupports
+        if self.boundary[1] is simply_support and self.length in support_list:
+            raise beam_exceptions.SuperImposedSupports
+        if (self.boundary[0] is fixed_support and 0 in support_list):
+            raise beam_exceptions.SuperImposedSupports
+        if (self.boundary[1] is fixed_support and self.length in support_list):
+            raise beam_exceptions.SuperImposedSupports
 
         self.__supports = list(set(support_list))
 
@@ -311,13 +331,15 @@ class Beam:
             elif load[0] == "dist_load":
                 self.__addDistLoad(load[1], load[2], load[3], load[4])
 
-        reaction_array = sp.symbols("R1:10")  ## TODO: expand this
-        eitheta_array = sp.symbols("EITHETA1:10")  # TODO: expand this
+        len_supports = len(self.supports)
+        len_hinges = len(self.hinges)
+        reaction_array = sp.symbols("R1:%d" % (len_supports + 1))  # TODO: expand this
+        eitheta_array = sp.symbols("EITHETA1:%d" % (len_hinges + 1))  # TODO: expand this
 
-        for index in range(0, len(self.supports)):
+        for index in range(len_supports):
             self.__addPointLoad(reaction_array[index], self.supports[index])
 
-        for index in range(0, len(self.hinges)):
+        for index in range(len_hinges):
             self.__addHingeLoad(eitheta_array[index], self.hinges[index])
 
     def __addMoment(self, magnitude, distance):
@@ -538,22 +560,31 @@ class Beam:
         for index in range(len(self.hinges)):
             self.M_boundary.append([self.hinges[index], 0])
 
-    def printEquations(self):
+    def diagramEquations(self):
 
         sections = self.__findSections()
+        equations_string = ""
 
         for index in range(len(sections)):
 
             if index == len(sections) - 1:
-                print("%.2f < X < %.2f" % (sections[index], self.length))
-                print
+                equations_string += ("%.2f < x < %.2f\n\n" % (sections[index], self.length))
             else:
-                print("%.2f < X < %.2f" % (sections[index], sections[index + 1]))
+                equations_string += ("%.2f < x < %.2f\n\n" % (sections[index], sections[index + 1]))
 
-            print("V = %s" % self.V_equations[index])
-            print("M = %s" % self.M_equations[index])
-            print("teta = %s" % self.theta_equations[index])
-            print("v = %s\n" % self.disp_equations[index])
+
+            V = self.V_equations[index].evalf(n= 3)
+            M = self.M_equations[index].evalf(n= 3)
+            theta = self.theta_equations[index].evalf(n= 3)
+            v = self.disp_equations[index].evalf(n= 3)
+
+
+            equations_string += ("V = %s \nM = %s\nEI*theta = %s\nEI*v = %s\n\n\n" % (V, M, theta, v))
+
+        equations_string = equations_string.replace("**", "^")
+        return equations_string
+
+
 
     def solve(self):
 
@@ -613,6 +644,8 @@ class Beam:
 
         self.calculated_beam = True
 
+        self.calculateStresses()
+
         self.__determineSectionsEquations()
 
     def evalPoint(self, plot, point):
@@ -629,13 +662,23 @@ class Beam:
     def evalMax(self, plot):
         return self.__max_values[plot]
 
-    def plotStress(self, fig=None, ax=None):
-        h_vector = np.linspace(-self.height / 2, self.height / 2, 500)
+    def calculateStresses(self):
+        h_vector = np.linspace(-self.height / 2, self.height / 2, 200)
         M_value = self.__M_values
 
         MM, hh = np.meshgrid(M_value, h_vector)
 
-        stress = - MM * (hh - self.neutral_line) / (self.inertia_moment)
+        self.bending_stress = - MM * (hh) / (self.inertia_moment)
+
+        V_value = self.__V_values
+
+        VV, hh = np.meshgrid(V_value, h_vector)
+
+        self.shear_stress = - VV * self.base / 2.0 * ((self.height ** 2) / 4 - hh ** 2) / (
+            self.inertia_moment * self.base)
+
+    def plotBendingStress(self, fig=None, ax=None):
+        h_vector = np.linspace(-self.height / 2, self.height / 2, 200)
 
         if not self.calculated_beam: raise beam_exceptions.BeamNotCalculated(
             "Beam has not been calculated or has been modified")
@@ -648,24 +691,109 @@ class Beam:
             ax_beam = ax
             figure_beam = fig
 
+        n_levels = np.linspace(np.amin(self.bending_stress), np.amax(self.bending_stress), 100)
 
-        n_levels = np.linspace(np.amin(stress), np.amax(stress), 100)
+        im = ax_beam.contourf(self.__beam_span, h_vector, self.bending_stress, levels=n_levels)
 
-        im = ax_beam.contourf(self.__beam_span, h_vector, stress, levels=n_levels)
-        # cb = figure_beam.colorbar(im, orientation="horizontal")
-        ax_beam.axis("equal")
-        ax_beam.autoscale(enable=True, axis='y', tight=True)
-        ax_beam.set_ylabel("Beam height (m)")
-        ax_beam.set_xlabel("Beam length (m)")
-        ax_beam.set_title("Bending Stress")
+        proxy = [plt.Rectangle((0, 0), 1, 1, fc=im.collections[-10].get_facecolor()[0]),
+                 plt.Rectangle((0, 0), 1, 1, fc=im.collections[10].get_facecolor()[0])]
+
+        ax_beam.legend(proxy, ["Maximum: %f" % np.amax(self.bending_stress),
+                               "Minimum: %f" % np.amin(self.bending_stress)])
+
+        # ax_beam.axis("equal")
+        # ax_beam.autoscale(enable=False, axis='y', tight=False)
+
 
         if __name__ == "__main__":
-            plt.show()
+            cb = figure_beam.colorbar(im, orientation="horizontal")
 
+            ax_beam.set_ylabel("Beam height (m)")
+            ax_beam.set_xlabel("Beam length (m)")
+            ax_beam.set_title("Bending Stress")
+
+            plt.show()
 
         return None
 
-    def plotEquations(self, fig=None, ax=None):
+    def plotShearStress(self, fig=None, ax=None):
+        h_vector = np.linspace(-self.height / 2, self.height / 2, 200)
+
+        if not self.calculated_beam:
+            raise beam_exceptions.BeamNotCalculated("Beam has not been calculated or has been modified")
+
+        if not ax:
+            figure_beam, ax_beam = plt.subplots()
+        else:
+            # plt.subplots_adjust(top=.98, bottom=.04, right=.95, left=.13, hspace=0.12)
+            plt.figure(fig.number)
+            ax_beam = ax
+            figure_beam = fig
+
+        n_levels = np.linspace(np.amin(self.shear_stress), np.amax(self.shear_stress), 100)
+
+        im = ax_beam.contourf(self.__beam_span, h_vector, self.shear_stress, levels=n_levels)
+
+        proxy = [plt.Rectangle((0, 0), 1, 1, fc=im.collections[-10].get_facecolor()[0]),
+                 plt.Rectangle((0, 0), 1, 1, fc=im.collections[10].get_facecolor()[0])]
+
+        ax_beam.legend(proxy, ["Maximum: %f" % np.amax(self.shear_stress),
+                               "Minimum: %f" % np.amin(self.shear_stress)])
+
+        # ax_beam.axis("equal")
+        # ax_beam.autoscale(enable=True, axis='x', tight=True)
+
+
+        if __name__ == "__main__":
+            cb = figure_beam.colorbar(im, orientation="horizontal")
+
+            ax_beam.set_ylabel("Beam height (m)")
+            ax_beam.set_xlabel("Beam length (m)")
+            ax_beam.set_title("Shear Stress")
+
+            plt.show()
+
+        return None
+
+    def plotIsoChromatic(self, fig=None, ax=None):
+        h_vector = np.linspace(-self.height / 2, self.height / 2, 200)
+
+        radius = (((self.bending_stress / 2) ** 2) + self.shear_stress ** 2) ** (1 / 2)
+
+        if not ax:
+            figure_beam, ax_beam = plt.subplots()
+        else:
+            # plt.subplots_adjust(top=.98, bottom=.04, right=.95, left=.13, hspace=0.12)
+            plt.figure(fig.number)
+            ax_beam = ax
+            figure_beam = fig
+
+        n_levels = np.linspace(np.amin(radius), np.amax(radius), 100)
+
+        im = ax_beam.contourf(self.__beam_span, h_vector, radius, levels=n_levels)
+
+        proxy = [plt.Rectangle((0, 0), 1, 1, fc=im.collections[-10].get_facecolor()[0]),
+                 plt.Rectangle((0, 0), 1, 1, fc=im.collections[10].get_facecolor()[0])]
+
+        ax_beam.legend(proxy, ["Maximum: %f" % np.amax(radius),
+                               "Minimum: %f" % np.amin(radius)])
+        #
+        # ax_beam.axis("equal")
+        # ax_beam.autoscale(enable=True, axis='x', tight=True)
+
+
+        if __name__ == "__main__":
+            cb = figure_beam.colorbar(im, orientation="horizontal")
+
+            ax_beam.set_ylabel("Beam height (m)")
+            ax_beam.set_xlabel("Beam length (m)")
+            ax_beam.set_title("Max Shear Stress")
+
+            plt.show()
+
+        return None
+
+    def plotDiagrams(self, fig=None, ax=None):
         """
         Post-processing Method
         Evaluate the values of V, M, theta and v for the beam and plot.
@@ -713,22 +841,24 @@ class Beam:
 
 
 if __name__ == "__main__":
-    L = 20
-    I = 1
+
+    a = 3
+    b = 1
+    L = a + b
+    I = 1234
     E = 200e9
     P = -10
 
-    beam = Beam(E, I, L, nl=0)
-    beam.setBoundary(fixed_support, free_support)
-    beam.applyDistLoad(-10, 0, -10, 20)
-    # beam.beam_hinges = [2]
-    # beam.applyMoment(-10, 10)
-
-
-
-
-
+    beam = Beam(E, L, I=I)
+    beam.setBoundary(free_support, free_support)
+    beam.supports = [0, 4]
+    beam.applyPointLoad(P, a)
+    beam.solve()
 
     beam.solve()
-    beam.plotStress()
-    beam.plotEquations()
+    print(beam.diagramEquations())
+    # beam.plotBendingStress()
+    # # beam.plotShearStress()
+    # # beam.plotIsoChromatic()
+    #
+    # beam.plotDiagrams()

@@ -1,19 +1,388 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AnalysisUIOptions">
+    <option name="SCOPE_TYPE" value="3" />
+  </component>
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/beam_ui.py" line="250" mnemonic="9" />
+    <bookmark url="file://$PROJECT_DIR$/beam_ui.py" line="283" mnemonic="9" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d6b83c23-59b6-49b6-ac4b-797e073c177f" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/beamPy_run.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bin/beamPy_compiler.spec" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/beamPyUI_test.ui" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Africa/Abidjan" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Africa/Accra" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Africa/Addis_Ababa" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Africa/Algiers" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Africa/Asmara" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Africa/Asmera" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Africa/Bamako" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Africa/Bangui" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Africa/Banjul" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Africa/Bissau" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Africa/Blantyre" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Africa/Brazzaville" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Africa/Bujumbura" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Africa/Cairo" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Africa/Casablanca" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Africa/Conakry" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Africa/Dakar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Africa/Dar_es_Salaam" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Africa/Djibouti" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Africa/Douala" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Africa/Freetown" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Africa/Gaborone" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Africa/Harare" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Africa/Johannesburg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Africa/Juba" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Africa/Kampala" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Africa/Khartoum" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Africa/Kigali" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Africa/Kinshasa" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Africa/Lagos" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Africa/Libreville" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Africa/Lome" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Africa/Luanda" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Africa/Lubumbashi" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Africa/Lusaka" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Africa/Malabo" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Africa/Maputo" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Africa/Maseru" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Africa/Mbabane" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Africa/Mogadishu" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Africa/Monrovia" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Africa/Nairobi" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Africa/Ndjamena" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Africa/Niamey" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Africa/Nouakchott" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Africa/Ouagadougou" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Africa/Porto-Novo" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Africa/Sao_Tome" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Africa/Timbuktu" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Africa/Tripoli" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Africa/Tunis" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Africa/Windhoek" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/America/Anguilla" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/America/Aruba" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/America/Bahia" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/America/Belem" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/America/Belize" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/America/Boise" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/America/Buenos_Aires" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/America/Cambridge_Bay" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/America/Campo_Grande" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/America/Cancun" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/America/Cayman" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/America/Coral_Harbour" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/America/Cordoba" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/America/Costa_Rica" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/America/Cuiaba" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/America/Danmarkshavn" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/America/Dawson" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/America/Denver" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/America/Eirunepe" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/America/El_Salvador" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/America/Ensenada" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/America/Fort_Wayne" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/America/Fortaleza" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/America/Glace_Bay" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/America/Godthab" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/America/Grand_Turk" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/America/Grenada" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/America/Guadeloupe" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/America/Guatemala" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/America/Guayaquil" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/America/Guyana" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/America/Halifax" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/America/Havana" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/America/Iqaluit" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/America/Jamaica" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/America/Jujuy" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/America/Kralendijk" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/America/Los_Angeles" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/America/Louisville" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/America/Lower_Princes" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/America/Maceio" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/America/Managua" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/America/Mendoza" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/America/Menominee" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/America/Miquelon" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/America/Moncton" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/America/Monterrey" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/America/Montreal" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/America/Montserrat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/America/Nassau" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/America/Nipigon" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/America/Nome" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/America/Noronha" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/America/Ojinaga" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/America/Panama" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/America/Pangnirtung" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/America/Porto_Acre" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/America/Porto_Velho" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/America/Puerto_Rico" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/America/Rankin_Inlet" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/America/Regina" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/America/Rio_Branco" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/America/Rosario" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/America/Santiago" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/America/Sao_Paulo" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/America/Scoresbysund" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/America/Sitka" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/America/St_Thomas" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/America/Swift_Current" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/America/Thule" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/America/Thunder_Bay" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/America/Toronto" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/America/Vancouver" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/America/Yakutat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Arctic/Longyearbyen" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Asia/Aden" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Asia/Almaty" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Asia/Amman" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Asia/Anadyr" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Asia/Aqtau" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Asia/Aqtobe" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Asia/Ashgabat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Asia/Ashkhabad" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Asia/Baghdad" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Asia/Bahrain" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Asia/Baku" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Asia/Bangkok" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Asia/Beirut" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Asia/Bishkek" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Asia/Brunei" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Asia/Calcutta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Asia/Chita" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Asia/Choibalsan" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Asia/Chongqing" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Asia/Chungking" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Asia/Colombo" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Asia/Dacca" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Asia/Damascus" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Asia/Dhaka" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Asia/Dili" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Asia/Dubai" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Asia/Dushanbe" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Asia/Gaza" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Asia/Harbin" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Asia/Hebron" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Asia/Ho_Chi_Minh" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Asia/Hong_Kong" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Asia/Hovd" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Asia/Irkutsk" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Asia/Istanbul" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Asia/Jakarta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Asia/Jayapura" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Asia/Jerusalem" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Asia/Kabul" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Asia/Kamchatka" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Asia/Karachi" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Asia/Kashgar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Asia/Kathmandu" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Asia/Katmandu" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Asia/Khandyga" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Asia/Kolkata" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Asia/Krasnoyarsk" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Asia/Kuala_Lumpur" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Asia/Kuching" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Asia/Kuwait" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Asia/Macao" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Asia/Macau" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Asia/Magadan" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Asia/Makassar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Asia/Manila" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Asia/Muscat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Asia/Nicosia" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Asia/Novokuznetsk" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Asia/Novosibirsk" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Asia/Omsk" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Asia/Oral" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Asia/Phnom_Penh" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Asia/Pontianak" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Asia/Pyongyang" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Asia/Qatar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Asia/Qyzylorda" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Asia/Rangoon" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Asia/Riyadh" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Asia/Saigon" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Asia/Sakhalin" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Asia/Samarkand" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Asia/Seoul" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Asia/Shanghai" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Asia/Singapore" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Asia/Srednekolymsk" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Asia/Taipei" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Asia/Tashkent" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Asia/Tbilisi" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Asia/Tehran" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Asia/Tel_Aviv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Asia/Thimbu" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Asia/Thimphu" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Asia/Tokyo" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Asia/Ujung_Pandang" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Asia/Ulaanbaatar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Asia/Ulan_Bator" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Asia/Urumqi" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Asia/Ust-Nera" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Asia/Vientiane" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Asia/Vladivostok" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Asia/Yakutsk" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Asia/Yekaterinburg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Asia/Yerevan" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Brazil/Acre" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Brazil/DeNoronha" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Brazil/East" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Brazil/West" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Canada/Atlantic" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Canada/Central" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Canada/East-Saskatchewan" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Canada/Eastern" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Canada/Mountain" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Canada/Newfoundland" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Canada/Pacific" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Canada/Saskatchewan" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Canada/Yukon" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Chile/Continental" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Chile/EasterIsland" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Cuba" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/EST" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/EST5EDT" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Eire" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Etc/GMT" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Etc/GMT+0" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Etc/GMT+1" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Etc/GMT+10" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Etc/GMT+11" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Etc/GMT+12" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Etc/GMT+2" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Etc/GMT+3" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Etc/GMT+4" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Etc/GMT+5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Etc/GMT+6" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Etc/GMT+7" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Etc/GMT+8" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Etc/GMT+9" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Etc/GMT-0" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Etc/GMT-1" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Etc/GMT-10" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Etc/GMT-11" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Etc/GMT-12" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Etc/GMT-13" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Etc/GMT-14" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Etc/GMT-2" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Etc/GMT-3" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Etc/GMT-4" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Etc/GMT-5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Etc/GMT-6" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Etc/GMT-7" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Etc/GMT-8" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Etc/GMT-9" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Etc/GMT0" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Etc/Greenwich" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Etc/UCT" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Etc/UTC" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Etc/Universal" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Etc/Zulu" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Europe/Amsterdam" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Europe/Andorra" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Europe/Athens" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Europe/Belfast" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Europe/Belgrade" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Europe/Berlin" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Europe/Bratislava" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Europe/Brussels" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Europe/Bucharest" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Europe/Budapest" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Europe/Busingen" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Europe/Chisinau" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Europe/Copenhagen" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Europe/Dublin" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Europe/Gibraltar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Europe/Guernsey" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Europe/Helsinki" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Europe/Isle_of_Man" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Europe/Istanbul" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Europe/Jersey" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Europe/Kaliningrad" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Europe/Kiev" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Europe/Lisbon" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Europe/Ljubljana" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Europe/London" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Europe/Luxembourg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Europe/Madrid" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Europe/Malta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Europe/Mariehamn" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Europe/Minsk" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Europe/Monaco" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Europe/Moscow" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Europe/Oslo" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Europe/Paris" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Europe/Podgorica" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Europe/Prague" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Europe/Riga" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Europe/Rome" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Europe/Samara" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Europe/San_Marino" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Europe/Sarajevo" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Europe/Simferopol" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Europe/Skopje" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Europe/Sofia" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Europe/Stockholm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Europe/Tallinn" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Europe/Tirane" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Europe/Tiraspol" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Europe/Uzhgorod" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Europe/Vaduz" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Europe/Vatican" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Europe/Vienna" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Europe/Vilnius" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Europe/Volgograd" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Europe/Warsaw" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Europe/Zagreb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Europe/Zaporozhye" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Europe/Zurich" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/GB" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/GMT-0" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/GMT0" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Indian/Antananarivo" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Indian/Chagos" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Indian/Christmas" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Indian/Cocos" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Indian/Comoro" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Indian/Kerguelen" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Indian/Mahe" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Indian/Maldives" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Indian/Mauritius" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Indian/Mayotte" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Indian/Reunion" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Israel" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/MST" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/MST7MDT" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Mexico/BajaNorte" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Mexico/BajaSur" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Mexico/General" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/NZ-CHAT" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/Poland" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/US/Alaska" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/US/Aleutian" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/US/Arizona" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/US/Central" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/US/East-Indiana" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/US/Eastern" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/US/Hawaii" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/US/Indiana-Starke" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/US/Michigan" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/US/Mountain" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/US/Pacific" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/US/Pacific-New" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dist/beam_ui/tcl/tzdata/US/Samoa" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/beamPyUI.ui" afterPath="$PROJECT_DIR$/beamPyUI.ui" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/beamPyUI.py" afterPath="$PROJECT_DIR$/beamPyUI.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/beam_solver/beam_exceptions.py" afterPath="$PROJECT_DIR$/beam_solver/beam_exceptions.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/beam_solver/solver.py" afterPath="$PROJECT_DIR$/beam_solver/solver.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/beam_solver/solver_unittest.py" afterPath="$PROJECT_DIR$/beam_solver/solver_unittest.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/beam_ui.py" afterPath="$PROJECT_DIR$/beam_ui.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/load_model.py" afterPath="$PROJECT_DIR$/load_model.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/beamPy_compiler.spec" afterPath="$PROJECT_DIR$/bin/beamPy_compiler.spec" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/symtest.py" afterPath="$PROJECT_DIR$/symtest.py" />
     </list>
     <ignored path="BeamProject.iws" />
@@ -37,8 +406,8 @@
       <file leaf-file-name="beam_ui.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/beam_ui.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="17" column="13" selection-start-line="17" selection-start-column="6" selection-end-line="17" selection-end-column="13" />
+            <state relative-caret-position="357">
+              <caret line="57" column="0" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
               <folding>
                 <element signature="e#0#31#0" expanded="true" />
               </folding>
@@ -46,54 +415,55 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="solver.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/beam_solver/solver.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="168">
+              <caret line="566" column="0" selection-start-line="566" selection-start-column="0" selection-end-line="566" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#31#0" expanded="true" />
+                <element signature="e#3933#3948#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="solver_unittest.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/beam_solver/solver_unittest.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="case.py" pinned="false" current-in-tab="false">
+        <entry file="file://C:/PythonAnaconda/Lib/unittest/case.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="195">
+              <caret line="599" column="0" selection-start-line="599" selection-start-column="0" selection-end-line="599" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="beamPy_compiler.spec" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/bin/beamPy_compiler.spec">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" column="21" selection-start-line="8" selection-start-column="21" selection-end-line="8" selection-end-column="21" />
+            <state relative-caret-position="219">
+              <caret line="20" column="20" selection-start-line="20" selection-start-column="20" selection-end-line="20" selection-end-column="20" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="build_main.py" pinned="false" current-in-tab="false">
-        <entry file="file://C:/PythonAnaconda/Lib/site-packages/PyInstaller/building/build_main.py">
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="12971">
-              <caret line="787" column="0" selection-start-line="787" selection-start-column="0" selection-end-line="787" selection-end-column="0" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="__main__.py" pinned="false" current-in-tab="false">
-        <entry file="file://C:/PythonAnaconda/Lib/site-packages/PyInstaller/__main__.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1292">
-              <caret line="89" column="0" selection-start-line="89" selection-start-column="0" selection-end-line="89" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="runpy.py" pinned="false" current-in-tab="false">
-        <entry file="file://C:/PythonAnaconda/Lib/runpy.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3043">
-              <caret line="183" column="0" selection-start-line="183" selection-start-column="0" selection-end-line="183" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="beamPy_run.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/beamPy_run.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-              <folding>
-                <element signature="e#0#9#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -101,28 +471,20 @@
       <file leaf-file-name="symtest.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/symtest.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="578">
-              <caret line="42" column="27" selection-start-line="42" selection-start-column="27" selection-end-line="42" selection-end-column="27" />
-              <folding />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="43" />
+              <folding>
+                <element signature="e#0#43#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="load_model.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/load_model.py">
+      <file leaf-file-name="pretty.py" pinned="false" current-in-tab="false">
+        <entry file="file://C:/PythonAnaconda/Lib/site-packages/sympy/printing/pretty/pretty.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="544">
-              <caret line="32" column="11" selection-start-line="32" selection-start-column="11" selection-end-line="32" selection-end-column="11" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="beamPyUI.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/beamPyUI.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3553">
-              <caret line="209" column="50" selection-start-line="209" selection-start-column="50" selection-end-line="209" selection-end-column="50" />
+            <state relative-caret-position="287">
+              <caret line="2043" column="4" selection-start-line="2043" selection-start-column="4" selection-end-line="2043" selection-end-column="4" />
               <folding />
             </state>
           </provider>
@@ -152,11 +514,12 @@
         <option value="$PROJECT_DIR$/pyui_creator.py" />
         <option value="$PROJECT_DIR$/load_model.py" />
         <option value="$PROJECT_DIR$/beam_solver/beam_exceptions.py" />
-        <option value="$PROJECT_DIR$/beam_solver/solver.py" />
-        <option value="$PROJECT_DIR$/beam_ui.py" />
         <option value="$PROJECT_DIR$/bin/compiler.spec" />
         <option value="$PROJECT_DIR$/beamPy_run.py" />
+        <option value="$PROJECT_DIR$/beam_solver/solver_unittest.py" />
+        <option value="$PROJECT_DIR$/beam_ui.py" />
         <option value="$PROJECT_DIR$/symtest.py" />
+        <option value="$PROJECT_DIR$/beam_solver/solver.py" />
         <option value="$PROJECT_DIR$/bin/beamPy_compiler.spec" />
       </list>
     </option>
@@ -192,6 +555,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -226,7 +590,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -245,22 +608,47 @@
       <recent name="C:\Users\Lucas\PycharmProjects\BeamProject" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.symtest">
-    <configuration default="false" name="beam_ui" type="PythonConfigurationType" factoryName="Python" temporary="true">
+  <component name="RunManager" selected="Python.beam_ui">
+    <configuration default="false" name="Nosetest MyTestCase.test_invalid_input" type="tests" factoryName="Nosetests" temporary="true" nameIsGenerated="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
+      <envs />
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/beam_solver" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="BeamProject" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/beam_ui.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/beam_solver/solver_unittest.py" />
+      <option name="CLASS_NAME" value="MyTestCase" />
+      <option name="METHOD_NAME" value="test_invalid_input" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_METHOD" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <option name="PARAMS" value="" />
+      <option name="USE_PARAM" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="Nosetests in MyTestCase" type="tests" factoryName="Nosetests" temporary="true" nameIsGenerated="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/beam_solver" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="BeamProject" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/beam_solver/solver_unittest.py" />
+      <option name="CLASS_NAME" value="MyTestCase" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_CLASS" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <option name="PARAMS" value="" />
+      <option name="USE_PARAM" value="false" />
       <method />
     </configuration>
     <configuration default="false" name="solver" type="PythonConfigurationType" factoryName="Python" temporary="true">
@@ -280,28 +668,7 @@
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
     </configuration>
-    <configuration default="false" name="Nosetests in BeamProject" type="tests" factoryName="Nosetests" temporary="true" nameIsGenerated="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="BeamProject" />
-      <option name="SCRIPT_NAME" value="" />
-      <option name="CLASS_NAME" value="" />
-      <option name="METHOD_NAME" value="" />
-      <option name="FOLDER_NAME" value="$PROJECT_DIR$" />
-      <option name="TEST_TYPE" value="TEST_FOLDER" />
-      <option name="PATTERN" value="" />
-      <option name="USE_PATTERN" value="false" />
-      <option name="PARAMS" value="" />
-      <option name="USE_PARAM" value="false" />
-      <method />
-    </configuration>
-    <configuration default="false" name="beamPy_run" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration default="false" name="beam_ui" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -313,7 +680,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="BeamProject" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/beamPy_run.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/beam_ui.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
@@ -470,19 +837,19 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Python.beam_ui" />
-      <item index="1" class="java.lang.String" itemvalue="Python.solver" />
-      <item index="2" class="java.lang.String" itemvalue="Python tests.Nosetests in BeamProject" />
-      <item index="3" class="java.lang.String" itemvalue="Python.beamPy_run" />
+      <item index="0" class="java.lang.String" itemvalue="Python tests.Nosetest MyTestCase.test_invalid_input" />
+      <item index="1" class="java.lang.String" itemvalue="Python tests.Nosetests in MyTestCase" />
+      <item index="2" class="java.lang.String" itemvalue="Python.solver" />
+      <item index="3" class="java.lang.String" itemvalue="Python.beam_ui" />
       <item index="4" class="java.lang.String" itemvalue="Python.symtest" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.symtest" />
-        <item index="1" class="java.lang.String" itemvalue="Python.beamPy_run" />
-        <item index="2" class="java.lang.String" itemvalue="Python.beam_ui" />
-        <item index="3" class="java.lang.String" itemvalue="Python tests.Nosetests in BeamProject" />
-        <item index="4" class="java.lang.String" itemvalue="Python.solver" />
+        <item index="0" class="java.lang.String" itemvalue="Python.beam_ui" />
+        <item index="1" class="java.lang.String" itemvalue="Python.solver" />
+        <item index="2" class="java.lang.String" itemvalue="Python.symtest" />
+        <item index="3" class="java.lang.String" itemvalue="Python tests.Nosetests in MyTestCase" />
+        <item index="4" class="java.lang.String" itemvalue="Python tests.Nosetest MyTestCase.test_invalid_input" />
       </list>
     </recent_temporary>
   </component>
@@ -508,35 +875,59 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Nosetest_MyTestCase_test_simply_middle_load - 2018.10.17 at 16h 00m 59s.xml">
-      <configuration name="Nosetest MyTestCase.test_simply_middle_load" configurationId="tests" />
+    <history-entry file="Nosetest_MyTestCase_test_cantilever_trap_load_dec_before_end - 2018.10.24 at 19h 42m 24s.xml">
+      <configuration name="Nosetest MyTestCase.test_cantilever_trap_load_dec_before_end" configurationId="tests" />
     </history-entry>
-    <history-entry file="Nosetests_in_BeamProject - 2018.10.20 at 18h 58m 12s.xml">
-      <configuration name="Nosetests in BeamProject" configurationId="tests" />
+    <history-entry file="Nosetest_MyTestCase_test_invalid_input - 2018.10.24 at 19h 38m 27s.xml">
+      <configuration name="Nosetest MyTestCase.test_invalid_input" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Nosetest_MyTestCase_test_invalid_input - 2018.10.24 at 19h 38m 45s.xml">
+      <configuration name="Nosetest MyTestCase.test_invalid_input" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Nosetest_MyTestCase_test_invalid_input - 2018.10.24 at 19h 38m 54s.xml">
+      <configuration name="Nosetest MyTestCase.test_invalid_input" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Nosetest_MyTestCase_test_invalid_input - 2018.10.24 at 19h 42m 39s.xml">
+      <configuration name="Nosetest MyTestCase.test_invalid_input" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Nosetest_MyTestCase_test_invalid_input - 2018.10.24 at 19h 43m 04s.xml">
+      <configuration name="Nosetest MyTestCase.test_invalid_input" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Nosetests_in_MyTestCase - 2018.10.24 at 19h 43m 22s.xml">
+      <configuration name="Nosetests in MyTestCase" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Nosetests_in_MyTestCase - 2018.10.24 at 19h 44m 24s.xml">
+      <configuration name="Nosetests in MyTestCase" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Nosetests_in_MyTestCase - 2018.10.24 at 20h 27m 33s.xml">
+      <configuration name="Nosetests in MyTestCase" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Nosetests_in_solver_unittest - 2018.10.24 at 19h 39m 20s.xml">
+      <configuration name="Nosetests in solver_unittest" configurationId="tests" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23720682" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24466951" sideWeight="0.5" order="0" side_tool="true" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24946696" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.34559643" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24626866" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3954496" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33586133" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Inspection Results" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980973" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection Results" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.14409535" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3964059" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -572,25 +963,21 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="First commit. Main code done" />
-    <option name="LAST_COMMIT_MESSAGE" value="First commit. Main code done" />
+    <MESSAGE value="Added shear and maximum stress plots.&#10;Added equations tabs." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added shear and maximum stress plots.&#10;Added equations tabs." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/symtest.py</url>
-          <line>1</line>
+          <line>2</line>
           <option name="timeStamp" value="31" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/beam_ui.py</url>
-          <line>218</line>
-          <option name="timeStamp" value="85" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/beam_solver/solver.py</url>
-          <line>147</line>
-          <option name="timeStamp" value="102" />
+          <line>96</line>
+          <option name="timeStamp" value="112" />
         </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
@@ -603,46 +990,14 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="103" />
+      <option name="time" value="115" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/beam_solver/solver.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#3594#3609#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/PythonAnaconda/Lib/site-packages/matplotlib/axes/_axes.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="78778">
-          <caret line="4634" column="0" selection-start-line="4634" selection-start-column="0" selection-end-line="4634" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/_pydev_imps/_pydev_execfile.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/symtest.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" column="33" selection-start-line="22" selection-start-column="23" selection-end-line="22" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://C:/PythonAnaconda/Lib/site-packages/matplotlib/pyplot.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="48076">
+        <state relative-caret-position="48909">
           <caret line="2877" column="4" selection-start-line="2877" selection-start-column="4" selection-end-line="2877" selection-end-column="4" />
         </state>
       </provider>
@@ -652,7 +1007,8 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#3594#3609#0" expanded="false" />
+            <element signature="e#0#31#0" expanded="true" />
+            <element signature="e#3933#3948#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -669,7 +1025,8 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#3594#3609#0" expanded="false" />
+            <element signature="e#0#31#0" expanded="true" />
+            <element signature="e#3933#3948#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -686,24 +1043,8 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#3594#3609#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/PythonAnaconda/Lib/site-packages/matplotlib/pyplot.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="48909">
-          <caret line="2877" column="4" selection-start-line="2877" selection-start-column="4" selection-end-line="2877" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/beam_solver/solver.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#3594#3609#0" expanded="false" />
+            <element signature="e#0#31#0" expanded="true" />
+            <element signature="e#3933#3948#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -807,13 +1148,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://C:/PythonAnaconda/Lib/unittest/case.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="835" column="28" selection-start-line="835" selection-start-column="28" selection-end-line="835" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://C:/PythonAnaconda/Lib/site-packages/sympy/core/basic.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="189">
@@ -846,13 +1180,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="509">
           <caret line="117" column="0" selection-start-line="117" selection-start-column="0" selection-end-line="117" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/pydevd.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15776">
-          <caret line="963" column="0" selection-start-line="963" selection-start-column="0" selection-end-line="963" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -891,23 +1218,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/beam_solver/solver_unittest.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3995">
-          <caret line="237" column="35" selection-start-line="237" selection-start-column="35" selection-end-line="237" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/beam_solver/solver.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="10999">
-          <caret line="653" column="64" selection-start-line="653" selection-start-column="58" selection-end-line="653" selection-end-column="64" />
-          <folding>
-            <element signature="e#3594#3609#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/beamPyUI.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3553">
@@ -917,21 +1227,10 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/compiler.py" />
-    <entry file="file://$PROJECT_DIR$/beam_ui.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="17" column="13" selection-start-line="17" selection-start-column="6" selection-end-line="17" selection-end-column="13" />
-          <folding>
-            <element signature="e#0#31#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://C:/PythonAnaconda/Lib/site-packages/PyInstaller/building/build_main.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="12971">
           <caret line="787" column="0" selection-start-line="787" selection-start-column="0" selection-end-line="787" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -939,7 +1238,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1292">
           <caret line="89" column="0" selection-start-line="89" selection-start-column="0" selection-end-line="89" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -952,16 +1250,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/beam_ui.spec" />
-    <entry file="file://$PROJECT_DIR$/beamPy_run.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/load_model.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="544">
@@ -970,18 +1258,121 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/pydevd.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="26248">
+          <caret line="1579" column="0" selection-start-line="1579" selection-start-column="0" selection-end-line="1579" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/PythonAnaconda/Lib/site-packages/xlsxwriter/chart.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="332" column="8" selection-start-line="332" selection-start-column="8" selection-end-line="332" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/PythonAnaconda/Lib/unittest/case.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="599" column="0" selection-start-line="599" selection-start-column="0" selection-end-line="599" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/PythonAnaconda/Lib/site-packages/sympy/core/evalf.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-468">
+          <caret line="1343" column="40" selection-start-line="1343" selection-start-column="40" selection-end-line="1343" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.PyCharm2016.2/system/python_stubs/968023056/PyQt4/QtGui/QMainWindow.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5321">
+          <caret line="316" column="8" selection-start-line="316" selection-start-column="8" selection-end-line="316" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/PythonAnaconda/Lib/site-packages/matplotlib/contour.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="399">
+          <caret line="1444" column="0" selection-start-line="1444" selection-start-column="0" selection-end-line="1444" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/PythonAnaconda/Lib/site-packages/sympy/printing/pretty/pretty.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="287">
+          <caret line="2043" column="4" selection-start-line="2043" selection-start-column="4" selection-end-line="2043" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/beam_solver/solver_unittest.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/symtest.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="578">
-          <caret line="42" column="27" selection-start-line="42" selection-start-column="27" selection-end-line="42" selection-end-column="27" />
-          <folding />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="43" />
+          <folding>
+            <element signature="e#0#43#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/beamPy_run.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="457">
+          <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#9#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/beam_solver/solver.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="566" column="0" selection-start-line="566" selection-start-column="0" selection-end-line="566" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#31#0" expanded="true" />
+            <element signature="e#3933#3948#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/beam_ui.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="57" column="0" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#31#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/bin/beamPy_compiler.spec">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="21" selection-start-line="8" selection-start-column="21" selection-end-line="8" selection-end-column="21" />
+        <state relative-caret-position="219">
+          <caret line="20" column="20" selection-start-line="20" selection-start-column="20" selection-end-line="20" selection-end-column="20" />
           <folding />
         </state>
       </provider>

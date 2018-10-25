@@ -33,14 +33,15 @@ class BeamApp(QtGui.QMainWindow, beamPyUI.Ui_MainWindow):
         self.__plot_figure, (self.ax1, self.ax2, self.ax3, self.ax4) = plt.subplots(4, 1, sharex=True)
         self.plot_canvas = FigureCanvas(self.__plot_figure)
         self.plot_canvas_toolbar = NavigationToolbar(self.plot_canvas, self, coordinates=True)
-        plt.subplots_adjust(top=.98, bottom=.04, right=.95, left=.13, hspace=0.12)
+        plt.subplots_adjust(top=.99, bottom=.05, right=.97, left=.14, hspace=0.22)
 
         self.ui.plots_widget_vl.addWidget(self.plot_canvas)
         self.ui.plots_widget_vl.addWidget(self.plot_canvas_toolbar)
 
-        self.__beam_figure, self.ax_beam = plt.subplots()
+        self.__beam_figure, (self.ax_bending, self.ax_shear, self.ax_max_shear) = plt.subplots(3, 1, sharex=True)
         self.beam_canvas = FigureCanvas(self.__beam_figure)
         self.beam_canvas_toolbar = NavigationToolbar(self.beam_canvas, self, coordinates=True)
+        plt.subplots_adjust(top=.98, bottom=.06, right=.98, left=.04, hspace=0.27)
 
         self.ui.beam_draw_widget_vl.addWidget(self.beam_canvas)
         self.ui.beam_draw_widget_vl.addWidget(self.beam_canvas_toolbar)
@@ -48,19 +49,27 @@ class BeamApp(QtGui.QMainWindow, beamPyUI.Ui_MainWindow):
         self.__beam_figure.set_facecolor('none')
         self.__plot_figure.set_facecolor('none')
         self.ui.length_dspn.valueChanged.connect(self.__setLoadPosValidators)
-        self.ui.height_dpsn.valueChanged.connect(self.__setNeutralLineValidator)
+        self.ui.distr_load_start_pos.valueChanged.connect(self.__setDistrEndPosValidator)
+        # self.ui.height_dpsn.valueChanged.connect(self.__setNeutralLineValidator)
 
+        # Tabifying tecplot
+        self.tabifyDockWidget(self.ui.equations_dock, self.ui.plot_dock)
+        self.ui.plot_dock.raise_()
+
+
+        self.ui.supports_combo.setValidator(QtGui.QDoubleValidator())
+        
+        self.__setConnectFunctions()
+        self.__setLoadPosValidators()
+        # self.__setNeutralLineValidator()
+
+    def __setConnectFunctions(self):
         self.ui.calculate_beam.clicked.connect(self.calculateButton)
         self.ui.remove_support_btn.clicked.connect(self.removeSupport)
         self.ui.remove_hinge_btn.clicked.connect(self.removeHinge)
         self.ui.remove_load_btn.clicked.connect(self.removeLoadItem)
         self.ui.add_load_btn.clicked.connect(self.addLoadItem)
         self.ui.load_treeview.clicked.connect(self.__setSelection)
-
-        self.ui.supports_combo.setValidator(QtGui.QDoubleValidator())
-
-        self.__setLoadPosValidators()
-        self.__setNeutralLineValidator()
 
     def __setLoadPosValidators(self):
         self.ui.moment_pos_dpsn.setMaximum(self.ui.length_dspn.value())
@@ -70,9 +79,12 @@ class BeamApp(QtGui.QMainWindow, beamPyUI.Ui_MainWindow):
 
         self.ui.distr_load_start_pos.setMaximum(self.ui.length_dspn.value())
 
-    def __setNeutralLineValidator(self):
-        self.ui.nl_dspn.setMaximum(round(self.ui.height_dpsn.value() / 2.1, 2))
-        self.ui.nl_dspn.setMinimum(-round(self.ui.height_dpsn.value() / 2.1, 2))
+    def __setDistrEndPosValidator(self):
+        self.ui.distr_load_end_pos.setMinimum(self.ui.distr_load_start_pos.value() + 0.01)
+
+    # def __setNeutralLineValidator(self):
+    #     self.ui.nl_dspn.setMaximum(round(self.ui.height_dpsn.value() / 2.1, 2))
+    #     self.ui.nl_dspn.setMinimum(-round(self.ui.height_dpsn.value() / 2.1, 2))
 
     def __setSelection(self, current, old=None):
         self.load_selected = current.internalPointer()
@@ -80,9 +92,15 @@ class BeamApp(QtGui.QMainWindow, beamPyUI.Ui_MainWindow):
     def setBeamProperties(self):
         self.beam.length = self.ui.length_dspn.value()
         self.beam.young_modulus = self.ui.young_module_dpsn.value() * 1e9
-        self.beam.inertia_moment = self.ui.inertia_moment_dspn.value()
+        # self.beam.inertia_moment = self.ui.inertia_moment_dspn.value()
         self.beam.height = self.ui.height_dpsn.value()
-        self.beam.neutral_line = self.ui.nl_dspn.value()
+        self.beam.base = self.ui.base_dspn.value()
+
+        self.beam.inertia_moment = self.beam.calculateInertia(self.beam.base, self.beam.height)
+
+        self.ui.inertia_moment_dspn.setValue(self.beam.inertia_moment)
+
+        pass
 
     def setSupports(self):
         if self.ui.left_support_combo.currentText() == "Simply":
@@ -168,11 +186,15 @@ class BeamApp(QtGui.QMainWindow, beamPyUI.Ui_MainWindow):
             assert not (
                 self.ui.pnt_load_up_chkbtn.isChecked() and self.ui.pnt_load_down_chkbtn.isChecked()), "Both Button checked"
 
-            if self.ui.pnt_load_up_chkbtn.isChecked():
-                magnitude = self.ui.pnt_load_mag_dpsn.value()
+            magnitude = self.ui.pnt_load_mag_dpsn.value()
 
-            elif self.ui.pnt_load_down_chkbtn.isChecked():
-                magnitude = -self.ui.pnt_load_mag_dpsn.value()
+            if self.ui.pnt_load_down_chkbtn.isChecked():
+                magnitude = -magnitude
+
+
+            if magnitude == 0:
+                self.ui.message_lbl.setText("Magnitude must be greater than zero")
+                return
 
             LoadNode("Point Load", magnitude, self.ui.pnt_load_pos_dpsn.value(), parent=self.root_node)
 
@@ -182,11 +204,14 @@ class BeamApp(QtGui.QMainWindow, beamPyUI.Ui_MainWindow):
             assert not (
                 self.ui.moment_cw_chkbtn.isChecked() and self.ui.moment_ccw_chkbtn.isChecked()), "Both Button checked"
 
-            if self.ui.moment_cw_chkbtn.isChecked():
-                magnitude = self.ui.moment_mag_dpsn.value()
+            magnitude = self.ui.moment_mag_dpsn.value()
 
-            elif self.ui.moment_ccw_chkbtn.isChecked():
-                magnitude = -self.ui.moment_mag_dpsn.value()
+            if self.ui.moment_ccw_chkbtn.isChecked():
+                magnitude = -magnitude
+
+            if magnitude == 0:
+                self.ui.message_lbl.setText("Magnitude must be greater than zero")
+                return
 
             LoadNode("Moment", magnitude, self.ui.moment_pos_dpsn.value(), parent=self.root_node)
 
@@ -196,13 +221,17 @@ class BeamApp(QtGui.QMainWindow, beamPyUI.Ui_MainWindow):
             assert not (
                 self.ui.up_distr_load_chkbtn.isChecked() and self.ui.down_distr_load_chkbtn.isChecked()), "Both Button checked"
 
-            if self.ui.up_distr_load_chkbtn.isChecked():
-                magnitude_1 = self.ui.distr_load_start_mag.value()
-                magnitude_2 = self.ui.distr_load_end_mag.value()
+            magnitude_1 = self.ui.distr_load_start_mag.value()
+            magnitude_2 = self.ui.distr_load_end_mag.value()
 
-            elif self.ui.down_distr_load_chkbtn.isChecked():
-                magnitude_1 = -self.ui.distr_load_start_mag.value()
-                magnitude_2 = -self.ui.distr_load_end_mag.value()
+            if self.ui.down_distr_load_chkbtn.isChecked():
+                magnitude_1 = -magnitude_1
+                magnitude_2 = -magnitude_2
+
+            if magnitude_1 == 0 and magnitude_2 == 0:
+                self.ui.message_lbl.setText("One magnitude must be greater than zero")
+                return
+
 
             LoadNode("Distr. Load", magnitude_1, self.ui.distr_load_start_pos.value(), magnitude_2,
                      self.ui.distr_load_end_pos.value(), parent=self.root_node)
@@ -241,6 +270,14 @@ class BeamApp(QtGui.QMainWindow, beamPyUI.Ui_MainWindow):
                 print("some loads were not applied due to out of bounds")
 
     def calculateButton(self):
+        self.ui.message_lbl.setText("Calculating...")
+        QtCore.QCoreApplication.processEvents()
+
+        if self.model.rowCount(self.ui.load_treeview.rootIndex()) == 0:
+            self.ui.message_lbl.setText("Add some loads!")
+
+            return
+
         self.__beam_figure.subplots_adjust()
 
         self.setBeamProperties()
@@ -250,7 +287,10 @@ class BeamApp(QtGui.QMainWindow, beamPyUI.Ui_MainWindow):
         self.ax2.cla()
         self.ax3.cla()
         self.ax4.cla()
-        self.ax_beam.cla()
+
+        self.ax_bending.cla()
+        self.ax_max_shear.cla()
+        self.ax_shear.cla()
 
         # try:
         #     self.__beam_figure.delaxes(self.__beam_figure.axes[1])
@@ -262,15 +302,20 @@ class BeamApp(QtGui.QMainWindow, beamPyUI.Ui_MainWindow):
 
 
         self.beam.solve()
+        self.ui.equations_lbl.setText(self.beam.diagramEquations())
+        self.beam.plotDiagrams(self.__plot_figure, (self.ax1, self.ax2, self.ax3, self.ax4))
 
-        self.beam.plotEquations(self.__plot_figure, (self.ax1, self.ax2, self.ax3, self.ax4))
-        self.beam.plotStress(self.__beam_figure, self.ax_beam)
-        self.__beam_figure.subplots_adjust()
+        self.beam.plotBendingStress(self.__beam_figure, self.ax_bending)
+        self.beam.plotShearStress(self.__beam_figure, self.ax_shear)
+        self.beam.plotIsoChromatic(self.__beam_figure, self.ax_max_shear)
+
+
+
+        # self.__beam_figure.subplots_adjust()
         self.plot_canvas.draw()
         self.beam_canvas.draw()
 
-        print("finished")
-
+        self.ui.message_lbl.setText("Calculation finished")
 
 def main():
     app = QtGui.QApplication(sys.argv)
