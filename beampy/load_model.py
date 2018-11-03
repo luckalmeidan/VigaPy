@@ -6,8 +6,7 @@ Contact: lucas.almeida@xyleminc.com
 File that contains the class CaseModel that creates a model for the Case treeview list.
 
 """
-from PyQt4 import QtCore, QtGui
-
+from PyQt4 import QtCore
 
 
 class LoadModel(QtCore.QAbstractItemModel):
@@ -25,8 +24,9 @@ a
 
     """
 
-    def __init__(self, root, parent=None):
+    def __init__(self, root, parent=None, beam_ui=None):
         super(LoadModel, self).__init__(parent)
+        self.beam_ui = beam_ui
         self._rootNode = root
 
     def rowCount(self, parent):
@@ -54,6 +54,7 @@ a
         """
         Returns the data stored under the given role for the item referred to by the index.
         """
+
         if not index.isValid():
             return None
 
@@ -82,6 +83,7 @@ a
         ref: http://pyqt.sourceforge.net/Docs/PyQt4/qabstractitemmodel.html#setdata
 
         """
+
         if index.isValid():
 
             node = index.internalPointer()
@@ -93,17 +95,22 @@ a
                     node.load_1 = value
 
                 if index.column() == 2:
-                    node.pos_1 = value
+                    if value >= 0:
+                        node.pos_1 = value
 
-                if node.load_type == "Distr. Load":
+                if node.load_type == "D. Load":
                     if index.column() == 3:
                         node.load_2 = value
 
                     if index.column() == 4:
-                        node.pos_2 = value
+                        if value > node.pos_1:
+                            node.pos_2 = value
 
 
                 self.dataChanged.emit(index, index)
+                self.beam_ui.updateBeam()
+
+
                 return True
 
         return False
@@ -195,7 +202,6 @@ class LoadNode(object):
         super(LoadNode, self).__init__()
 
         if parent is not None:
-            self.subshape = []
             self.load_type = load_type
             self.load_1 = load_1
             self.load_2 = load_2

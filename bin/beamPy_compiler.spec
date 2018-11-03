@@ -4,8 +4,8 @@ block_cipher = None
 
 
 
-a = Analysis(['../beam_ui.py'],
-             pathex=['../'],
+a = Analysis(['../beampy/beam_ui.py'],
+             pathex=['.'],
              binaries=[],
              datas=[],
              hiddenimports=[],
@@ -20,11 +20,14 @@ pyz = PYZ(a.pure, a.zipped_data,
 exe = EXE(pyz,
           a.scripts,
           exclude_binaries=True,
-          name='beampy',
+          name='BeamPy',
           debug=False,
           strip=False,
           upx=True,
-          console=True )
+          console=True,
+          icon='C:\\Users\Lucas\\PycharmProjects\\BeamProject\\beampy\\imgs\\beampy_icon2.ico'
+           )
+
 coll = COLLECT(exe,
                a.binaries,
                a.zipfiles,

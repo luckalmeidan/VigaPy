@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
+ <author>Lucas dos Santos Almeida</author>
  <class>MainWindow</class>
  <widget class="QMainWindow" name="MainWindow">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1419</width>
-    <height>739</height>
+    <width>1239</width>
+    <height>800</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -19,33 +20,73 @@
      <layout class="QGridLayout" name="main_gl">
       <item row="0" column="0" colspan="3">
        <widget class="QWidget" name="beam_draw_widget" native="true">
-        <layout class="QVBoxLayout" name="beam_draw_widget_vl"/>
+        <layout class="QVBoxLayout" name="beam_draw_widget_vl">
+         <property name="margin">
+          <number>0</number>
+         </property>
+        </layout>
        </widget>
       </item>
-      <item row="4" column="2">
-       <layout class="QHBoxLayout" name="add_remove_hl">
-        <item>
-         <widget class="QPushButton" name="add_load_btn">
+      <item row="3" column="1">
+       <widget class="QWidget" name="beam_widget" native="true">
+        <property name="maximumSize">
+         <size>
+          <width>16777215</width>
+          <height>120</height>
+         </size>
+        </property>
+        <property name="statusTip">
+         <string>Beam Display</string>
+        </property>
+        <layout class="QVBoxLayout" name="beam_widget_vl">
+         <property name="spacing">
+          <number>0</number>
+         </property>
+         <property name="margin">
+          <number>0</number>
+         </property>
+        </layout>
+       </widget>
+      </item>
+      <item row="2" column="1">
+       <layout class="QGridLayout" name="gridLayout">
+        <item row="0" column="1">
+         <widget class="QLabel" name="message_lbl">
+          <property name="statusTip">
+           <string>Current BeamPy message</string>
+          </property>
           <property name="text">
-           <string>Add</string>
+           <string>Ready</string>
           </property>
          </widget>
         </item>
-        <item>
-         <widget class="QPushButton" name="remove_load_btn">
+        <item row="0" column="0">
+         <widget class="QLabel" name="lbl_message">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
           <property name="text">
-           <string>Remove Selected</string>
+           <string>Message:</string>
           </property>
          </widget>
         </item>
        </layout>
       </item>
-      <item row="2" column="0" rowspan="3">
+      <item row="2" column="0" rowspan="5">
        <layout class="QGridLayout" name="properties_supports_vl">
         <item row="3" column="0">
          <widget class="QPushButton" name="calculate_beam">
+          <property name="statusTip">
+           <string>Solves the differential equations and plot diagrams (F5)</string>
+          </property>
           <property name="text">
-           <string>Calculate</string>
+           <string>Solve</string>
+          </property>
+          <property name="shortcut">
+           <string>F5</string>
           </property>
          </widget>
         </item>
@@ -55,6 +96,54 @@
            <string>Beam Properties</string>
           </property>
           <layout class="QGridLayout" name="beam_properties_gb_vl">
+           <item row="8" column="0">
+            <widget class="QPushButton" name="pushButton_2">
+             <property name="enabled">
+              <bool>false</bool>
+             </property>
+             <property name="font">
+              <font>
+               <pointsize>16</pointsize>
+              </font>
+             </property>
+             <property name="text">
+              <string>l</string>
+             </property>
+            </widget>
+           </item>
+           <item row="6" column="0">
+            <widget class="QLabel" name="lbl_length_2">
+             <property name="text">
+              <string>Base (m)</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="1" colspan="2">
+            <widget class="QDoubleSpinBox" name="length_dspn">
+             <property name="statusTip">
+              <string>Beam Length</string>
+             </property>
+             <property name="decimals">
+              <number>4</number>
+             </property>
+             <property name="minimum">
+              <double>0.000100000000000</double>
+             </property>
+             <property name="maximum">
+              <double>9999.000000000000000</double>
+             </property>
+             <property name="value">
+              <double>10.000000000000000</double>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="0">
+            <widget class="QLabel" name="lbl_length">
+             <property name="text">
+              <string>Length (m)</string>
+             </property>
+            </widget>
+           </item>
            <item row="7" column="1" colspan="2">
             <widget class="QDoubleSpinBox" name="inertia_moment_dspn">
              <property name="enabled">
@@ -74,37 +163,6 @@
              </property>
             </widget>
            </item>
-           <item row="1" column="1" colspan="2">
-            <widget class="QDoubleSpinBox" name="length_dspn">
-             <property name="decimals">
-              <number>4</number>
-             </property>
-             <property name="minimum">
-              <double>0.000100000000000</double>
-             </property>
-             <property name="maximum">
-              <double>9999.000000000000000</double>
-             </property>
-             <property name="value">
-              <double>10.000000000000000</double>
-             </property>
-            </widget>
-           </item>
-           <item row="8" column="0">
-            <widget class="QPushButton" name="pushButton_2">
-             <property name="enabled">
-              <bool>false</bool>
-             </property>
-             <property name="font">
-              <font>
-               <pointsize>16</pointsize>
-              </font>
-             </property>
-             <property name="text">
-              <string>l</string>
-             </property>
-            </widget>
-           </item>
            <item row="4" column="0">
             <widget class="QLabel" name="lbl_height">
              <property name="text">
@@ -112,37 +170,40 @@
              </property>
             </widget>
            </item>
-           <item row="6" column="0">
-            <widget class="QLabel" name="lbl_length_2">
-             <property name="text">
-              <string>Base (m)</string>
+           <item row="0" column="1" colspan="2">
+            <widget class="QDoubleSpinBox" name="young_module_dpsn">
+             <property name="statusTip">
+              <string>Beam Young Modulus</string>
+             </property>
+             <property name="minimum">
+              <double>1.000000000000000</double>
+             </property>
+             <property name="maximum">
+              <double>99999.000000000000000</double>
+             </property>
+             <property name="singleStep">
+              <double>10.000000000000000</double>
+             </property>
+             <property name="value">
+              <double>200.000000000000000</double>
              </property>
             </widget>
            </item>
-           <item row="1" column="0">
-            <widget class="QLabel" name="lbl_length">
-             <property name="text">
-              <string>Length (m)</string>
-             </property>
-            </widget>
-           </item>
-           <item row="8" column="2">
-            <widget class="QPushButton" name="pushButton_3">
+           <item row="7" column="0">
+            <widget class="QLabel" name="lbl_inertia_moment">
              <property name="enabled">
               <bool>false</bool>
              </property>
-             <property name="font">
-              <font>
-               <pointsize>16</pointsize>
-              </font>
-             </property>
              <property name="text">
-              <string>I</string>
+              <string>Inertia (m^4)</string>
              </property>
             </widget>
            </item>
            <item row="6" column="1" colspan="2">
             <widget class="QDoubleSpinBox" name="base_dspn">
+             <property name="statusTip">
+              <string>Beam section Base</string>
+             </property>
              <property name="decimals">
               <number>4</number>
              </property>
@@ -154,16 +215,6 @@
              </property>
              <property name="value">
               <double>1.000000000000000</double>
-             </property>
-            </widget>
-           </item>
-           <item row="7" column="0">
-            <widget class="QLabel" name="lbl_inertia_moment">
-             <property name="enabled">
-              <bool>false</bool>
-             </property>
-             <property name="text">
-              <string>Inertia (m^4)</string>
              </property>
             </widget>
            </item>
@@ -184,6 +235,9 @@
            </item>
            <item row="4" column="1" colspan="2">
             <widget class="QDoubleSpinBox" name="height_dpsn">
+             <property name="statusTip">
+              <string>Beam section Height</string>
+             </property>
              <property name="decimals">
               <number>4</number>
              </property>
@@ -198,19 +252,18 @@
              </property>
             </widget>
            </item>
-           <item row="0" column="1" colspan="2">
-            <widget class="QDoubleSpinBox" name="young_module_dpsn">
-             <property name="minimum">
-              <double>1.000000000000000</double>
+           <item row="8" column="2">
+            <widget class="QPushButton" name="pushButton_3">
+             <property name="enabled">
+              <bool>false</bool>
              </property>
-             <property name="maximum">
-              <double>99999.000000000000000</double>
+             <property name="font">
+              <font>
+               <pointsize>16</pointsize>
+              </font>
              </property>
-             <property name="singleStep">
-              <double>10.000000000000000</double>
-             </property>
-             <property name="value">
-              <double>200.000000000000000</double>
+             <property name="text">
+              <string>I</string>
              </property>
             </widget>
            </item>
@@ -230,52 +283,22 @@
            <string>Supports</string>
           </property>
           <layout class="QGridLayout" name="supports_gb_gl">
-           <item row="2" column="0">
-            <widget class="QLabel" name="lbl_add_support">
-             <property name="sizePolicy">
-              <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
-               <horstretch>0</horstretch>
-               <verstretch>0</verstretch>
-              </sizepolicy>
-             </property>
-             <property name="text">
-              <string>Add Supports</string>
-             </property>
-            </widget>
-           </item>
-           <item row="0" column="0">
-            <widget class="QLabel" name="lbl_left_support">
-             <property name="sizePolicy">
-              <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
-               <horstretch>0</horstretch>
-               <verstretch>0</verstretch>
-              </sizepolicy>
-             </property>
-             <property name="text">
-              <string>Left Support</string>
-             </property>
-            </widget>
-           </item>
            <item row="3" column="0">
             <widget class="QComboBox" name="supports_combo">
+             <property name="focusPolicy">
+              <enum>Qt::StrongFocus</enum>
+             </property>
+             <property name="statusTip">
+              <string>Type support pos. then press Enter to add a Support</string>
+             </property>
              <property name="editable">
               <bool>true</bool>
              </property>
+             <property name="insertPolicy">
+              <enum>QComboBox::InsertAlphabetically</enum>
+             </property>
              <property name="duplicatesEnabled">
               <bool>false</bool>
-             </property>
-            </widget>
-           </item>
-           <item row="0" column="1">
-            <widget class="QLabel" name="lbl_right_support">
-             <property name="sizePolicy">
-              <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
-               <horstretch>0</horstretch>
-               <verstretch>0</verstretch>
-              </sizepolicy>
-             </property>
-             <property name="text">
-              <string>Right Support</string>
              </property>
             </widget>
            </item>
@@ -298,6 +321,19 @@
              </item>
             </widget>
            </item>
+           <item row="0" column="1">
+            <widget class="QLabel" name="lbl_right_support">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="text">
+              <string>Right Support</string>
+             </property>
+            </widget>
+           </item>
            <item row="1" column="1">
             <widget class="QComboBox" name="right_support_combo">
              <item>
@@ -317,13 +353,6 @@
              </item>
             </widget>
            </item>
-           <item row="4" column="0">
-            <widget class="QPushButton" name="remove_support_btn">
-             <property name="text">
-              <string>Remove Support</string>
-             </property>
-            </widget>
-           </item>
            <item row="2" column="1">
             <widget class="QLabel" name="lbl_add_support_2">
              <property name="sizePolicy">
@@ -339,6 +368,12 @@
            </item>
            <item row="3" column="1">
             <widget class="QComboBox" name="hinges_combo">
+             <property name="focusPolicy">
+              <enum>Qt::StrongFocus</enum>
+             </property>
+             <property name="statusTip">
+              <string>Type hinge pos. then press Enter to add a Hinge</string>
+             </property>
              <property name="editable">
               <bool>true</bool>
              </property>
@@ -349,8 +384,53 @@
            </item>
            <item row="4" column="1">
             <widget class="QPushButton" name="remove_hinge_btn">
+             <property name="statusTip">
+              <string>Removes selected Hinge (Ctrl + H)</string>
+             </property>
              <property name="text">
               <string>Remove Hinge</string>
+             </property>
+             <property name="shortcut">
+              <string>Ctrl+H</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="0">
+            <widget class="QLabel" name="lbl_left_support">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="text">
+              <string>Left Support</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="0">
+            <widget class="QLabel" name="lbl_add_support">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="text">
+              <string>Add Supports</string>
+             </property>
+            </widget>
+           </item>
+           <item row="4" column="0">
+            <widget class="QPushButton" name="remove_support_btn">
+             <property name="statusTip">
+              <string>Removes selected Support (Ctrl + S)</string>
+             </property>
+             <property name="text">
+              <string>Remove Support</string>
+             </property>
+             <property name="shortcut">
+              <string>Ctrl+S</string>
              </property>
             </widget>
            </item>
@@ -359,7 +439,77 @@
         </item>
        </layout>
       </item>
-      <item row="2" column="2" rowspan="2">
+      <item row="6" column="2">
+       <layout class="QHBoxLayout" name="add_remove_hl">
+        <item>
+         <widget class="QPushButton" name="add_load_btn">
+          <property name="focusPolicy">
+           <enum>Qt::WheelFocus</enum>
+          </property>
+          <property name="statusTip">
+           <string>Adds Load or Moment (Enter)</string>
+          </property>
+          <property name="text">
+           <string>Add</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="remove_load_btn">
+          <property name="focusPolicy">
+           <enum>Qt::WheelFocus</enum>
+          </property>
+          <property name="statusTip">
+           <string>Removes an item from the list  (Del)</string>
+          </property>
+          <property name="text">
+           <string>Remove</string>
+          </property>
+          <property name="shortcut">
+           <string>Del</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item row="4" column="1" rowspan="3">
+       <widget class="QTreeView" name="load_treeview">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>370</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="focusPolicy">
+         <enum>Qt::ClickFocus</enum>
+        </property>
+        <property name="statusTip">
+         <string>Beam loaded Items</string>
+        </property>
+        <property name="verticalScrollBarPolicy">
+         <enum>Qt::ScrollBarAsNeeded</enum>
+        </property>
+        <property name="horizontalScrollBarPolicy">
+         <enum>Qt::ScrollBarAlwaysOff</enum>
+        </property>
+        <property name="autoScroll">
+         <bool>true</bool>
+        </property>
+        <property name="defaultDropAction">
+         <enum>Qt::IgnoreAction</enum>
+        </property>
+        <property name="alternatingRowColors">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="2" rowspan="4">
        <widget class="QTabWidget" name="loads_tab">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
@@ -378,6 +528,20 @@
           <property name="horizontalSpacing">
            <number>0</number>
           </property>
+          <item row="2" column="0">
+           <widget class="QLabel" name="lbl_point_load_mag">
+            <property name="text">
+             <string>Load Magnitude:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="0">
+           <widget class="QLabel" name="lbl_point_load_pos">
+            <property name="text">
+             <string>Load Position: </string>
+            </property>
+           </widget>
+          </item>
           <item row="0" column="0">
            <widget class="QPushButton" name="pnt_load_up_chkbtn">
             <property name="sizePolicy">
@@ -407,6 +571,9 @@
               <underline>false</underline>
              </font>
             </property>
+            <property name="focusPolicy">
+             <enum>Qt::NoFocus</enum>
+            </property>
             <property name="text">
              <string>↑</string>
             </property>
@@ -419,6 +586,45 @@
             <attribute name="buttonGroup">
              <string notr="true">buttonGroup</string>
             </attribute>
+           </widget>
+          </item>
+          <item row="1" column="0" colspan="2">
+           <spacer name="vs_pnt_load">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>40</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item row="2" column="1">
+           <widget class="QDoubleSpinBox" name="pnt_load_mag_dpsn">
+            <property name="decimals">
+             <number>2</number>
+            </property>
+            <property name="minimum">
+             <double>0.000000000000000</double>
+            </property>
+            <property name="maximum">
+             <double>9999.000000000000000</double>
+            </property>
+            <property name="value">
+             <double>5.000000000000000</double>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="1">
+           <widget class="QDoubleSpinBox" name="pnt_load_pos_dpsn">
+            <property name="maximum">
+             <double>9999.000000000000000</double>
+            </property>
+            <property name="value">
+             <double>5.000000000000000</double>
+            </property>
            </widget>
           </item>
           <item row="0" column="1">
@@ -446,6 +652,9 @@
               <pointsize>40</pointsize>
              </font>
             </property>
+            <property name="focusPolicy">
+             <enum>Qt::NoFocus</enum>
+            </property>
             <property name="text">
              <string>↓</string>
             </property>
@@ -463,59 +672,6 @@
             </attribute>
            </widget>
           </item>
-          <item row="2" column="0">
-           <widget class="QLabel" name="lbl_point_load_mag">
-            <property name="text">
-             <string>Load Magnitude:</string>
-            </property>
-           </widget>
-          </item>
-          <item row="2" column="1">
-           <widget class="QDoubleSpinBox" name="pnt_load_mag_dpsn">
-            <property name="decimals">
-             <number>2</number>
-            </property>
-            <property name="minimum">
-             <double>0.000000000000000</double>
-            </property>
-            <property name="maximum">
-             <double>9999.000000000000000</double>
-            </property>
-            <property name="value">
-             <double>5.000000000000000</double>
-            </property>
-           </widget>
-          </item>
-          <item row="3" column="0">
-           <widget class="QLabel" name="lbl_point_load_pos">
-            <property name="text">
-             <string>Load Position: </string>
-            </property>
-           </widget>
-          </item>
-          <item row="1" column="0" colspan="2">
-           <spacer name="vs_pnt_load">
-            <property name="orientation">
-             <enum>Qt::Vertical</enum>
-            </property>
-            <property name="sizeHint" stdset="0">
-             <size>
-              <width>20</width>
-              <height>40</height>
-             </size>
-            </property>
-           </spacer>
-          </item>
-          <item row="3" column="1">
-           <widget class="QDoubleSpinBox" name="pnt_load_pos_dpsn">
-            <property name="maximum">
-             <double>9999.000000000000000</double>
-            </property>
-            <property name="value">
-             <double>5.000000000000000</double>
-            </property>
-           </widget>
-          </item>
          </layout>
         </widget>
         <widget class="QWidget" name="moment_tab_widget">
@@ -527,7 +683,11 @@
            <number>0</number>
           </property>
           <item row="4" column="1">
-           <widget class="QDoubleSpinBox" name="moment_pos_dpsn"/>
+           <widget class="QDoubleSpinBox" name="moment_pos_dpsn">
+            <property name="value">
+             <double>7.000000000000000</double>
+            </property>
+           </widget>
           </item>
           <item row="3" column="0">
            <widget class="QLabel" name="lbl_moment_pos">
@@ -557,7 +717,11 @@
            </spacer>
           </item>
           <item row="3" column="1">
-           <widget class="QDoubleSpinBox" name="moment_mag_dpsn"/>
+           <widget class="QDoubleSpinBox" name="moment_mag_dpsn">
+            <property name="value">
+             <double>7.000000000000000</double>
+            </property>
+           </widget>
           </item>
           <item row="0" column="0">
            <widget class="QPushButton" name="moment_ccw_chkbtn">
@@ -569,8 +733,8 @@
             </property>
             <property name="minimumSize">
              <size>
-              <width>100</width>
-              <height>100</height>
+              <width>50</width>
+              <height>50</height>
              </size>
             </property>
             <property name="maximumSize">
@@ -585,6 +749,12 @@
               <weight>50</weight>
               <bold>false</bold>
              </font>
+            </property>
+            <property name="focusPolicy">
+             <enum>Qt::NoFocus</enum>
+            </property>
+            <property name="statusTip">
+             <string/>
             </property>
             <property name="text">
              <string>↺</string>
@@ -622,6 +792,12 @@
               <pointsize>50</pointsize>
              </font>
             </property>
+            <property name="focusPolicy">
+             <enum>Qt::NoFocus</enum>
+            </property>
+            <property name="statusTip">
+             <string/>
+            </property>
             <property name="text">
              <string>↻</string>
             </property>
@@ -640,7 +816,7 @@
         </widget>
         <widget class="QWidget" name="distr_load_tab_widget">
          <attribute name="title">
-          <string>Distributed Load</string>
+          <string>Distr. Load</string>
          </attribute>
          <layout class="QGridLayout" name="distr_load_tab_widget_gl">
           <property name="horizontalSpacing">
@@ -670,6 +846,9 @@
              <font>
               <pointsize>40</pointsize>
              </font>
+            </property>
+            <property name="focusPolicy">
+             <enum>Qt::NoFocus</enum>
             </property>
             <property name="text">
              <string>↓</string>
@@ -709,6 +888,9 @@
              <font>
               <pointsize>40</pointsize>
              </font>
+            </property>
+            <property name="focusPolicy">
+             <enum>Qt::NoFocus</enum>
             </property>
             <property name="text">
              <string>↑</string>
@@ -761,6 +943,9 @@
           </item>
           <item row="3" column="1">
            <widget class="QDoubleSpinBox" name="distr_load_start_pos">
+            <property name="focusPolicy">
+             <enum>Qt::WheelFocus</enum>
+            </property>
             <property name="value">
              <double>1.000000000000000</double>
             </property>
@@ -797,46 +982,6 @@
         </widget>
        </widget>
       </item>
-      <item row="2" column="1">
-       <layout class="QGridLayout" name="gridLayout">
-        <item row="0" column="1">
-         <widget class="QLabel" name="message_lbl">
-          <property name="text">
-           <string>Ready</string>
-          </property>
-         </widget>
-        </item>
-        <item row="0" column="0">
-         <widget class="QLabel" name="lbl_message">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="text">
-           <string>Message:</string>
-          </property>
-         </widget>
-        </item>
-       </layout>
-      </item>
-      <item row="3" column="1" rowspan="2">
-       <widget class="QTreeView" name="load_treeview">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="minimumSize">
-         <size>
-          <width>500</width>
-          <height>0</height>
-         </size>
-        </property>
-       </widget>
-      </item>
      </layout>
     </item>
    </layout>
@@ -846,7 +991,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1419</width>
+     <width>1239</width>
      <height>21</height>
     </rect>
    </property>
@@ -854,14 +999,28 @@
     <property name="title">
      <string>File</string>
     </property>
+    <addaction name="actionQuit"/>
+   </widget>
+   <widget class="QMenu" name="menuStress_Plot">
+    <property name="title">
+     <string>Stress Plot</string>
+    </property>
+    <addaction name="actionDisplay_Stress_Value"/>
+   </widget>
+   <widget class="QMenu" name="menuAbout">
+    <property name="title">
+     <string>About</string>
+    </property>
    </widget>
    <addaction name="menuFile"/>
+   <addaction name="menuStress_Plot"/>
+   <addaction name="menuAbout"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
   <widget class="QDockWidget" name="plot_dock">
    <property name="minimumSize">
     <size>
-     <width>400</width>
+     <width>350</width>
      <height>58</height>
     </size>
    </property>
@@ -903,32 +1062,121 @@
    </attribute>
    <widget class="QWidget" name="equations_dock_contents">
     <layout class="QVBoxLayout" name="equations_dock_contents_vl">
+     <property name="margin">
+      <number>0</number>
+     </property>
      <item>
       <widget class="QTextBrowser" name="equations_lbl">
        <property name="font">
         <font>
-         <family>Times New Roman</family>
-         <pointsize>12</pointsize>
+         <family>Cambria</family>
+         <pointsize>13</pointsize>
          <weight>50</weight>
          <italic>false</italic>
          <bold>false</bold>
         </font>
        </property>
+       <property name="focusPolicy">
+        <enum>Qt::ClickFocus</enum>
+       </property>
        <property name="html">
         <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Times New Roman'; font-size:12pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:14pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Cambria'; font-size:13pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Times New Roman'; font-size:14pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
        </property>
       </widget>
      </item>
     </layout>
    </widget>
   </widget>
+  <widget class="QToolBar" name="tool_bar">
+   <property name="windowTitle">
+    <string>toolBar</string>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+  </widget>
+  <action name="actionDisplay_Stress_Value">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Display Stress Value</string>
+   </property>
+   <property name="shortcut">
+    <string>D</string>
+   </property>
+  </action>
+  <action name="actionQuit">
+   <property name="text">
+    <string>Quit</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+W</string>
+   </property>
+  </action>
  </widget>
+ <tabstops>
+  <tabstop>young_module_dpsn</tabstop>
+  <tabstop>length_dspn</tabstop>
+  <tabstop>height_dpsn</tabstop>
+  <tabstop>base_dspn</tabstop>
+  <tabstop>inertia_moment_dspn</tabstop>
+  <tabstop>pushButton_2</tabstop>
+  <tabstop>pushButton</tabstop>
+  <tabstop>pushButton_3</tabstop>
+  <tabstop>left_support_combo</tabstop>
+  <tabstop>right_support_combo</tabstop>
+  <tabstop>calculate_beam</tabstop>
+  <tabstop>supports_combo</tabstop>
+  <tabstop>remove_support_btn</tabstop>
+  <tabstop>hinges_combo</tabstop>
+  <tabstop>remove_hinge_btn</tabstop>
+  <tabstop>loads_tab</tabstop>
+  <tabstop>pnt_load_up_chkbtn</tabstop>
+  <tabstop>pnt_load_down_chkbtn</tabstop>
+  <tabstop>pnt_load_mag_dpsn</tabstop>
+  <tabstop>pnt_load_pos_dpsn</tabstop>
+  <tabstop>moment_ccw_chkbtn</tabstop>
+  <tabstop>moment_cw_chkbtn</tabstop>
+  <tabstop>moment_mag_dpsn</tabstop>
+  <tabstop>moment_pos_dpsn</tabstop>
+  <tabstop>up_distr_load_chkbtn</tabstop>
+  <tabstop>down_distr_load_chkbtn</tabstop>
+  <tabstop>distr_load_start_mag</tabstop>
+  <tabstop>distr_load_start_pos</tabstop>
+  <tabstop>distr_load_end_mag</tabstop>
+  <tabstop>distr_load_end_pos</tabstop>
+  <tabstop>add_load_btn</tabstop>
+  <tabstop>remove_load_btn</tabstop>
+  <tabstop>load_treeview</tabstop>
+  <tabstop>equations_lbl</tabstop>
+ </tabstops>
  <resources/>
  <connections/>
+ <designerdata>
+  <property name="gridDeltaX">
+   <number>10</number>
+  </property>
+  <property name="gridDeltaY">
+   <number>10</number>
+  </property>
+  <property name="gridSnapX">
+   <bool>true</bool>
+  </property>
+  <property name="gridSnapY">
+   <bool>true</bool>
+  </property>
+  <property name="gridVisible">
+   <bool>true</bool>
+  </property>
+ </designerdata>
  <buttongroups>
   <buttongroup name="buttonGroup"/>
  </buttongroups>

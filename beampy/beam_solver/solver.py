@@ -2,8 +2,8 @@ import matplotlib.pyplot as plt
 import numpy as np
 import sympy as sp
 
-from beam_solver import beam_exceptions
-from beam_solver.definitions import *
+from beampy.beam_solver import beam_exceptions
+from beampy.beam_solver.definitions import *
 
 x, C1, C2, C3, C4, E, I = sp.symbols('x, C1, C2, C3, C4, E, I')
 
@@ -52,7 +52,6 @@ class MacaulayBracket:
 
     def __str__(self):
         return None
-        return "%f <x - %f>^%d" % (self.w, self.pos, self.n)
 
 
 class Beam:
@@ -113,7 +112,7 @@ class Beam:
 
     @staticmethod
     def calculateInertia(base, height):
-        return (1.0 / 12.0 * base * height ** 3)
+        return 1.0 / 12.0 * base * height ** 3
 
     @property
     def young_modulus(self):
@@ -195,13 +194,13 @@ class Beam:
             raise beam_exceptions.OutOfBounds(
                 "Support must be lower than beam length")
 
-        if (self.boundary[0] is simply_support and 0 in support_list):
+        if self.boundary[0] is simply_support and 0 in support_list:
             raise beam_exceptions.SuperImposedSupports
         if self.boundary[1] is simply_support and self.length in support_list:
             raise beam_exceptions.SuperImposedSupports
-        if (self.boundary[0] is fixed_support and 0 in support_list):
+        if self.boundary[0] is fixed_support and 0 in support_list:
             raise beam_exceptions.SuperImposedSupports
-        if (self.boundary[1] is fixed_support and self.length in support_list):
+        if self.boundary[1] is fixed_support and self.length in support_list:
             raise beam_exceptions.SuperImposedSupports
 
         self.__supports = list(set(support_list))
@@ -218,18 +217,21 @@ class Beam:
 
             return
 
-        if not min(hinge_list) >= 0: raise beam_exceptions.OutOfBounds("Hinge must be greater than zero")
-        if not max(hinge_list) <= self.length: raise beam_exceptions.OutOfBounds("Hinge must be lower than beam length")
+        if not min(hinge_list) >= 0:
+            raise beam_exceptions.OutOfBounds("Hinge must be greater than zero")
+        if not max(hinge_list) <= self.length:
+            raise beam_exceptions.OutOfBounds("Hinge must be lower than beam length")
 
-        if (self.boundary[0] is simply_support and 0 in hinge_list):  raise beam_exceptions.SuperImposedSupports
-        if (self.boundary[
-                1] is simply_support and self.length in hinge_list):  raise beam_exceptions.SuperImposedSupports
-        if (self.boundary[0] is fixed_support and 0 in hinge_list):  raise beam_exceptions.SuperImposedSupports
-        if (self.boundary[
-                1] is fixed_support and self.length in hinge_list):  raise beam_exceptions.SuperImposedSupports
+        if self.boundary[0] is simply_support and 0 in hinge_list:
+            raise beam_exceptions.SuperImposedSupports
+        if self.boundary[1] is simply_support and self.length in hinge_list:
+            raise beam_exceptions.SuperImposedSupports
+        if self.boundary[0] is fixed_support and 0 in hinge_list:
+            raise beam_exceptions.SuperImposedSupports
+        if self.boundary[1] is fixed_support and self.length in hinge_list:
+            raise beam_exceptions.SuperImposedSupports
 
         self.__hinges = list(set(hinge_list))
-        pass
 
     def setBoundary(self, left_support_type: str, right_support_type: str) -> None:
         """
@@ -246,20 +248,14 @@ class Beam:
         if not isinstance(right_support_type, SupportObject): raise beam_exceptions.InvalidInput(
             "Invalid right support")
 
-        #
-        # if (self.boundary[0] is simply_support and 0 in support_list):  raise beam_exceptions.SuperImposedSupports
-        # if (self.boundary[1] is simply_support and self.beam_length in support_list):  raise beam_exceptions.SuperImposedSupports
-        # if (self.boundary[0] is fixed_support and 0 in support_list):  raise beam_exceptions.SuperImposedSupports
-        # if (self.boundary[1] is fixed_support and self.beam_length in support_list):  raise beam_exceptions.SuperImposedSupports
-        #
-
-
-        if (self.boundary[0] is simply_support and 0 in support_list):  support_list.remove(0)
-        if (self.boundary[
-                1] is simply_support and self.length in support_list):  support_list.remove(0)
-        if (self.boundary[0] is fixed_support and 0 in support_list):  support_list.remove(0)
-        if (self.boundary[
-                1] is fixed_support and self.length in support_list):  support_list.remove(0)
+        if self.boundary[0] is simply_support and 0 in support_list:
+            support_list.remove(0)
+        if self.boundary[1] is simply_support and self.length in support_list:
+            support_list.remove(0)
+        if self.boundary[0] is fixed_support and 0 in support_list:
+            support_list.remove(0)
+        if self.boundary[1] is fixed_support and self.length in support_list:
+            support_list.remove(0)
 
         self.supports = support_list
         self.boundary = [left_support_type, right_support_type]
@@ -271,8 +267,10 @@ class Beam:
         :param distance:
         :return:
         """
-        if not distance >= 0: raise beam_exceptions.OutOfBounds("Load out of boundaries")
-        if not distance <= self.length: raise beam_exceptions.OutOfBounds("Load out of boundaries")
+        if not distance >= 0:
+            raise beam_exceptions.OutOfBounds("Load out of boundaries")
+        if not distance <= self.length:
+            raise beam_exceptions.OutOfBounds("Load out of boundaries")
 
         self.loads.append(["moment", magnitude, distance])
 
@@ -292,13 +290,16 @@ class Beam:
         :return:
         """
 
-        if not distance_1 >= 0: raise beam_exceptions.OutOfBounds("Load out of boundaries")
-        if not distance_2 > distance_1: raise beam_exceptions.InvalidInput(
-            "End load position must be > than star load position")
-        if not distance_2 <= self.length: raise beam_exceptions.OutOfBounds("Load out of boundaries")
-        if not magnitude_1 * magnitude_2 >= 0: raise beam_exceptions.InvalidInput("Both magnitudes must have same sign")
-        if not abs(magnitude_1) + abs(magnitude_2) > 0: raise beam_exceptions.InvalidInput(
-            "At least one magnitude must be greater than zero")
+        if not distance_1 >= 0:
+            raise beam_exceptions.OutOfBounds("Load out of boundaries")
+        if not distance_2 > distance_1:
+            raise beam_exceptions.InvalidInput("End load position must be > than star load position")
+        if not distance_2 <= self.length:
+            raise beam_exceptions.OutOfBounds("Load out of boundaries")
+        if not magnitude_1 * magnitude_2 >= 0:
+            raise beam_exceptions.InvalidInput("Both magnitudes must have same sign")
+        if not abs(magnitude_1) + abs(magnitude_2) > 0:
+            raise beam_exceptions.InvalidInput("At least one magnitude must be greater than zero")
 
         self.loads.append(["dist_load", magnitude_1, distance_1, magnitude_2, distance_2])
 
@@ -424,12 +425,12 @@ class Beam:
         :param sym: symbolic
         :return: expression
         """
-        sum = 0
+        eval_sum = 0
 
         for bracket in bracket_list:
-            sum += bracket.eval(position, sym)
+            eval_sum += bracket.eval(position, sym)
 
-        return sum
+        return eval_sum
 
     def __findSections(self):
         """
@@ -552,7 +553,7 @@ class Beam:
             self.disp_boundary.append([self.length, 0])
             self.theta_boundary.append([self.length, 0])
 
-        ## Restrictions:
+        # Restrictions:
 
         for index in range(len(self.supports)):
             self.disp_boundary.append([self.supports[index], 0])
@@ -572,19 +573,19 @@ class Beam:
             else:
                 equations_string += ("%.2f < x < %.2f\n\n" % (sections[index], sections[index + 1]))
 
-
-            V = self.V_equations[index].evalf(n= 3)
-            M = self.M_equations[index].evalf(n= 3)
-            theta = self.theta_equations[index].evalf(n= 3)
-            v = self.disp_equations[index].evalf(n= 3)
-
+            V = self.V_equations[index].evalf(n=3)
+            M = self.M_equations[index].evalf(n=3)
+            theta = self.theta_equations[index].evalf(n=3)
+            v = self.disp_equations[index].evalf(n=3)
 
             equations_string += ("V = %s \nM = %s\nEI*theta = %s\nEI*v = %s\n\n\n" % (V, M, theta, v))
 
         equations_string = equations_string.replace("**", "^")
+        equations_string = equations_string.replace("*", "")
+        # equations_string = equations_string.replace("-", "—")
+
+
         return equations_string
-
-
 
     def solve(self):
 
@@ -680,8 +681,8 @@ class Beam:
     def plotBendingStress(self, fig=None, ax=None):
         h_vector = np.linspace(-self.height / 2, self.height / 2, 200)
 
-        if not self.calculated_beam: raise beam_exceptions.BeamNotCalculated(
-            "Beam has not been calculated or has been modified")
+        if not self.calculated_beam:
+            raise beam_exceptions.BeamNotCalculated("Beam has not been calculated or has been modified")
 
         if not ax:
             figure_beam, ax_beam = plt.subplots()
@@ -698,8 +699,8 @@ class Beam:
         proxy = [plt.Rectangle((0, 0), 1, 1, fc=im.collections[-10].get_facecolor()[0]),
                  plt.Rectangle((0, 0), 1, 1, fc=im.collections[10].get_facecolor()[0])]
 
-        ax_beam.legend(proxy, ["Maximum: %f" % np.amax(self.bending_stress),
-                               "Minimum: %f" % np.amin(self.bending_stress)])
+        ax_beam.legend(proxy, ["Max: %.1f Pa" % np.amax(self.bending_stress),
+                               "Min: %.1f Pa" % np.amin(self.bending_stress)], fancybox=True, shadow=True)
 
         # ax_beam.axis("equal")
         # ax_beam.autoscale(enable=False, axis='y', tight=False)
@@ -737,8 +738,8 @@ class Beam:
         proxy = [plt.Rectangle((0, 0), 1, 1, fc=im.collections[-10].get_facecolor()[0]),
                  plt.Rectangle((0, 0), 1, 1, fc=im.collections[10].get_facecolor()[0])]
 
-        ax_beam.legend(proxy, ["Maximum: %f" % np.amax(self.shear_stress),
-                               "Minimum: %f" % np.amin(self.shear_stress)])
+        ax_beam.legend(proxy, ["Max: %.1f Pa" % np.amax(self.shear_stress),
+                               "Min: %.1f Pa" % np.amin(self.shear_stress)], fancybox=True, shadow=True)
 
         # ax_beam.axis("equal")
         # ax_beam.autoscale(enable=True, axis='x', tight=True)
@@ -775,8 +776,8 @@ class Beam:
         proxy = [plt.Rectangle((0, 0), 1, 1, fc=im.collections[-10].get_facecolor()[0]),
                  plt.Rectangle((0, 0), 1, 1, fc=im.collections[10].get_facecolor()[0])]
 
-        ax_beam.legend(proxy, ["Maximum: %f" % np.amax(radius),
-                               "Minimum: %f" % np.amin(radius)])
+        ax_beam.legend(proxy, ["Max: %.1f Pa" % np.amax(radius),
+                               "Min: %.1f Pa" % np.amin(radius)], fancybox=True, shadow=True)
         #
         # ax_beam.axis("equal")
         # ax_beam.autoscale(enable=True, axis='x', tight=True)
@@ -800,8 +801,8 @@ class Beam:
 
         :return:
         """
-        if not self.calculated_beam: raise beam_exceptions.BeamNotCalculated(
-            "Beam has not been calculated or has been modified")
+        if not self.calculated_beam:
+            raise beam_exceptions.BeamNotCalculated("Beam has not been calculated or has been modified")
 
         if not ax:
             fig, (ax1, ax2, ax3, ax4) = plt.subplots(4, 1, sharex=True)
@@ -813,22 +814,22 @@ class Beam:
             ax3 = ax[2]
             ax4 = ax[3]
 
-        ax1.fill_between(self.__beam_span, 0, self.__V_values, hatch="//", facecolor="none")
+        ax1.fill_between(self.__beam_span, 0, self.__V_values, hatch="//", facecolor="none", linewidth=2)
         ax1.set_ylabel("V")
         # ax1.set_title("Esforço Cortante")
         ax1.grid()
 
-        ax2.fill_between(self.__beam_span, 0, self.__M_values, hatch="//", facecolor="none")
+        ax2.fill_between(self.__beam_span, 0, self.__M_values, hatch="//", facecolor="none", linewidth=2)
         ax2.set_ylabel("M")
         # ax2.set_title("Momento Fletor")
         ax2.grid()
 
-        ax3.fill_between(self.__beam_span, 0, self.__theta_values, hatch="//", facecolor="none")
+        ax3.fill_between(self.__beam_span, 0, self.__theta_values, hatch="//", facecolor="none", linewidth=2)
         ax3.set_ylabel("Theta")
         # ax3.set_title("Angulo")
         ax3.grid()
 
-        ax4.fill_between(self.__beam_span, 0, self.__disp_values, hatch="//", facecolor="none")
+        ax4.fill_between(self.__beam_span, 0, self.__disp_values, hatch="//", facecolor="none", linewidth=2)
         ax4.set_xlabel("x")
         ax4.set_ylabel("v")
         # ax4.set_title("Deslocamento")
@@ -841,7 +842,6 @@ class Beam:
 
 
 if __name__ == "__main__":
-
     a = 3
     b = 1
     L = a + b
@@ -857,7 +857,8 @@ if __name__ == "__main__":
 
     beam.solve()
     print(beam.diagramEquations())
-    # beam.plotBendingStress()
+    # beam.plotDiagrams()
+    beam.plotBendingStress()
     # # beam.plotShearStress()
     # # beam.plotIsoChromatic()
     #

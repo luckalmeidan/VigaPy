@@ -4,4 +4,3 @@ class SupportObject:
 fixed_support = SupportObject()
 simply_support = SupportObject()
 free_support = SupportObject()
-
