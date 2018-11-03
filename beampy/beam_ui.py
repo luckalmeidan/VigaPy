@@ -1,24 +1,37 @@
-from PyQt4 import QtCore, QtGui
-import pyui_creator
 import sys
-from beam_solver import solver
-from beam_solver.definitions import *
 
 import matplotlib.pyplot as plt
+from PyQt4 import QtCore, QtGui
 from matplotlib.backends.backend_qt4agg import FigureCanvasQTAgg as FigureCanvas
 from matplotlib.backends.backend_qt4agg import NavigationToolbar2QT as NavigationToolbar
-from load_model import LoadModel
-from load_model import LoadNode
 
-pyui_creator.updateApplication()
+import beampy.pyui_creator
+from beampy.beam_display import BeamView
+from beampy.beam_solver import solver
+from beampy.beam_solver.definitions import *
+from beampy.load_model import LoadModel
+from beampy.load_model import LoadNode
 
-import beamPyUI
+beampy.pyui_creator.updateApplication()
+
+from beampy import beamPyUI
 
 
 class BeamApp(QtGui.QMainWindow, beamPyUI.Ui_MainWindow):
     def __init__(self, parent=None):
 
         super(BeamApp, self).__init__(parent)
+        app_icon = QtGui.QIcon()
+
+        app_icon.addFile('C:\\Users\Lucas\\PycharmProjects\\BeamProject\\beampy\\imgs\\beampy_icon2.ico',
+                         QtCore.QSize(16, 16))
+        app_icon.addFile('C:\\Users\Lucas\\PycharmProjects\\BeamProject\\beampy\\imgs\\beampy_icon2.ico',
+                         QtCore.QSize(24, 24))
+
+        app_icon.addFile('C:\\Users\Lucas\\PycharmProjects\\BeamProject\\beampy\\imgs\\beampy_icon2.ico',
+                         QtCore.QSize(32, 32))
+
+        self.setWindowIcon(app_icon)
 
         self.ui = beamPyUI.Ui_MainWindow()
         self.ui.setupUi(self)
@@ -26,7 +39,7 @@ class BeamApp(QtGui.QMainWindow, beamPyUI.Ui_MainWindow):
 
         self.model = None
         self.root_node = LoadNode("RootNode")
-        self.model = LoadModel(self.root_node)
+        self.model = LoadModel(self.root_node, beam_ui=self)
 
         self.ui.load_treeview.setModel(self.model)
 
@@ -41,7 +54,12 @@ class BeamApp(QtGui.QMainWindow, beamPyUI.Ui_MainWindow):
         self.__beam_figure, (self.ax_bending, self.ax_shear, self.ax_max_shear) = plt.subplots(3, 1, sharex=True)
         self.beam_canvas = FigureCanvas(self.__beam_figure)
         self.beam_canvas_toolbar = NavigationToolbar(self.beam_canvas, self, coordinates=True)
-        plt.subplots_adjust(top=.98, bottom=.06, right=.98, left=.04, hspace=0.27)
+
+        self.ax_bending.set_ylabel("Bending")
+        self.ax_max_shear.set_ylabel("Max Shear")
+        self.ax_shear.set_ylabel("Shear")
+
+        plt.subplots_adjust(top=.97, bottom=.06, right=.98, left=.07, hspace=0.27)
 
         self.ui.beam_draw_widget_vl.addWidget(self.beam_canvas)
         self.ui.beam_draw_widget_vl.addWidget(self.beam_canvas_toolbar)
@@ -50,18 +68,43 @@ class BeamApp(QtGui.QMainWindow, beamPyUI.Ui_MainWindow):
         self.__plot_figure.set_facecolor('none')
         self.ui.length_dspn.valueChanged.connect(self.__setLoadPosValidators)
         self.ui.distr_load_start_pos.valueChanged.connect(self.__setDistrEndPosValidator)
+        self.ui.actionQuit.triggered.connect(self.quitSoftware)
+
         # self.ui.height_dpsn.valueChanged.connect(self.__setNeutralLineValidator)
 
         # Tabifying tecplot
         self.tabifyDockWidget(self.ui.equations_dock, self.ui.plot_dock)
         self.ui.plot_dock.raise_()
 
-
         self.ui.supports_combo.setValidator(QtGui.QDoubleValidator())
-        
+
+        self.beam_view = BeamView()
+        self.ui.beam_widget_vl.addWidget(self.beam_view)
+
+        self.ui.load_treeview.header().setResizeMode(QtGui.QHeaderView.Stretch)
+        self.ui.load_treeview.setColumnWidth(0, 30)
+
+        self.updateBeam()
+
+        # self.ui.load_treeview.selectionChanged.connect(self.close)
+        # self.model.layoutChanged.connect(self.updateBeam)
         self.__setConnectFunctions()
         self.__setLoadPosValidators()
+
+    def quitSoftware(self):
+        sys.exit()
+
+
+
         # self.__setNeutralLineValidator()
+
+    def updateBeam(self):
+
+        self.beam_view.beam_length = self.ui.length_dspn.value()
+
+        left_support, right_support, support_list, hinge_list = self.getSupports()
+
+        self.beam_view.updateView(left_support, right_support, support_list, hinge_list, self.root_node.children)
 
     def __setConnectFunctions(self):
         self.ui.calculate_beam.clicked.connect(self.calculateButton)
@@ -70,6 +113,30 @@ class BeamApp(QtGui.QMainWindow, beamPyUI.Ui_MainWindow):
         self.ui.remove_load_btn.clicked.connect(self.removeLoadItem)
         self.ui.add_load_btn.clicked.connect(self.addLoadItem)
         self.ui.load_treeview.clicked.connect(self.__setSelection)
+        self.ui.length_dspn.valueChanged.connect(self.updateBeam)
+
+        self.ui.left_support_combo.currentIndexChanged.connect(self.updateBeam)
+        self.ui.right_support_combo.currentIndexChanged.connect(self.updateBeam)
+        self.ui.supports_combo.currentIndexChanged.connect(self.updateBeam)
+        self.ui.hinges_combo.currentIndexChanged.connect(self.updateBeam)
+
+        self.ui.actionDisplay_Stress_Value.toggled.connect(self.setDisplayStressValue)
+
+    def setDisplayStressValue(self):
+        if self.ui.actionDisplay_Stress_Value.isChecked():
+            visibility = True
+
+
+        elif not self.ui.actionDisplay_Stress_Value.isChecked():
+            visibility = False
+
+        try:
+            for ax in (self.ax_bending, self.ax_shear, self.ax_max_shear):
+                ax.get_legend().set_visible(visibility)
+        except AttributeError:
+            pass
+
+        self.beam_canvas.draw()
 
     def __setLoadPosValidators(self):
         self.ui.moment_pos_dpsn.setMaximum(self.ui.length_dspn.value())
@@ -102,7 +169,7 @@ class BeamApp(QtGui.QMainWindow, beamPyUI.Ui_MainWindow):
 
         pass
 
-    def setSupports(self):
+    def getSupports(self):
         if self.ui.left_support_combo.currentText() == "Simply":
             left_support = simply_support
 
@@ -129,33 +196,46 @@ class BeamApp(QtGui.QMainWindow, beamPyUI.Ui_MainWindow):
             assert False, "Something wrong in support definition"
             pass
 
+        support_list = self.getCommaFixedListCombo(self.ui.supports_combo, rule=self.ui.length_dspn.value())
+
+        hinge_list = self.getCommaFixedListCombo(self.ui.hinges_combo, rule=self.ui.length_dspn.value())
+
+        return left_support, right_support, support_list, hinge_list
+
+    @staticmethod
+    def getCommaFixedListCombo(combo, rule=None):
+
+        if rule:
+            fixed_list = [(float(combo.itemText(i).replace(",", ".")))
+                          for i in range(combo.count()) if
+                          float(combo.itemText(i).replace(",", ".")) <= rule]
+        else:
+            fixed_list = [(float(combo.itemText(i).replace(",", ".")))
+                          for i in range(combo.count()) if
+                          float(combo.itemText(i).replace(",", "."))]
+
+        return fixed_list
+
+    def setSupports(self):
+        left_support, right_support, support_list, hinge_list = self.getSupports()
+
         self.beam.setBoundary(left_support, right_support)
-
-        support_list = []
-        support_list = [(float(self.ui.supports_combo.itemText(i)))
-                        for i in range(self.ui.supports_combo.count()) if
-                        float(self.ui.supports_combo.itemText(i)) <= self.ui.length_dspn.value()]
-
         self.beam.supports = support_list
-
-        hinge_list = []
-        hinge_list = [(float(self.ui.hinges_combo.itemText(i)))
-                      for i in range(self.ui.hinges_combo.count()) if
-                      float(self.ui.hinges_combo.itemText(i)) <= self.ui.length_dspn.value()]
-
         self.beam.hinges = hinge_list
 
     def removeSupport(self):
+        self.beam.length = self.ui.length_dspn.value()
+
         self.ui.supports_combo.removeItem(self.ui.supports_combo.currentIndex())
-        support_list = [float(self.ui.supports_combo.itemText(i))
-                        for i in range(self.ui.supports_combo.count())]
+        support_list = self.getCommaFixedListCombo(self.ui.supports_combo, rule=self.ui.length_dspn.value())
 
         self.beam.supports = support_list
 
     def removeHinge(self):
+        self.beam.length = self.ui.length_dspn.value()
+
         self.ui.hinges_combo.removeItem(self.ui.hinges_combo.currentIndex())
-        hinge_list = [float(self.ui.hinges_combo.itemText(i))
-                      for i in range(self.ui.hinges_combo.count())]
+        hinge_list = self.getCommaFixedListCombo(self.ui.hinges_combo, rule=self.ui.length_dspn.value())
 
         self.beam.supports = hinge_list
 
@@ -163,20 +243,27 @@ class BeamApp(QtGui.QMainWindow, beamPyUI.Ui_MainWindow):
         if self.model.rowCount(self.ui.load_treeview.rootIndex()) == 0:
             return
 
+        index = self.ui.load_treeview.currentIndex().row()
+
+        if index == self.model.rowCount(
+                self.ui.load_treeview.rootIndex()) - 1:
+            index = index - 1
+
         self.load_selected.parent().removeChild(self.load_selected.row())
-        self.model = LoadModel(self.root_node)
+        self.model = LoadModel(self.root_node, beam_ui=self)
         self.ui.load_treeview.setModel(self.model)
 
         try:
-            self.ui.load_treeview.setCurrentIndex(self.model.index(self.model.rowCount(
-                self.ui.load_treeview.rootIndex()) - 1, 0, self.ui.load_treeview.rootIndex()))
+
+            self.ui.load_treeview.setCurrentIndex(self.model.index(index, 0, self.ui.load_treeview.rootIndex()))
+            self.ui.load_treeview.setCurrentIndex(self.model.index(index, 0, self.ui.load_treeview.rootIndex()))
 
             self.__setSelection(self.ui.load_treeview.currentIndex(), old=None)
 
         except IndexError:
             pass
 
-        pass
+        self.updateBeam()
 
     def addLoadItem(self):
 
@@ -191,12 +278,11 @@ class BeamApp(QtGui.QMainWindow, beamPyUI.Ui_MainWindow):
             if self.ui.pnt_load_down_chkbtn.isChecked():
                 magnitude = -magnitude
 
-
             if magnitude == 0:
                 self.ui.message_lbl.setText("Magnitude must be greater than zero")
                 return
 
-            LoadNode("Point Load", magnitude, self.ui.pnt_load_pos_dpsn.value(), parent=self.root_node)
+            LoadNode("P. Load", magnitude, self.ui.pnt_load_pos_dpsn.value(), parent=self.root_node)
 
         if self.ui.loads_tab.currentIndex() == 1:
             assert (
@@ -232,16 +318,16 @@ class BeamApp(QtGui.QMainWindow, beamPyUI.Ui_MainWindow):
                 self.ui.message_lbl.setText("One magnitude must be greater than zero")
                 return
 
-
-            LoadNode("Distr. Load", magnitude_1, self.ui.distr_load_start_pos.value(), magnitude_2,
+            LoadNode("D. Load", magnitude_1, self.ui.distr_load_start_pos.value(), magnitude_2,
                      self.ui.distr_load_end_pos.value(), parent=self.root_node)
 
-        self.model = LoadModel(self.root_node)
+        self.model = LoadModel(self.root_node, beam_ui=self)
         self.ui.load_treeview.setModel(self.model)
 
         self.ui.load_treeview.setCurrentIndex(self.model.index(self.model.rowCount(
             self.ui.load_treeview.rootIndex()) - 1, 0, self.ui.load_treeview.rootIndex()))
 
+        self.updateBeam()
         self.__setSelection(self.ui.load_treeview.currentIndex(), old=None)
 
     def defineLoads(self):
@@ -249,25 +335,32 @@ class BeamApp(QtGui.QMainWindow, beamPyUI.Ui_MainWindow):
 
         for load in self.root_node.children:
             if load.pos_1 <= self.ui.length_dspn.value():
-                if load.load_type == "Point Load":
+                if load.load_type == "P. Load":
                     self.beam.applyPointLoad(load.load_1, load.pos_1)
 
                 elif load.load_type == "Moment":
                     self.beam.applyMoment(load.load_1, load.pos_1)
 
-                elif load.load_type == "Distr. Load":
+                elif load.load_type == "D. Load":
 
                     if load.pos_2 <= self.ui.length_dspn.value():
                         self.beam.applyDistLoad(load.load_1, load.pos_1, load.load_2, load.pos_2)
                     else:
                         print("some loads were not applied due to out of bounds")
 
-                        ### TOO UGLY
-
-
-
             else:
                 print("some loads were not applied due to out of bounds")
+
+    def keyPressEvent(self, event):
+        if event.key() == QtCore.Qt.Key_Enter or event.key() == QtCore.Qt.Key_Return:
+
+            if any(item.hasFocus() for item in self.ui.pnt_load_tab_widget.children() if
+                   isinstance(item, QtGui.QDoubleSpinBox)) \
+                    or any(item.hasFocus() for item in self.ui.moment_tab_widget.children()
+                           if isinstance(item, QtGui.QDoubleSpinBox)) \
+                    or any(item.hasFocus() for item in self.ui.distr_load_tab_widget.children()
+                           if isinstance(item, QtGui.QDoubleSpinBox)):
+                self.addLoadItem()
 
     def calculateButton(self):
         self.ui.message_lbl.setText("Calculating...")
@@ -309,7 +402,11 @@ class BeamApp(QtGui.QMainWindow, beamPyUI.Ui_MainWindow):
         self.beam.plotShearStress(self.__beam_figure, self.ax_shear)
         self.beam.plotIsoChromatic(self.__beam_figure, self.ax_max_shear)
 
+        self.setDisplayStressValue()
 
+        self.ax_bending.set_ylabel("Bending")
+        self.ax_max_shear.set_ylabel("Max Shear")
+        self.ax_shear.set_ylabel("Shear")
 
         # self.__beam_figure.subplots_adjust()
         self.plot_canvas.draw()
@@ -317,18 +414,18 @@ class BeamApp(QtGui.QMainWindow, beamPyUI.Ui_MainWindow):
 
         self.ui.message_lbl.setText("Calculation finished")
 
+
 def main():
     app = QtGui.QApplication(sys.argv)
     # app.setStyle("gtk+")
 
     beam_app = BeamApp()
     beam_app.show()
+    app_icon = QtGui.QIcon()
 
     app.exec_()
 
-    # inifile.close()
-    sys.exit(app.exec_())
-    return main_window
+    sys.exit(app.exec_)
 
 
 if __name__ == "__main__":
