@@ -4,17 +4,23 @@
     <option name="SCOPE_TYPE" value="3" />
   </component>
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/beampy/beam_ui.py" line="320" mnemonic="9" />
+    <bookmark url="file://$PROJECT_DIR$/vigapy/beam_ui.py" line="319" mnemonic="9" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d6b83c23-59b6-49b6-ac4b-797e073c177f" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/beampy/beamPyUI.ui" afterPath="$PROJECT_DIR$/beampy/beamPyUI.ui" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/beampy/beamPyUI.py" afterPath="$PROJECT_DIR$/vigapy/beamPyUI.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/beampy/beamPyUI.ui" afterPath="$PROJECT_DIR$/vigapy/beamPyUI.ui" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/beampy/beam_display.py" afterPath="$PROJECT_DIR$/vigapy/beam_display.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/beampy/beam_solver/beam_exceptions.py" afterPath="$PROJECT_DIR$/vigapy/beam_solver/beam_exceptions.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/beampy/beam_solver/definitions.py" afterPath="$PROJECT_DIR$/vigapy/beam_solver/definitions.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/beampy/beam_solver/solver.py" afterPath="$PROJECT_DIR$/vigapy/beam_solver/solver.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/beampy/beam_solver/solver_unittest.py" afterPath="$PROJECT_DIR$/vigapy/beam_solver/solver_unittest.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/beampy/beam_ui.py" afterPath="$PROJECT_DIR$/vigapy/beam_ui.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/beampy/load_model.py" afterPath="$PROJECT_DIR$/vigapy/load_model.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/beampy/pyui_creator.py" afterPath="$PROJECT_DIR$/vigapy/pyui_creator.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/beampy/beamPyUI.py" afterPath="$PROJECT_DIR$/beampy/beamPyUI.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/beampy/beam_display.py" afterPath="$PROJECT_DIR$/beampy/beam_display.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/beampy/beam_solver/solver.py" afterPath="$PROJECT_DIR$/beampy/beam_solver/solver.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/beampy/beam_solver/solver_unittest.py" afterPath="$PROJECT_DIR$/beampy/beam_solver/solver_unittest.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/beampy/beam_ui.py" afterPath="$PROJECT_DIR$/beampy/beam_ui.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/beamPy_run.py" afterPath="$PROJECT_DIR$/beamPy_run.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/beamPy_compiler.spec" afterPath="$PROJECT_DIR$/bin/beamPy_compiler.spec" />
     </list>
     <ignored path="BeamProject.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -35,13 +41,11 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="beam_ui.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/beampy/beam_ui.py">
+        <entry file="file://$PROJECT_DIR$/vigapy/beam_ui.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="402">
-              <caret line="30" column="5" selection-start-line="30" selection-start-column="5" selection-end-line="30" selection-end-column="5" />
-              <folding>
-                <element signature="e#0#10#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="147">
+              <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -66,33 +70,42 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="contour.py" pinned="false" current-in-tab="false">
-        <entry file="file://C:/PythonAnaconda/Lib/site-packages/matplotlib/contour.py">
+      <file leaf-file-name="beamPy_compiler.spec" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/bin/beamPy_compiler.spec">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="19618">
-              <caret line="1181" column="0" selection-start-line="1181" selection-start-column="0" selection-end-line="1181" selection-end-column="0" />
+            <state relative-caret-position="300">
+              <caret line="27" column="69" selection-start-line="27" selection-start-column="69" selection-end-line="27" selection-end-column="69" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="expr.py" pinned="false" current-in-tab="false">
-        <entry file="file://C:/PythonAnaconda/Lib/site-packages/sympy/core/expr.py">
+      <file leaf-file-name="beamPy_run.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/beamPy_run.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3638">
-              <caret line="225" column="0" selection-start-line="225" selection-start-column="0" selection-end-line="225" selection-end-column="0" />
+            <state relative-caret-position="408">
+              <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="solver.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/beampy/beam_solver/solver.py">
+      <file leaf-file-name="build_main.py" pinned="false" current-in-tab="false">
+        <entry file="file://C:/PythonAnaconda/Lib/site-packages/PyInstaller/building/build_main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="257">
-              <caret line="400" column="18" selection-start-line="400" selection-start-column="18" selection-end-line="400" selection-end-column="18" />
+            <state relative-caret-position="394">
+              <caret line="161" column="0" selection-start-line="161" selection-start-column="0" selection-end-line="161" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="solver.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/vigapy/beam_solver/solver.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="188">
+              <caret line="683" column="0" selection-start-line="683" selection-start-column="0" selection-end-line="683" selection-end-column="0" />
               <folding>
-                <element signature="e#0#31#0" expanded="true" />
                 <element signature="e#3567#3582#0" expanded="false" />
                 <element signature="e#10481#10537#0" expanded="false" />
                 <element signature="e#10598#10654#0" expanded="false" />
@@ -103,7 +116,7 @@
         </entry>
       </file>
       <file leaf-file-name="beam_exceptions.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/beampy/beam_solver/beam_exceptions.py">
+        <entry file="file://$PROJECT_DIR$/vigapy/beam_solver/beam_exceptions.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="153">
               <caret line="9" column="6" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
@@ -113,30 +126,10 @@
         </entry>
       </file>
       <file leaf-file-name="solver_unittest.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/beampy/beam_solver/solver_unittest.py">
+        <entry file="file://$PROJECT_DIR$/vigapy/beam_solver/solver_unittest.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="827">
               <caret line="229" column="32" selection-start-line="229" selection-start-column="32" selection-end-line="229" selection-end-column="32" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="beam_display.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/beampy/beam_display.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="24" column="45" selection-start-line="24" selection-start-column="45" selection-end-line="24" selection-end-column="45" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="beamPyUI.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/beampy/beamPyUI.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3689">
-              <caret line="217" column="0" selection-start-line="217" selection-start-column="0" selection-end-line="217" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -154,6 +147,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="PUSH_TAGS">
+      <GitPushTagMode />
+    </option>
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -175,13 +171,14 @@
         <option value="$PROJECT_DIR$/beam_solver/solver.py" />
         <option value="$PROJECT_DIR$/beam_ui.py" />
         <option value="$PROJECT_DIR$/beamPy_run.py" />
-        <option value="$PROJECT_DIR$/bin/beamPy_compiler.spec" />
         <option value="$PROJECT_DIR$/beampy/beam_solver/definitions.py" />
         <option value="$PROJECT_DIR$/beampy/beamPyUI.py" />
         <option value="$PROJECT_DIR$/beampy/beam_solver/solver_unittest.py" />
         <option value="$PROJECT_DIR$/beampy/beam_display.py" />
         <option value="$PROJECT_DIR$/beampy/beam_ui.py" />
         <option value="$PROJECT_DIR$/beampy/beam_solver/solver.py" />
+        <option value="$PROJECT_DIR$/vigapy/beam_solver/solver.py" />
+        <option value="$PROJECT_DIR$/bin/beamPy_compiler.spec" />
       </list>
     </option>
   </component>
@@ -245,6 +242,38 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="vigapy" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BeamProject" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BeamProject" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="vigapy" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="beam_solver" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BeamProject" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BeamProject" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="docs" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -273,25 +302,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="beampy" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="BeamProject" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="BeamProject" />
+              <option name="myItemId" value="bin" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="beampy" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="beam_solver" />
+              <option name="myItemId" value="dist" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -317,7 +332,7 @@
       <recent name="C:\Users\Lucas\PycharmProjects\BeamProject\beam_solver" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.test2">
+  <component name="RunManager" selected="Python.beamPy_run">
     <configuration default="false" name="beam_ui (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -335,61 +350,6 @@
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
     </configuration>
-    <configuration default="false" name="Nosetest MyTestCase.test_tri_load" type="tests" factoryName="Nosetests" temporary="true" nameIsGenerated="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/beampy/beam_solver" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="BeamProject" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/beampy/beam_solver/solver_unittest.py" />
-      <option name="CLASS_NAME" value="MyTestCase" />
-      <option name="METHOD_NAME" value="test_tri_load" />
-      <option name="FOLDER_NAME" value="" />
-      <option name="TEST_TYPE" value="TEST_METHOD" />
-      <option name="PATTERN" value="" />
-      <option name="USE_PATTERN" value="false" />
-      <option name="PARAMS" value="" />
-      <option name="USE_PARAM" value="false" />
-      <method />
-    </configuration>
-    <configuration default="false" name="solver_unittest" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/beampy/beam_solver" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="BeamProject" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/beampy/beam_solver/solver_unittest.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <method />
-    </configuration>
-    <configuration default="false" name="beam_display" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/beampy" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="BeamProject" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/beampy/beam_display.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <method />
-    </configuration>
     <configuration default="false" name="test2" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -403,6 +363,57 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="BeamProject" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test2.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="solver" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/vigapy/beam_solver" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="BeamProject" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/vigapy/beam_solver/solver.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="beam_ui" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/vigapy" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="BeamProject" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/vigapy/beam_ui.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="beamPy_run" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="BeamProject" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/beamPy_run.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
@@ -543,18 +554,18 @@
     </configuration>
     <list size="5">
       <item index="0" class="java.lang.String" itemvalue="Python.beam_ui (1)" />
-      <item index="1" class="java.lang.String" itemvalue="Python tests.Nosetest MyTestCase.test_tri_load" />
-      <item index="2" class="java.lang.String" itemvalue="Python.solver_unittest" />
-      <item index="3" class="java.lang.String" itemvalue="Python.beam_display" />
-      <item index="4" class="java.lang.String" itemvalue="Python.test2" />
+      <item index="1" class="java.lang.String" itemvalue="Python.test2" />
+      <item index="2" class="java.lang.String" itemvalue="Python.solver" />
+      <item index="3" class="java.lang.String" itemvalue="Python.beam_ui" />
+      <item index="4" class="java.lang.String" itemvalue="Python.beamPy_run" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.test2" />
-        <item index="1" class="java.lang.String" itemvalue="Python.beam_ui (1)" />
-        <item index="2" class="java.lang.String" itemvalue="Python.beam_display" />
-        <item index="3" class="java.lang.String" itemvalue="Python.solver_unittest" />
-        <item index="4" class="java.lang.String" itemvalue="Python tests.Nosetest MyTestCase.test_tri_load" />
+        <item index="0" class="java.lang.String" itemvalue="Python.beamPy_run" />
+        <item index="1" class="java.lang.String" itemvalue="Python.beam_ui" />
+        <item index="2" class="java.lang.String" itemvalue="Python.solver" />
+        <item index="3" class="java.lang.String" itemvalue="Python.test2" />
+        <item index="4" class="java.lang.String" itemvalue="Python.beam_ui (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -600,7 +611,14 @@
       <option name="project" value="LOCAL" />
       <updated>1541215980960</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Commented sections">
+      <created>1543341361348</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1543341361348</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -637,9 +655,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.246875" sideWeight="0.5" order="0" side_tool="true" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.246875" sideWeight="0.5" order="0" side_tool="true" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.14376321" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -696,7 +714,9 @@
     <MESSAGE value="First commit. Main code done" />
     <MESSAGE value="Added shear and maximum stress plots.&#10;Added equations tabs." />
     <MESSAGE value="Added beam viewer&#10;Added option for displaying stresses&#10;Window size adjusted&#10;Added Shortcuts&#10;Renamed a few things&#10;Fixed tabs" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added beam viewer&#10;Added option for displaying stresses&#10;Window size adjusted&#10;Added Shortcuts&#10;Renamed a few things&#10;Fixed tabs" />
+    <MESSAGE value="Commented sections" />
+    <MESSAGE value="Project renamed to VigaPy" />
+    <option name="LAST_COMMIT_MESSAGE" value="Project renamed to VigaPy" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
@@ -710,13 +730,13 @@
           <option name="timeStamp" value="129" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/beampy/beam_ui.py</url>
-          <line>250</line>
+          <url>file://$PROJECT_DIR$/vigapy/beam_ui.py</url>
+          <line>249</line>
           <option name="timeStamp" value="147" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/beampy/beam_solver/solver.py</url>
-          <line>678</line>
+          <url>file://$PROJECT_DIR$/vigapy/beam_solver/solver.py</url>
+          <line>675</line>
           <option name="timeStamp" value="150" />
         </line-breakpoint>
       </breakpoints>
@@ -935,7 +955,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/beampy/imgs/beampy_icon.ico">
+    <entry file="file://$PROJECT_DIR$/vigapy/imgs/beampy_icon.ico">
       <provider selected="true" editor-type-id="images">
         <state />
       </provider>
@@ -944,13 +964,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="190">
           <caret line="449" column="0" selection-start-line="449" selection-start-column="0" selection-end-line="449" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/PythonAnaconda/Lib/site-packages/PyInstaller/building/build_main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="161" column="0" selection-start-line="161" selection-start-column="0" selection-end-line="161" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -969,15 +982,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/beamPy_run.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="22" column="30" selection-start-line="22" selection-start-column="30" selection-end-line="22" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/beampy/load_model.py">
+    <entry file="file://$PROJECT_DIR$/vigapy/load_model.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="4709">
           <caret line="277" column="0" selection-start-line="277" selection-start-column="0" selection-end-line="277" selection-end-column="0" />
@@ -985,7 +990,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/beampy/beam_solver/definitions.py">
+    <entry file="file://$PROJECT_DIR$/vigapy/beam_solver/definitions.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
@@ -993,18 +998,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/beampy/pyui_creator.py">
+    <entry file="file://$PROJECT_DIR$/vigapy/pyui_creator.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1938">
           <caret line="117" column="0" selection-start-line="117" selection-start-column="0" selection-end-line="117" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bin/beamPy_compiler.spec">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="20" selection-start-line="9" selection-start-column="20" selection-end-line="9" selection-end-column="20" />
           <folding />
         </state>
       </provider>
@@ -1025,10 +1022,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/beampy/beamPyUI.py">
+    <entry file="file://$PROJECT_DIR$/vigapy/beamPyUI.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3689">
-          <caret line="217" column="0" selection-start-line="217" selection-start-column="0" selection-end-line="217" selection-end-column="0" />
+        <state relative-caret-position="3604">
+          <caret line="212" column="0" selection-start-line="212" selection-start-column="0" selection-end-line="212" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1049,7 +1046,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/beampy/beam_solver/beam_exceptions.py">
+    <entry file="file://$PROJECT_DIR$/vigapy/beam_solver/beam_exceptions.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
           <caret line="9" column="6" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
@@ -1057,7 +1054,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/beampy/beam_solver/solver_unittest.py">
+    <entry file="file://$PROJECT_DIR$/vigapy/beam_solver/solver_unittest.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="827">
           <caret line="229" column="32" selection-start-line="229" selection-start-column="32" selection-end-line="229" selection-end-column="32" />
@@ -1065,7 +1062,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/beampy/beam_display.py">
+    <entry file="file://$PROJECT_DIR$/vigapy/beam_display.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
           <caret line="24" column="45" selection-start-line="24" selection-start-column="45" selection-end-line="24" selection-end-column="45" />
@@ -1081,27 +1078,48 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/beampy/beam_ui.py">
+    <entry file="file://$PROJECT_DIR$/vigapy/beam_solver/solver.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="402">
-          <caret line="30" column="5" selection-start-line="30" selection-start-column="5" selection-end-line="30" selection-end-column="5" />
+        <state relative-caret-position="188">
+          <caret line="683" column="0" selection-start-line="683" selection-start-column="0" selection-end-line="683" selection-end-column="0" />
           <folding>
-            <element signature="e#0#10#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/beampy/beam_solver/solver.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="257">
-          <caret line="400" column="18" selection-start-line="400" selection-start-column="18" selection-end-line="400" selection-end-column="18" />
-          <folding>
-            <element signature="e#0#31#0" expanded="true" />
             <element signature="e#3567#3582#0" expanded="false" />
             <element signature="e#10481#10537#0" expanded="false" />
             <element signature="e#10598#10654#0" expanded="false" />
             <element signature="e#10715#10771#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/PythonAnaconda/Lib/site-packages/PyInstaller/building/build_main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="394">
+          <caret line="161" column="0" selection-start-line="161" selection-start-column="0" selection-end-line="161" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bin/beamPy_compiler.spec">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="27" column="69" selection-start-line="27" selection-start-column="69" selection-end-line="27" selection-end-column="69" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vigapy/beam_ui.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="147">
+          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/beamPy_run.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>

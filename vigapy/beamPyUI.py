@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'C:\Users\Lucas\PycharmProjects\BeamProject\beampy\beamPyUI.ui'
+# Form implementation generated from reading ui file 'C:\Users\Lucas\PycharmProjects\BeamProject\vigapy\beamPyUI.ui'
 #
 # Created by: PyQt4 UI code generator 4.11.4
 #
@@ -556,7 +556,7 @@ class Ui_MainWindow(object):
         MainWindow.setTabOrder(self.load_treeview, self.equations_lbl)
 
     def retranslateUi(self, MainWindow):
-        MainWindow.setWindowTitle(_translate("MainWindow", "BeamPy ", None))
+        MainWindow.setWindowTitle(_translate("MainWindow", "VigaPy", None))
         self.beam_widget.setStatusTip(_translate("MainWindow", "Beam Display", None))
         self.message_lbl.setStatusTip(_translate("MainWindow", "Current BeamPy message", None))
         self.message_lbl.setText(_translate("MainWindow", "Ready", None))

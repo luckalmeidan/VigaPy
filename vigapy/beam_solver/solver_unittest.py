@@ -1,6 +1,6 @@
 import unittest
 
-from beampy.beam_solver.solver import *
+from vigapy.beam_solver.solver import *
 
 
 # noinspection PyShadowingNames

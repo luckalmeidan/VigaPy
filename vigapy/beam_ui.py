@@ -6,18 +6,17 @@ from PyQt4 import QtCore, QtGui
 from matplotlib.backends.backend_qt4agg import FigureCanvasQTAgg as FigureCanvas
 from matplotlib.backends.backend_qt4agg import NavigationToolbar2QT as NavigationToolbar
 
-import beampy.pyui_creator
-from beampy.beam_display import BeamView
-from beampy.beam_solver import beam_exceptions
-from beampy.beam_solver import solver
-from beampy.beam_solver.definitions import *
-from beampy.load_model import LoadModel
-from beampy.load_model import LoadNode
+import vigapy.pyui_creator
+from vigapy.beam_display import BeamView
+from vigapy.beam_solver import beam_exceptions
+from vigapy.beam_solver import solver
+from vigapy.beam_solver.definitions import *
+from vigapy.load_model import LoadModel
+from vigapy.load_model import LoadNode
 
+vigapy.pyui_creator.updateApplication()
 
-beampy.pyui_creator.updateApplication()
-
-from beampy import beamPyUI
+from vigapy import beamPyUI
 
 
 class BeamApp(QtGui.QMainWindow, beamPyUI.Ui_MainWindow):
@@ -26,12 +25,12 @@ class BeamApp(QtGui.QMainWindow, beamPyUI.Ui_MainWindow):
         super(BeamApp, self).__init__(parent)
         app_icon = QtGui.QIcon()
 
-        app_icon.addFile('C:\\Users\Lucas\\PycharmProjects\\BeamProject\\beampy\\imgs\\beampy_icon2.ico',
+        app_icon.addFile('C:\\Users\Lucas\\PycharmProjects\\BeamProject\\vigapy\\imgs\\beampy_icon2.ico',
                          QtCore.QSize(16, 16))
-        app_icon.addFile('C:\\Users\Lucas\\PycharmProjects\\BeamProject\\beampy\\imgs\\beampy_icon2.ico',
+        app_icon.addFile('C:\\Users\Lucas\\PycharmProjects\\BeamProject\\vigapy\\imgs\\beampy_icon2.ico',
                          QtCore.QSize(24, 24))
 
-        app_icon.addFile('C:\\Users\Lucas\\PycharmProjects\\BeamProject\\beampy\\imgs\\beampy_icon2.ico',
+        app_icon.addFile('C:\\Users\Lucas\\PycharmProjects\\BeamProject\\vigapy\\imgs\\beampy_icon2.ico',
                          QtCore.QSize(32, 32))
 
         self.setWindowIcon(app_icon)

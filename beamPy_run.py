@@ -20,7 +20,7 @@ if compiling:
     subprocess.call(["pyinstaller", "beamPy_compiler.spec"])
 
 else:
-    from beampy import beam_ui
+    from vigapy import beam_ui
 
 
     beam_ui.main()

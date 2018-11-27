@@ -2,8 +2,8 @@ import sys
 
 from PyQt4 import QtGui, QtCore
 
-from beampy.beam_solver.definitions import *
-from beampy.load_model import LoadNode
+from vigapy.beam_solver.definitions import *
+from vigapy.load_model import LoadNode
 
 
 class QGraphicArcItem(QtGui.QGraphicsEllipseItem):

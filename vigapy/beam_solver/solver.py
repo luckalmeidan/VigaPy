@@ -2,8 +2,8 @@ import matplotlib.pyplot as plt
 import numpy as np
 import sympy as sp
 
-from beampy.beam_solver import beam_exceptions
-from beampy.beam_solver.definitions import *
+from vigapy.beam_solver import beam_exceptions
+from vigapy.beam_solver.definitions import *
 
 x, C1, C2, C3, C4, E, I = sp.symbols('x, C1, C2, C3, C4, E, I')
 
@@ -680,8 +680,9 @@ class Beam:
         self.__calculateValues()
 
         # Evaluate section equations
-        self.__determineSectionsEquations()
         self.calculated_beam = True
+
+        self.__determineSectionsEquations()
 
 
     def evalPoint(self, plot, point):

@@ -4,7 +4,7 @@ block_cipher = None
 
 
 
-a = Analysis(['../beampy/beam_ui.py'],
+a = Analysis(['../vigapy/beam_ui.py'],
              pathex=['.'],
              binaries=[],
              datas=[],
@@ -20,12 +20,12 @@ pyz = PYZ(a.pure, a.zipped_data,
 exe = EXE(pyz,
           a.scripts,
           exclude_binaries=True,
-          name='BeamPy',
+          name='VigaPy',
           debug=False,
           strip=False,
           upx=True,
           console=True,
-          icon='C:\\Users\Lucas\\PycharmProjects\\BeamProject\\beampy\\imgs\\beampy_icon2.ico'
+          icon='C:\\Users\Lucas\\PycharmProjects\\BeamProject\\vigapy\\imgs\\beampy_icon2.ico'
            )
 
 coll = COLLECT(exe,
@@ -34,4 +34,4 @@ coll = COLLECT(exe,
                a.datas,
                strip=False,
                upx=True,
-               name='BeamPy')
+               name='VigaPy')
