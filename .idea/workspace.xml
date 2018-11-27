@@ -4,23 +4,17 @@
     <option name="SCOPE_TYPE" value="3" />
   </component>
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/beampy/beam_ui.py" line="317" mnemonic="9" />
+    <bookmark url="file://$PROJECT_DIR$/beampy/beam_ui.py" line="320" mnemonic="9" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d6b83c23-59b6-49b6-ac4b-797e073c177f" name="Default" comment="Added beam viewer&#10;Added option for displaying stresses&#10;Window size adjusted&#10;Added Shortcuts&#10;Renamed a few things&#10;Fixed tabs">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/beampy/beam_display.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/beamPyUI.py" afterPath="$PROJECT_DIR$/beampy/beamPyUI.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/beamPyUI.ui" afterPath="$PROJECT_DIR$/beampy/beamPyUI.ui" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/beam_solver/beam_exceptions.py" afterPath="$PROJECT_DIR$/beampy/beam_solver/beam_exceptions.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/beam_solver/definitions.py" afterPath="$PROJECT_DIR$/beampy/beam_solver/definitions.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/beam_solver/solver.py" afterPath="$PROJECT_DIR$/beampy/beam_solver/solver.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/beam_solver/solver_unittest.py" afterPath="$PROJECT_DIR$/beampy/beam_solver/solver_unittest.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/load_model.py" afterPath="$PROJECT_DIR$/beampy/load_model.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/pyui_creator.py" afterPath="$PROJECT_DIR$/beampy/pyui_creator.py" />
+    <list default="true" id="d6b83c23-59b6-49b6-ac4b-797e073c177f" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/beampy/beamPyUI.ui" afterPath="$PROJECT_DIR$/beampy/beamPyUI.ui" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/beamPy_run.py" afterPath="$PROJECT_DIR$/beamPy_run.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/beamPy_compiler.spec" afterPath="$PROJECT_DIR$/bin/beamPy_compiler.spec" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/symtest.py" afterPath="$PROJECT_DIR$/symtest.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/beampy/beamPyUI.py" afterPath="$PROJECT_DIR$/beampy/beamPyUI.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/beampy/beam_display.py" afterPath="$PROJECT_DIR$/beampy/beam_display.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/beampy/beam_solver/solver.py" afterPath="$PROJECT_DIR$/beampy/beam_solver/solver.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/beampy/beam_solver/solver_unittest.py" afterPath="$PROJECT_DIR$/beampy/beam_solver/solver_unittest.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/beampy/beam_ui.py" afterPath="$PROJECT_DIR$/beampy/beam_ui.py" />
     </list>
     <ignored path="BeamProject.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -40,84 +34,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="beamPy_run.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/beamPy_run.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="22" column="10" selection-start-line="22" selection-start-column="10" selection-end-line="22" selection-end-column="10" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.gitignore">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="definitions.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/beampy/beam_solver/definitions.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="beam_ui.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/beampy/beam_ui.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="181">
-              <caret line="281" column="35" selection-start-line="281" selection-start-column="33" selection-end-line="281" selection-end-column="35" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="symtest.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/symtest.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="283">
-              <caret line="19" column="33" selection-start-line="19" selection-start-column="33" selection-end-line="19" selection-end-column="33" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="beamPy_compiler.spec" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/bin/beamPy_compiler.spec">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" column="20" selection-start-line="9" selection-start-column="20" selection-end-line="9" selection-end-column="20" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="solver.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/beampy/beam_solver/solver.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="215">
-              <caret line="226" column="76" selection-start-line="226" selection-start-column="76" selection-end-line="226" selection-end-column="76" />
-              <folding>
-                <element signature="e#0#31#0" expanded="true" />
-                <element signature="e#3884#3899#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="beam_display.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/beampy/beam_display.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="181">
-              <caret line="25" column="39" selection-start-line="25" selection-start-column="39" selection-end-line="25" selection-end-column="39" />
+            <state relative-caret-position="402">
+              <caret line="30" column="5" selection-start-line="30" selection-start-column="5" selection-end-line="30" selection-end-column="5" />
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
               </folding>
@@ -125,21 +46,97 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Qt.py" pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/.PyCharm2016.2/system/python_stubs/968023056/PyQt4/QtCore/Qt.py">
+      <file leaf-file-name="test2.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test2.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1530">
-              <caret line="90" column="4" selection-start-line="90" selection-start-column="4" selection-end-line="90" selection-end-column="4" />
+            <state relative-caret-position="833">
+              <caret line="50" column="0" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="beamPyUI.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="pydevd.py" pinned="false" current-in-tab="false">
+        <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/pydevd.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="26299">
+              <caret line="1582" column="20" selection-start-line="1582" selection-start-column="20" selection-end-line="1582" selection-end-column="20" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="contour.py" pinned="false" current-in-tab="false">
+        <entry file="file://C:/PythonAnaconda/Lib/site-packages/matplotlib/contour.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="19618">
+              <caret line="1181" column="0" selection-start-line="1181" selection-start-column="0" selection-end-line="1181" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="expr.py" pinned="false" current-in-tab="false">
+        <entry file="file://C:/PythonAnaconda/Lib/site-packages/sympy/core/expr.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="3638">
+              <caret line="225" column="0" selection-start-line="225" selection-start-column="0" selection-end-line="225" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="solver.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/beampy/beam_solver/solver.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="257">
+              <caret line="400" column="18" selection-start-line="400" selection-start-column="18" selection-end-line="400" selection-end-column="18" />
+              <folding>
+                <element signature="e#0#31#0" expanded="true" />
+                <element signature="e#3567#3582#0" expanded="false" />
+                <element signature="e#10481#10537#0" expanded="false" />
+                <element signature="e#10598#10654#0" expanded="false" />
+                <element signature="e#10715#10771#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="beam_exceptions.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/beampy/beam_solver/beam_exceptions.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="153">
+              <caret line="9" column="6" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="solver_unittest.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/beampy/beam_solver/solver_unittest.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="827">
+              <caret line="229" column="32" selection-start-line="229" selection-start-column="32" selection-end-line="229" selection-end-column="32" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="beam_display.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/beampy/beam_display.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="323">
+              <caret line="24" column="45" selection-start-line="24" selection-start-column="45" selection-end-line="24" selection-end-column="45" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="beamPyUI.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/beampy/beamPyUI.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="12" column="22" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="22" />
+            <state relative-caret-position="3689">
+              <caret line="217" column="0" selection-start-line="217" selection-start-column="0" selection-end-line="217" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -179,15 +176,18 @@
         <option value="$PROJECT_DIR$/beam_ui.py" />
         <option value="$PROJECT_DIR$/beamPy_run.py" />
         <option value="$PROJECT_DIR$/bin/beamPy_compiler.spec" />
-        <option value="$PROJECT_DIR$/beampy/beam_solver/solver.py" />
-        <option value="$PROJECT_DIR$/beampy/beam_display.py" />
         <option value="$PROJECT_DIR$/beampy/beam_solver/definitions.py" />
+        <option value="$PROJECT_DIR$/beampy/beamPyUI.py" />
+        <option value="$PROJECT_DIR$/beampy/beam_solver/solver_unittest.py" />
+        <option value="$PROJECT_DIR$/beampy/beam_display.py" />
         <option value="$PROJECT_DIR$/beampy/beam_ui.py" />
+        <option value="$PROJECT_DIR$/beampy/beam_solver/solver.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-3" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
     <option name="width" value="1936" />
     <option name="height" value="1056" />
   </component>
@@ -217,7 +217,6 @@
     </navigator>
     <panes>
       <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -233,6 +232,20 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="BeamProject" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BeamProject" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BeamProject" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="docs" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -284,6 +297,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -303,75 +317,7 @@
       <recent name="C:\Users\Lucas\PycharmProjects\BeamProject\beam_solver" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.beam_ui (1)">
-    <configuration default="false" name="solver" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/beam_solver" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="BeamProject" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/beam_solver/solver.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <method />
-    </configuration>
-    <configuration default="false" name="beam_ui" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="BeamProject" />
-      <option name="SCRIPT_NAME" value="C:\Users\Lucas\PycharmProjects\BeamProject\beampy\beam_ui.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <method />
-    </configuration>
-    <configuration default="false" name="beamPy_run" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="BeamProject" />
-      <option name="SCRIPT_NAME" value="C:\Users\Lucas\PycharmProjects\BeamProject\beamPy_run.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <method />
-    </configuration>
-    <configuration default="false" name="beamPy_run (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="BeamProject" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/beamPy_run.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <method />
-    </configuration>
+  <component name="RunManager" selected="Python.test2">
     <configuration default="false" name="beam_ui (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -385,6 +331,78 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="BeamProject" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/beampy/beam_ui.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="Nosetest MyTestCase.test_tri_load" type="tests" factoryName="Nosetests" temporary="true" nameIsGenerated="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/beampy/beam_solver" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="BeamProject" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/beampy/beam_solver/solver_unittest.py" />
+      <option name="CLASS_NAME" value="MyTestCase" />
+      <option name="METHOD_NAME" value="test_tri_load" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_METHOD" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <option name="PARAMS" value="" />
+      <option name="USE_PARAM" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="solver_unittest" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/beampy/beam_solver" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="BeamProject" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/beampy/beam_solver/solver_unittest.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="beam_display" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/beampy" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="BeamProject" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/beampy/beam_display.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="test2" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="BeamProject" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test2.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
@@ -524,19 +542,19 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Python.solver" />
-      <item index="1" class="java.lang.String" itemvalue="Python.beam_ui" />
-      <item index="2" class="java.lang.String" itemvalue="Python.beamPy_run" />
-      <item index="3" class="java.lang.String" itemvalue="Python.beamPy_run (1)" />
-      <item index="4" class="java.lang.String" itemvalue="Python.beam_ui (1)" />
+      <item index="0" class="java.lang.String" itemvalue="Python.beam_ui (1)" />
+      <item index="1" class="java.lang.String" itemvalue="Python tests.Nosetest MyTestCase.test_tri_load" />
+      <item index="2" class="java.lang.String" itemvalue="Python.solver_unittest" />
+      <item index="3" class="java.lang.String" itemvalue="Python.beam_display" />
+      <item index="4" class="java.lang.String" itemvalue="Python.test2" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.beam_ui (1)" />
-        <item index="1" class="java.lang.String" itemvalue="Python.beamPy_run (1)" />
-        <item index="2" class="java.lang.String" itemvalue="Python.beamPy_run" />
-        <item index="3" class="java.lang.String" itemvalue="Python.beam_ui" />
-        <item index="4" class="java.lang.String" itemvalue="Python.solver" />
+        <item index="0" class="java.lang.String" itemvalue="Python.test2" />
+        <item index="1" class="java.lang.String" itemvalue="Python.beam_ui (1)" />
+        <item index="2" class="java.lang.String" itemvalue="Python.beam_display" />
+        <item index="3" class="java.lang.String" itemvalue="Python.solver_unittest" />
+        <item index="4" class="java.lang.String" itemvalue="Python tests.Nosetest MyTestCase.test_tri_load" />
       </list>
     </recent_temporary>
   </component>
@@ -575,27 +593,34 @@
       <option name="project" value="LOCAL" />
       <updated>1541215900313</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Added beam viewer&#10;Added option for displaying stresses&#10;Window size adjusted&#10;Added Shortcuts&#10;Renamed a few things&#10;Fixed tabs">
+      <created>1541215980960</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1541215980960</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Nosetest_MyTestCase_test_cantilever_trap_load_dec_before_end - 2018.10.24 at 19h 42m 24s.xml">
-      <configuration name="Nosetest MyTestCase.test_cantilever_trap_load_dec_before_end" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Nosetest_MyTestCase_test_invalid_input - 2018.10.24 at 19h 38m 27s.xml">
-      <configuration name="Nosetest MyTestCase.test_invalid_input" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Nosetest_MyTestCase_test_invalid_input - 2018.10.24 at 19h 38m 45s.xml">
-      <configuration name="Nosetest MyTestCase.test_invalid_input" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Nosetest_MyTestCase_test_invalid_input - 2018.10.24 at 19h 38m 54s.xml">
-      <configuration name="Nosetest MyTestCase.test_invalid_input" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Nosetest_MyTestCase_test_invalid_input - 2018.10.24 at 19h 42m 39s.xml">
-      <configuration name="Nosetest MyTestCase.test_invalid_input" configurationId="tests" />
-    </history-entry>
     <history-entry file="Nosetest_MyTestCase_test_invalid_input - 2018.10.24 at 19h 43m 04s.xml">
       <configuration name="Nosetest MyTestCase.test_invalid_input" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Nosetest_MyTestCase_test_simply_middle_load - 2018.11.27 at 14h 27m 25s.xml">
+      <configuration name="Nosetest MyTestCase.test_simply_middle_load" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Nosetest_MyTestCase_test_simply_middle_load - 2018.11.27 at 14h 27m 33s.xml">
+      <configuration name="Nosetest MyTestCase.test_simply_middle_load" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Nosetest_MyTestCase_test_simply_middle_load - 2018.11.27 at 14h 27m 43s.xml">
+      <configuration name="Nosetest MyTestCase.test_simply_middle_load" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Nosetest_MyTestCase_test_simply_middle_load - 2018.11.27 at 14h 27m 55s.xml">
+      <configuration name="Nosetest MyTestCase.test_simply_middle_load" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Nosetest_MyTestCase_test_tri_load - 2018.11.27 at 14h 28m 20s.xml">
+      <configuration name="Nosetest MyTestCase.test_tri_load" configurationId="tests" />
     </history-entry>
     <history-entry file="Nosetests_in_MyTestCase - 2018.10.24 at 19h 43m 22s.xml">
       <configuration name="Nosetests in MyTestCase" configurationId="tests" />
@@ -611,12 +636,11 @@
     </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-3" y="0" width="1936" height="1056" extended-state="0" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.246875" sideWeight="0.5" order="0" side_tool="true" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980973" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.14376321" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -627,6 +651,7 @@
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39429176" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980973" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -681,13 +706,18 @@
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/symtest.py</url>
-          <line>34</line>
+          <line>35</line>
           <option name="timeStamp" value="129" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/beampy/beam_ui.py</url>
-          <line>247</line>
+          <line>250</line>
           <option name="timeStamp" value="147" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/beampy/beam_solver/solver.py</url>
+          <line>678</line>
+          <option name="timeStamp" value="150" />
         </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
@@ -700,7 +730,7 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="149" />
+      <option name="time" value="156" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -740,13 +770,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/beampy/pyui_creator.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="509">
-          <caret line="117" column="0" selection-start-line="117" selection-start-column="0" selection-end-line="117" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://C:/PythonAnaconda/Lib/site-packages/matplotlib/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30226">
@@ -758,20 +781,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="95370">
           <caret line="5651" column="0" selection-start-line="5651" selection-start-column="0" selection-end-line="5651" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/PythonAnaconda/Lib/site-packages/sympy/core/expr.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3638">
-          <caret line="225" column="0" selection-start-line="225" selection-start-column="0" selection-end-line="225" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/beampy/beam_solver/beam_exceptions.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="27" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="27" />
         </state>
       </provider>
     </entry>
@@ -791,13 +800,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/beam_ui.spec" />
-    <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/pydevd.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="26248">
-          <caret line="1579" column="0" selection-start-line="1579" selection-start-column="0" selection-end-line="1579" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://C:/PythonAnaconda/Lib/site-packages/xlsxwriter/chart.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
@@ -834,21 +836,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://C:/PythonAnaconda/Lib/site-packages/matplotlib/contour.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="26894">
-          <caret line="1609" column="0" selection-start-line="1609" selection-start-column="0" selection-end-line="1609" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/beampy/beam_solver/solver_unittest.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/.PyCharm2016.2/system/python_stubs/968023056/PyQt4/QtCore/QLineF.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="197">
@@ -860,7 +847,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2992">
           <caret line="182" column="8" selection-start-line="182" selection-start-column="8" selection-end-line="182" selection-end-column="8" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -868,7 +854,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="14" column="8" selection-start-line="14" selection-start-column="8" selection-end-line="14" selection-end-column="8" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -883,7 +868,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="191">
           <caret line="103" column="8" selection-start-line="103" selection-start-column="8" selection-end-line="103" selection-end-column="8" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -891,17 +875,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1530">
           <caret line="93" column="59" selection-start-line="93" selection-start-column="22" selection-end-line="93" selection-end-column="59" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test2.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="24" column="8" selection-start-line="24" selection-start-column="8" selection-end-line="24" selection-end-column="8" />
-          <folding>
-            <element signature="e#0#18#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -909,7 +882,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="318">
           <caret line="93" column="12" selection-start-line="93" selection-start-column="12" selection-end-line="93" selection-end-column="12" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -917,7 +889,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="191">
           <caret line="288" column="8" selection-start-line="288" selection-start-column="8" selection-end-line="288" selection-end-column="8" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -925,7 +896,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="10" column="6" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="6" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -933,7 +903,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="191">
           <caret line="278" column="8" selection-start-line="278" selection-start-column="8" selection-end-line="278" selection-end-column="8" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -941,7 +910,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="82">
           <caret line="25" column="12" selection-start-line="25" selection-start-column="12" selection-end-line="26" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -957,7 +925,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="191">
           <caret line="1563" column="8" selection-start-line="1563" selection-start-column="8" selection-end-line="1563" selection-end-column="8" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -965,7 +932,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="351">
           <caret line="150" column="0" selection-start-line="150" selection-start-column="0" selection-end-line="150" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -974,19 +940,10 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/beampy/load_model.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="232">
-          <caret line="277" column="34" selection-start-line="277" selection-start-column="34" selection-end-line="277" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://C:/PythonAnaconda/Lib/site-packages/PyInstaller/building/utils.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="190">
           <caret line="449" column="0" selection-start-line="449" selection-start-column="0" selection-end-line="449" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -994,14 +951,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="190">
           <caret line="161" column="0" selection-start-line="161" selection-start-column="0" selection-end-line="161" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/symtest.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="283">
-          <caret line="19" column="33" selection-start-line="19" selection-start-column="33" selection-end-line="19" selection-end-column="33" />
+          <caret line="20" column="33" selection-start-line="20" selection-start-column="33" selection-end-line="20" selection-end-column="33" />
           <folding />
         </state>
       </provider>
@@ -1010,51 +966,21 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/beamPy_run.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
-          <caret line="22" column="10" selection-start-line="22" selection-start-column="10" selection-end-line="22" selection-end-column="10" />
+          <caret line="22" column="30" selection-start-line="22" selection-start-column="30" selection-end-line="22" selection-end-column="30" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/.PyCharm2016.2/system/python_stubs/968023056/PyQt4/QtCore/Qt.py">
+    <entry file="file://$PROJECT_DIR$/beampy/load_model.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1530">
-          <caret line="90" column="4" selection-start-line="90" selection-start-column="4" selection-end-line="90" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/beampy/beam_display.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="181">
-          <caret line="25" column="39" selection-start-line="25" selection-start-column="39" selection-end-line="25" selection-end-column="39" />
-          <folding>
-            <element signature="e#0#10#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/beampy/beam_solver/solver.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="215">
-          <caret line="226" column="76" selection-start-line="226" selection-start-column="76" selection-end-line="226" selection-end-column="76" />
-          <folding>
-            <element signature="e#0#31#0" expanded="true" />
-            <element signature="e#3884#3899#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bin/beamPy_compiler.spec">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="20" selection-start-line="9" selection-start-column="20" selection-end-line="9" selection-end-column="20" />
+        <state relative-caret-position="4709">
+          <caret line="277" column="0" selection-start-line="277" selection-start-column="0" selection-end-line="277" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1067,19 +993,115 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/beampy/beam_ui.py">
+    <entry file="file://$PROJECT_DIR$/beampy/pyui_creator.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="181">
-          <caret line="281" column="35" selection-start-line="281" selection-start-column="33" selection-end-line="281" selection-end-column="35" />
+        <state relative-caret-position="1938">
+          <caret line="117" column="0" selection-start-line="117" selection-start-column="0" selection-end-line="117" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bin/beamPy_compiler.spec">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="20" selection-start-line="9" selection-start-column="20" selection-end-line="9" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.PyCharm2016.2/system/python_stubs/968023056/PyQt4/QtCore/Qt.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1530">
+          <caret line="90" column="4" selection-start-line="90" selection-start-column="4" selection-end-line="90" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/PythonAnaconda/Lib/site-packages/matplotlib/contour.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="19618">
+          <caret line="1181" column="0" selection-start-line="1181" selection-start-column="0" selection-end-line="1181" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/beampy/beamPyUI.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="22" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="22" />
+        <state relative-caret-position="3689">
+          <caret line="217" column="0" selection-start-line="217" selection-start-column="0" selection-end-line="217" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/PythonAnaconda/Lib/site-packages/sympy/core/expr.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3638">
+          <caret line="225" column="0" selection-start-line="225" selection-start-column="0" selection-end-line="225" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/pydevd.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="26299">
+          <caret line="1582" column="20" selection-start-line="1582" selection-start-column="20" selection-end-line="1582" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/beampy/beam_solver/beam_exceptions.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="6" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/beampy/beam_solver/solver_unittest.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="827">
+          <caret line="229" column="32" selection-start-line="229" selection-start-column="32" selection-end-line="229" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/beampy/beam_display.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="24" column="45" selection-start-line="24" selection-start-column="45" selection-end-line="24" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="833">
+          <caret line="50" column="0" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/beampy/beam_ui.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="402">
+          <caret line="30" column="5" selection-start-line="30" selection-start-column="5" selection-end-line="30" selection-end-column="5" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/beampy/beam_solver/solver.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="257">
+          <caret line="400" column="18" selection-start-line="400" selection-start-column="18" selection-end-line="400" selection-end-column="18" />
+          <folding>
+            <element signature="e#0#31#0" expanded="true" />
+            <element signature="e#3567#3582#0" expanded="false" />
+            <element signature="e#10481#10537#0" expanded="false" />
+            <element signature="e#10598#10654#0" expanded="false" />
+            <element signature="e#10715#10771#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -226,40 +226,6 @@ class MyTestCase(unittest.TestCase):
             beam.applyDistLoad(-20, 1, -10, 3)
             beam.solve()
 
-        # Out of boundaries dist load
-        # with self.assertRaises(beam_exceptions.OutOfBounds) as context:
-        #     L = 4
-        #     I = 1234
-        #     E = 200e9
-        #     beam = Beam(E, L, I=I)
-        #     beam.setBoundary(fixed_support, free_support)
-        #     beam.applyDistLoad(-20, 1, -10, 5)
-
-        # Out of boundaries support
-        # with self.assertRaises(beam_exceptions.OutOfBounds) as context:
-        #     L = 4
-        #     I = 1234
-        #     E = 200e9
-        #     beam = Beam(E, L, I=I)
-        #     beam.supports = [6]
-
-        # Out of boundaries support
-        # with self.assertRaises(beam_exceptions.OutOfBounds) as context:
-        #     L = 4
-        #     I = 1234
-        #     E = 200e9
-        #     beam = Beam(E, L, I=I)
-        #     beam.supports = [-2]
-        #
-        # # Super imposed supports, supports are defined before boundaries
-        # with self.assertRaises(beam_exceptions.SuperImposedSupports) as context:
-        #     L = 4
-        #     I = 1234
-        #     E = 200e9
-        #     beam = Beam(E, L, I=I)
-        #     beam.supports = [0]
-        #     beam.setBoundary(simply_support, simply_support)
-
         # Super imposed supports, supports are defined after boundaries
         with self.assertRaises(beam_exceptions.SuperImposedSupports) as context:
             L = 4

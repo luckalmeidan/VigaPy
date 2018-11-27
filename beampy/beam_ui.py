@@ -1,4 +1,5 @@
 import sys
+import time
 
 import matplotlib.pyplot as plt
 from PyQt4 import QtCore, QtGui
@@ -7,10 +8,12 @@ from matplotlib.backends.backend_qt4agg import NavigationToolbar2QT as Navigatio
 
 import beampy.pyui_creator
 from beampy.beam_display import BeamView
+from beampy.beam_solver import beam_exceptions
 from beampy.beam_solver import solver
 from beampy.beam_solver.definitions import *
 from beampy.load_model import LoadModel
 from beampy.load_model import LoadNode
+
 
 beampy.pyui_creator.updateApplication()
 
@@ -165,7 +168,7 @@ class BeamApp(QtGui.QMainWindow, beamPyUI.Ui_MainWindow):
 
         self.beam.inertia_moment = self.beam.calculateInertia(self.beam.base, self.beam.height)
 
-        self.ui.inertia_moment_dspn.setValue(self.beam.inertia_moment)
+        self.ui.inertia_moment_dspn.setText("%.4f" % (self.beam.inertia_moment))
 
         pass
 
@@ -237,7 +240,7 @@ class BeamApp(QtGui.QMainWindow, beamPyUI.Ui_MainWindow):
         self.ui.hinges_combo.removeItem(self.ui.hinges_combo.currentIndex())
         hinge_list = self.getCommaFixedListCombo(self.ui.hinges_combo, rule=self.ui.length_dspn.value())
 
-        self.beam.supports = hinge_list
+        self.beam.hinges = hinge_list
 
     def removeLoadItem(self):
         if self.model.rowCount(self.ui.load_treeview.rootIndex()) == 0:
@@ -376,14 +379,7 @@ class BeamApp(QtGui.QMainWindow, beamPyUI.Ui_MainWindow):
         self.setBeamProperties()
         self.setSupports()
         self.defineLoads()
-        self.ax1.cla()
-        self.ax2.cla()
-        self.ax3.cla()
-        self.ax4.cla()
 
-        self.ax_bending.cla()
-        self.ax_max_shear.cla()
-        self.ax_shear.cla()
 
         # try:
         #     self.__beam_figure.delaxes(self.__beam_figure.axes[1])
@@ -392,15 +388,66 @@ class BeamApp(QtGui.QMainWindow, beamPyUI.Ui_MainWindow):
         # except:
         #     pass
 
+        start_time = time.time()
+
+        try:
+            self.ui.message_lbl.setText("Solving equations...")
+            QtCore.QCoreApplication.processEvents()
+
+            self.beam.solve()
+
+        except beam_exceptions.ImpossibleToCalculate as e:
+            self.ui.message_lbl.setText(str(e))
+            return
+
+            pass
+
+        print("Solver elapsed time: %fs" % (time.time() - start_time))
+
+        self.ax1.cla()
+        self.ax2.cla()
+        self.ax3.cla()
+        self.ax4.cla()
 
 
-        self.beam.solve()
+
         self.ui.equations_lbl.setText(self.beam.diagramEquations())
+
         self.beam.plotDiagrams(self.__plot_figure, (self.ax1, self.ax2, self.ax3, self.ax4))
 
-        self.beam.plotBendingStress(self.__beam_figure, self.ax_bending)
-        self.beam.plotShearStress(self.__beam_figure, self.ax_shear)
-        self.beam.plotIsoChromatic(self.__beam_figure, self.ax_max_shear)
+        start_time = time.time()
+        self.ui.message_lbl.setText("Calculating Stress...")
+        QtCore.QCoreApplication.processEvents()
+
+        self.beam.calculateStresses()
+
+        print("Stress calculation elapsed time: %fs" % (time.time() - start_time))
+
+        start_time = time.time()
+        self.ui.message_lbl.setText("Plotting Stress...")
+        QtCore.QCoreApplication.processEvents()
+
+        self.ax_bending.cla()
+        self.ax_max_shear.cla()
+        self.ax_shear.cla()
+
+        try:
+            self.beam.plotBendingStress(self.__beam_figure, self.ax_bending)
+        except ValueError:
+            pass
+
+        try:
+            self.beam.plotShearStress(self.__beam_figure, self.ax_shear)
+
+        except ValueError:
+            pass
+
+        try:
+            self.beam.plotIsoChromatic(self.__beam_figure, self.ax_max_shear)
+        except ValueError:
+            pass
+
+        print("Plotting elapsed time: %fs\n" % (time.time() - start_time))
 
         self.setDisplayStressValue()
 

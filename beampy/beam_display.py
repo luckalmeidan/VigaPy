@@ -22,7 +22,7 @@ class BeamView(QtGui.QGraphicsView):
         self.setScene(self.scene)
         self.setRenderHint(QtGui.QPainter.Antialiasing)
 
-        self.supports_color = QtCore.Qt.darkRed
+        self.supports_color = QtCore.Qt.black
         self.loads_color = QtCore.Qt.black
 
         self.x_s = -40
@@ -136,6 +136,32 @@ class BeamView(QtGui.QGraphicsView):
 
         self.loads.append(["dist_load", magnitude_1, distance_1, magnitude_2, distance_2])
 
+    #
+    # def __drawSingleLoad(self, magnitude_1,  distance_1):
+    #     single_load = QtGui.QGraphicsItemGroup()
+    #
+    #     load = QtGui.QGraphicsLineItem(self.x_s + self.v_l / self.beam_length * distance_1,
+    #                                    self.y_s - magnitude_1 * self.factor,
+    #                                    self.x_s + self.v_l / self.beam_length * distance_1,
+    #                                    self.y_s)
+    #     arrowhead = QtGui.QGraphicsPolygonItem(
+    #         QtGui.QPolygonF([QtCore.QPoint(self.x_s + self.v_l / self.beam_length * distance_1, self.y_s),
+    #                          QtCore.QPoint(self.x_s + self.v_l / self.beam_length * distance_1 - self.a_size,
+    #                                        self.y_s - self.a_size * 2),
+    #                          QtCore.QPoint(self.x_s + self.v_l / self.beam_length * distance_1 + self.a_size,
+    #                                        self.y_s - self.a_size * 2)]))
+    #
+    #     arrowhead.setBrush(QtGui.QBrush(self.loads_color))
+    #     arrowhead.setPen(QtGui.QPen(self.loads_color, 1, QtCore.Qt.SolidLine))
+    #     load.setPen(QtGui.QPen(self.loads_color, 1, QtCore.Qt.SolidLine))
+    #
+    #     for member in (load, arrowhead):
+    #         single_load.addToGroup(member)
+    #
+    #     return single_load
+
+
+
     def diagramApplyPointLoad(self, magnitude_1, distance_1):
         diagram_object = QtGui.QGraphicsItemGroup()
 
@@ -152,6 +178,7 @@ class BeamView(QtGui.QGraphicsView):
                                                self.y_s - self.a_size * 2),
                                  QtCore.QPoint(self.x_s + self.v_l / self.beam_length * distance_1 + self.a_size,
                                                self.y_s - self.a_size * 2)]))
+
         else:
             magnitude_1 = abs(magnitude_1)
 

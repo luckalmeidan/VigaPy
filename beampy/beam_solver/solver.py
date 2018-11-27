@@ -152,18 +152,6 @@ class Beam:
 
         self.__height = h
 
-    #
-    # @property
-    # def neutral_line(self):
-    #     return self.__nl
-    #
-    # @neutral_line.setter
-    # def neutral_line(self, nl):
-    #     if abs(nl) >= self.height / 2: raise beam_exceptions.InvalidInput("Invalid Neutral line")
-    #     self.calculated_beam = False
-    #
-    #     self.__nl = nl
-
     @property
     def inertia_moment(self):
         return self.__I
@@ -313,6 +301,7 @@ class Beam:
 
         self.calculated_beam = False
 
+        # The condition exponent < 0 is necessary in case load is a distributed load, then it is not considered contour
         if distance == self.length or (distance == 0 and exponent < 0):
             is_contour = True
 
@@ -320,6 +309,11 @@ class Beam:
         self.load_brackets.append(bracket)
 
     def __addLoadBrackets(self):
+        """
+        Based on self.loads, it will compute the macaulay brackets for the software calculation
+
+        :return:
+        """
         self.load_brackets = []
 
         for load in self.loads:
@@ -332,10 +326,13 @@ class Beam:
             elif load[0] == "dist_load":
                 self.__addDistLoad(load[1], load[2], load[3], load[4])
 
+        # Check how many supports and hinges there are to add the respective brackets
         len_supports = len(self.supports)
         len_hinges = len(self.hinges)
-        reaction_array = sp.symbols("R1:%d" % (len_supports + 1))  # TODO: expand this
-        eitheta_array = sp.symbols("EITHETA1:%d" % (len_hinges + 1))  # TODO: expand this
+
+        # Support and Hinge rackets are symbolic to be solved
+        reaction_array = sp.symbols("R1:%d" % (len_supports + 1))
+        eitheta_array = sp.symbols("EITHETA1:%d" % (len_hinges + 1))
 
         for index in range(len_supports):
             self.__addPointLoad(reaction_array[index], self.supports[index])
@@ -365,37 +362,44 @@ class Beam:
         :return:
         """
 
+        # This one is a little bit more complex. Due to necessity of compensation
         if magnitude_1 == magnitude_2:
             n = 0
             w = magnitude_1
             self.__addBracket(w, distance_1, n)
 
+            # If the end point of distr. load is not the end of the beam, it adds a negative bracket to compensate it
             if distance_2 < self.length:
                 self.__addBracket(-w, distance_2, n)
 
             return
 
-            # self.load_brackets.append(MacaulayBracket(magnitude, distance, -1))
-
+        # "Triangular" distr. load case
         if abs(magnitude_2) > abs(magnitude_1):
             n = 1
+
+            # w in this case is the slope of the distr. load. This bracket is the Triangular part
             w = (magnitude_2 - magnitude_1) / (distance_2 - distance_1)
             self.__addBracket(w, distance_1, n)
-            # self.load_brackets.append(MacaulayBracket(magnitude, distance, -1))
 
+            # Compensate with a triangular load and a square load if distr. load does not end in the length of beam
             if distance_2 < self.length:
                 self.__addBracket(-w, distance_2, n)
                 self.__addBracket(-(magnitude_2 - magnitude_1), distance_2, 0)
 
+            # If it is a "Square + Triangle" distr. load, this one is the Square part:
             if magnitude_1 != 0:
                 self.__addBracket(magnitude_1, distance_1, 0)
 
+                # Compensate the square part
                 if distance_2 < self.length:
                     self.__addBracket(-magnitude_1, distance_2, 0)
 
+            # It is possible to optimize a lot this. But the program needs to check other loads
             return
 
         else:
+            # When load is negative. Same as above
             n = 1
             w = (magnitude_1 - magnitude_2) / (distance_2 - distance_1)
 
@@ -425,6 +429,7 @@ class Beam:
         :param sym: symbolic
         :return: expression
         """
+
         eval_sum = 0
 
         for bracket in bracket_list:
@@ -452,8 +457,7 @@ class Beam:
 
     def __determineSectionsEquations(self):
         """
-
-        Post-processing Method
+        Finds equations
 
         :return:
         """
@@ -474,6 +478,11 @@ class Beam:
                 equation_list.append(sp.expand(self.__evalBrackets(bracket_list, section, sym=True)))
 
     def __calculateValues(self):
+        """
+        Calculates the values for V, M, theta and v for the beam spam
+
+        :return:
+        """
 
         self.__beam_span = np.linspace(0, self.length, 500)
 
@@ -498,13 +507,16 @@ class Beam:
 
     def __defineConditions(self):
         """
+
         
         :return: 
         """
 
+        # conload_boundary holds the value of loads applied to the boundaries. It starts with 0 in both ends.
         conload_boundary = [0, 0]
         momment_boundary = [0, 0]
 
+        # The boundaries hold lists of two itens. 1st idx is the position in beam span, 2nd idx is value of V, M, theta or disp in that pos.
         self.V_boundary = []
         self.M_boundary = []
         self.theta_boundary = []
@@ -512,35 +524,40 @@ class Beam:
 
         boundary = self.boundary
 
+        # Search all load brackets
         for load in self.load_brackets:
             if load.exp == -2:  # Moment loads
+
+                # If the bracket pos is either 0 or the length of the beam, it adds to conload or momment boundary
                 if load.pos == 0:
                     momment_boundary[0] += load.magnitude
 
                 elif load.pos == self.length:
                     momment_boundary[1] += load.magnitude
 
-            if load.exp == -1:  # Moment loads
+            if load.exp == -1:  # Point loads
                 if load.pos == 0:
                     conload_boundary[0] += load.magnitude
 
                 elif load.pos == self.length:
                     conload_boundary[1] += load.magnitude
 
+        # Free support, V and M are zero. If there are loads, then it is the load
         if boundary[0] is free_support:
             self.V_boundary.append([0, conload_boundary[0]])
             self.M_boundary.append([0, momment_boundary[0]])
 
+        # Simply support, M is zero or the moment applied. Displacement is zero
         elif boundary[0] is simply_support:
             self.M_boundary.append([0, momment_boundary[0]])
             self.disp_boundary.append([0, 0])
 
+        # Fixed support, both displacement and theta are zero
         elif boundary[0] is fixed_support:
             self.disp_boundary.append([0, 0])
             self.theta_boundary.append([0, 0])
 
-            pass
-
+        # Same as above, but respecting the signal convention
         if boundary[1] == free_support:
             self.V_boundary.append([self.length, -conload_boundary[1]])
             self.M_boundary.append([self.length, -momment_boundary[1]])
@@ -562,6 +579,10 @@ class Beam:
             self.M_boundary.append([self.hinges[index], 0])
 
     def diagramEquations(self):
+        """
+        Formats the  equation to be printed
+        :return: string with the equations
+        """
 
         sections = self.__findSections()
         equations_string = ""
@@ -580,10 +601,11 @@ class Beam:
 
             equations_string += ("V = %s \nM = %s\nEI*theta = %s\nEI*v = %s\n\n\n" % (V, M, theta, v))
 
+        # Optional: Replaces power symbol (**)
         equations_string = equations_string.replace("**", "^")
-        equations_string = equations_string.replace("*", "")
-        # equations_string = equations_string.replace("-", "—")
 
+        # Optional: Replaces mult symbol (*)
+        equations_string = equations_string.replace("*", "")
 
         return equations_string
 
@@ -594,9 +616,13 @@ class Beam:
         self.theta_brackets = []
         self.disp_brackets = []
 
+        # Defines all brackets for all input loads
         self.__addLoadBrackets()
+
+        # Defines boundary conditions
         self.__defineConditions()
 
+        # Integrates the load_brackets all the way to displacement brackets, always adding a constant bracket
         for item in self.load_brackets:
             self.V_brackets.append(item.integrated)
 
@@ -617,6 +643,7 @@ class Beam:
 
         self.disp_brackets.append(MacaulayBracket(C4, 0, 0))
 
+
         equation_set = []
         variables = set()
 
@@ -625,6 +652,8 @@ class Beam:
 
         for boundary_list, bracket_list in zip(boundaries_tuple, brackets_tuple):
             for boundary in boundary_list:
+                # Gets equation to be solved. Eval the value of brackets at points of interest
+                # Boundary idx 0 is the position, boundary idx 1 is the value at that position
                 equation = self.__evalBrackets(bracket_list, boundary[0]) - boundary[1]
                 variables.update(equation.atoms(sp.Symbol), variables)
 
@@ -632,8 +661,10 @@ class Beam:
 
         if len(equation_set) != len(variables):
             raise beam_exceptions.ImpossibleToCalculate("Not enough supports")
-
+        # Solves equation set
         solutions = sp.solve(equation_set)
+
+        # Substitute constants and reactions calculated in the solver
         for brackets in brackets_tuple:
             for bracket in brackets:
                 try:
@@ -641,15 +672,26 @@ class Beam:
                 except AttributeError:
                     pass
 
+        # Checks whether it was possible to solver or not
+        if len(solutions) != len(variables):
+            raise beam_exceptions.ImpossibleToCalculate("Impossible to Solve")
+
+        # Calculates the values for V, M, theta and displacement
         self.__calculateValues()
 
+        # Evaluate section equations
+        self.__determineSectionsEquations()
         self.calculated_beam = True
 
-        self.calculateStresses()
-
-        self.__determineSectionsEquations()
 
     def evalPoint(self, plot, point):
+        """
+        Eval value of a given plot in a given point
+
+        :param plot:
+        :param point:
+        :return:
+        """
 
         if plot == "shear":
             return self.__evalBrackets(self.V_brackets, point)
@@ -661,12 +703,26 @@ class Beam:
             return self.__evalBrackets(self.disp_brackets, point) / (self.young_modulus * self.inertia_moment)
 
     def evalMax(self, plot):
+        """
+        Gets the abs maximum value for that plot
+
+        :param plot:
+        :return:
+        """
         return self.__max_values[plot]
 
     def calculateStresses(self):
+        """
+        Calculate stresses
+
+        :return:
+        """
+
+        # Height span
         h_vector = np.linspace(-self.height / 2, self.height / 2, 200)
         M_value = self.__M_values
 
+        # MM, hh mesh
         MM, hh = np.meshgrid(M_value, h_vector)
 
         self.bending_stress = - MM * (hh) / (self.inertia_moment)
@@ -858,6 +914,8 @@ if __name__ == "__main__":
     beam.solve()
     print(beam.diagramEquations())
     # beam.plotDiagrams()
+    beam.calculateStresses()
+
     beam.plotBendingStress()
     # # beam.plotShearStress()
     # # beam.plotIsoChromatic()

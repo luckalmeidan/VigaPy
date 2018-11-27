@@ -96,8 +96,27 @@
            <string>Beam Properties</string>
           </property>
           <layout class="QGridLayout" name="beam_properties_gb_vl">
-           <item row="8" column="0">
-            <widget class="QPushButton" name="pushButton_2">
+           <item row="10" column="1" colspan="2">
+            <widget class="QDoubleSpinBox" name="base_dspn">
+             <property name="statusTip">
+              <string>Beam section Base</string>
+             </property>
+             <property name="decimals">
+              <number>4</number>
+             </property>
+             <property name="minimum">
+              <double>0.000100000000000</double>
+             </property>
+             <property name="maximum">
+              <double>9999.000000000000000</double>
+             </property>
+             <property name="value">
+              <double>1.000000000000000</double>
+             </property>
+            </widget>
+           </item>
+           <item row="11" column="1">
+            <widget class="QPushButton" name="pushButton">
              <property name="enabled">
               <bool>false</bool>
              </property>
@@ -107,14 +126,87 @@
               </font>
              </property>
              <property name="text">
+              <string>T</string>
+             </property>
+             <property name="checkable">
+              <bool>true</bool>
+             </property>
+             <property name="checked">
+              <bool>false</bool>
+             </property>
+             <property name="autoExclusive">
+              <bool>true</bool>
+             </property>
+             <attribute name="buttonGroup">
+              <string notr="true">buttonGroup_2</string>
+             </attribute>
+            </widget>
+           </item>
+           <item row="11" column="2">
+            <widget class="QPushButton" name="pushButton_3">
+             <property name="enabled">
+              <bool>false</bool>
+             </property>
+             <property name="font">
+              <font>
+               <pointsize>16</pointsize>
+              </font>
+             </property>
+             <property name="text">
+              <string>I</string>
+             </property>
+             <property name="checkable">
+              <bool>true</bool>
+             </property>
+             <property name="checked">
+              <bool>false</bool>
+             </property>
+             <property name="autoExclusive">
+              <bool>true</bool>
+             </property>
+             <attribute name="buttonGroup">
+              <string notr="true">buttonGroup_2</string>
+             </attribute>
+            </widget>
+           </item>
+           <item row="11" column="0">
+            <widget class="QPushButton" name="pushButton_2">
+             <property name="enabled">
+              <bool>true</bool>
+             </property>
+             <property name="font">
+              <font>
+               <pointsize>16</pointsize>
+              </font>
+             </property>
+             <property name="text">
               <string>l</string>
+             </property>
+             <property name="checkable">
+              <bool>true</bool>
+             </property>
+             <property name="checked">
+              <bool>true</bool>
+             </property>
+             <property name="autoExclusive">
+              <bool>true</bool>
+             </property>
+             <attribute name="buttonGroup">
+              <string notr="true">buttonGroup_2</string>
+             </attribute>
+            </widget>
+           </item>
+           <item row="1" column="0">
+            <widget class="QLabel" name="lbl_length">
+             <property name="text">
+              <string>Length (m)</string>
              </property>
             </widget>
            </item>
-           <item row="6" column="0">
-            <widget class="QLabel" name="lbl_length_2">
+           <item row="0" column="0">
+            <widget class="QLabel" name="lbl_young_module">
              <property name="text">
-              <string>Base (m)</string>
+              <string>E (GPa)</string>
              </property>
             </widget>
            </item>
@@ -137,39 +229,6 @@
              </property>
             </widget>
            </item>
-           <item row="1" column="0">
-            <widget class="QLabel" name="lbl_length">
-             <property name="text">
-              <string>Length (m)</string>
-             </property>
-            </widget>
-           </item>
-           <item row="7" column="1" colspan="2">
-            <widget class="QDoubleSpinBox" name="inertia_moment_dspn">
-             <property name="enabled">
-              <bool>false</bool>
-             </property>
-             <property name="decimals">
-              <number>4</number>
-             </property>
-             <property name="minimum">
-              <double>0.000100000000000</double>
-             </property>
-             <property name="maximum">
-              <double>9999.000000000000000</double>
-             </property>
-             <property name="value">
-              <double>10.000000000000000</double>
-             </property>
-            </widget>
-           </item>
-           <item row="4" column="0">
-            <widget class="QLabel" name="lbl_height">
-             <property name="text">
-              <string>Height (m)</string>
-             </property>
-            </widget>
-           </item>
            <item row="0" column="1" colspan="2">
             <widget class="QDoubleSpinBox" name="young_module_dpsn">
              <property name="statusTip">
@@ -189,51 +248,7 @@
              </property>
             </widget>
            </item>
-           <item row="7" column="0">
-            <widget class="QLabel" name="lbl_inertia_moment">
-             <property name="enabled">
-              <bool>false</bool>
-             </property>
-             <property name="text">
-              <string>Inertia (m^4)</string>
-             </property>
-            </widget>
-           </item>
-           <item row="6" column="1" colspan="2">
-            <widget class="QDoubleSpinBox" name="base_dspn">
-             <property name="statusTip">
-              <string>Beam section Base</string>
-             </property>
-             <property name="decimals">
-              <number>4</number>
-             </property>
-             <property name="minimum">
-              <double>0.000100000000000</double>
-             </property>
-             <property name="maximum">
-              <double>9999.000000000000000</double>
-             </property>
-             <property name="value">
-              <double>1.000000000000000</double>
-             </property>
-            </widget>
-           </item>
-           <item row="8" column="1">
-            <widget class="QPushButton" name="pushButton">
-             <property name="enabled">
-              <bool>false</bool>
-             </property>
-             <property name="font">
-              <font>
-               <pointsize>16</pointsize>
-              </font>
-             </property>
-             <property name="text">
-              <string>T</string>
-             </property>
-            </widget>
-           </item>
-           <item row="4" column="1" colspan="2">
+           <item row="9" column="1" colspan="2">
             <widget class="QDoubleSpinBox" name="height_dpsn">
              <property name="statusTip">
               <string>Beam section Height</string>
@@ -252,25 +267,37 @@
              </property>
             </widget>
            </item>
-           <item row="8" column="2">
-            <widget class="QPushButton" name="pushButton_3">
+           <item row="12" column="0">
+            <widget class="QLabel" name="lbl_inertia_moment">
              <property name="enabled">
-              <bool>false</bool>
-             </property>
-             <property name="font">
-              <font>
-               <pointsize>16</pointsize>
-              </font>
+              <bool>true</bool>
              </property>
              <property name="text">
-              <string>I</string>
+              <string>Inertia (m^4)</string>
              </property>
             </widget>
            </item>
-           <item row="0" column="0">
-            <widget class="QLabel" name="lbl_young_module">
+           <item row="9" column="0">
+            <widget class="QLabel" name="lbl_height">
              <property name="text">
-              <string>E (GPa)</string>
+              <string>Height (m)</string>
+             </property>
+            </widget>
+           </item>
+           <item row="10" column="0">
+            <widget class="QLabel" name="lbl_length_2">
+             <property name="text">
+              <string>Base (m)</string>
+             </property>
+            </widget>
+           </item>
+           <item row="12" column="1" colspan="2">
+            <widget class="QLineEdit" name="inertia_moment_dspn">
+             <property name="text">
+              <string>0,0000</string>
+             </property>
+             <property name="readOnly">
+              <bool>true</bool>
              </property>
             </widget>
            </item>
@@ -610,7 +637,7 @@
              <double>0.000000000000000</double>
             </property>
             <property name="maximum">
-             <double>9999.000000000000000</double>
+             <double>999999999.000000000000000</double>
             </property>
             <property name="value">
              <double>5.000000000000000</double>
@@ -620,7 +647,7 @@
           <item row="3" column="1">
            <widget class="QDoubleSpinBox" name="pnt_load_pos_dpsn">
             <property name="maximum">
-             <double>9999.000000000000000</double>
+             <double>999999999.000000000000000</double>
             </property>
             <property name="value">
              <double>5.000000000000000</double>
@@ -684,6 +711,9 @@
           </property>
           <item row="4" column="1">
            <widget class="QDoubleSpinBox" name="moment_pos_dpsn">
+            <property name="maximum">
+             <double>999999999.000000000000000</double>
+            </property>
             <property name="value">
              <double>7.000000000000000</double>
             </property>
@@ -718,6 +748,9 @@
           </item>
           <item row="3" column="1">
            <widget class="QDoubleSpinBox" name="moment_mag_dpsn">
+            <property name="maximum">
+             <double>999999999.000000000000000</double>
+            </property>
             <property name="value">
              <double>7.000000000000000</double>
             </property>
@@ -936,6 +969,9 @@
           </item>
           <item row="2" column="1">
            <widget class="QDoubleSpinBox" name="distr_load_start_mag">
+            <property name="maximum">
+             <double>999999999.000000000000000</double>
+            </property>
             <property name="value">
              <double>5.000000000000000</double>
             </property>
@@ -953,6 +989,9 @@
           </item>
           <item row="4" column="1">
            <widget class="QDoubleSpinBox" name="distr_load_end_mag">
+            <property name="maximum">
+             <double>999999999.000000000000000</double>
+            </property>
             <property name="value">
              <double>10.000000000000000</double>
             </property>
@@ -1125,12 +1164,6 @@ p, li { white-space: pre-wrap; }
  <tabstops>
   <tabstop>young_module_dpsn</tabstop>
   <tabstop>length_dspn</tabstop>
-  <tabstop>height_dpsn</tabstop>
-  <tabstop>base_dspn</tabstop>
-  <tabstop>inertia_moment_dspn</tabstop>
-  <tabstop>pushButton_2</tabstop>
-  <tabstop>pushButton</tabstop>
-  <tabstop>pushButton_3</tabstop>
   <tabstop>left_support_combo</tabstop>
   <tabstop>right_support_combo</tabstop>
   <tabstop>calculate_beam</tabstop>
@@ -1178,6 +1211,7 @@ p, li { white-space: pre-wrap; }
   </property>
  </designerdata>
  <buttongroups>
+  <buttongroup name="buttonGroup_2"/>
   <buttongroup name="buttonGroup"/>
  </buttongroups>
 </ui>
